@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Freescale Community BSP Release Notes &mdash; Freescale Community BSP Release Notes 1.4a documentation</title>
+    <title>Freescale Community BSP Release Notes 1.4a documentation</title>
     
     <link rel="stylesheet" href="_static/release-notes.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -19,26 +19,19 @@
         VERSION:     '1.4a',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  false
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Freescale Community BSP Release Notes 1.4a documentation" href="#" />
-    <link rel="next" title="Introduction" href="introduction.html" /> 
+    <link rel="top" title="None" href="index.html#document-index" /> 
   </head>
   <body>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="introduction.html" title="Introduction"
-             accesskey="N">next</a> |</li>
-        <li><a href="#">Freescale Community BSP Release Notes 1.4a documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">Freescale Community BSP Release Notes 1.4a documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,22 +42,407 @@
             
   <div class="section" id="freescale-community-bsp-release-notes">
 <h1>Freescale Community BSP Release Notes<a class="headerlink" href="#freescale-community-bsp-release-notes" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bsp-scope.html">BSP Scope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hw-acceleration.html">Hardware Acceleration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="known-issues.html">Known Issues</a></li>
-</ul>
+<span id="document-introduction"></span><div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document has the release notes of the Freescale Community BSP 1.4
+(dylan branch) which is a communty effort to improve Freescale&#8217;s
+processors support in OpenEmbedded and Yocto.</p>
 </div>
+<span id="document-bsp-scope"></span><div class="section" id="bsp-scope">
+<h2>BSP Scope<a class="headerlink" href="#bsp-scope" title="Permalink to this headline">¶</a></h2>
+<p>The scope of this release includes both meta-fsl-arm and meta-fsl-arm-extra.
+Please, see in next table the complete supported board list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="49%" />
+<col width="10%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Name</th>
+<th class="head">SoC</th>
+<th class="head">Layer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx6qsabrelite</td>
+<td>Boundary Devices i.MX6Q SABRE Lite</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>nitrogen6x</td>
+<td>Boundary Devices Nitrogen6X</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>cgtqmx6</td>
+<td>Congatec Qmx6</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>imx23evk</td>
+<td>Freescale i.MX23 Evaluation Kit</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx28evk</td>
+<td>Freescale i.MX28 Evaluation Kit</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx31pdk</td>
+<td>Freescale i.MX31 Platform Development Kit</td>
+<td>i.MX31</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx35pdk</td>
+<td>Freescale i.MX35 Platform Development Kit</td>
+<td>i.MX35</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>Freescale i.MX51 Evaluation Kit</td>
+<td>i.MX51</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>Freescale i.MX53 Quick Start Board</td>
+<td>i.MX53</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>Freescale i.MX53 SABRE Automotive Board</td>
+<td>i.MX53</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td>Freescale i.MX6DL SABRE Smart Device</td>
+<td>i.MX6DL</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>Freescale i.MX6Q SABRE Automotive</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>Freescale i.MX6Q SABRE Smart Device</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>Freescale i.MX6SL Evaluation Kit</td>
+<td>i.MX6SL</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-maxi</td>
+<td>OLIMEX iMX233-OLinuXino-Maxi</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-micro</td>
+<td>OLIMEX iMX233-OLinuXino-Micro</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-mini</td>
+<td>OLIMEX iMX233-OLinuXino-Mini</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>wandboard-dual</td>
+<td>Wandboard i.MX6 Wandboard Duallite</td>
+<td>i.MX6DL</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>wandboard-solo</td>
+<td>Wandboard i.MX6 Wandboard Solo</td>
+<td>i.MX6S</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<span id="document-kernel-linux"></span><div class="section" id="linux-kernel">
+<h2>Linux Kernel<a class="headerlink" href="#linux-kernel" title="Permalink to this headline">¶</a></h2>
+<p>Fsl-community-bsp supports to sources for Linux Kernel:</p>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li>linux-imx: Linux Kernel supported by Freescale</li>
+<li>linux-fslc: Linux Kernel mainline with backported fixes (kernel.org)</li>
 </ul>
+<div class="section" id="linux-imx">
+<h3>linux-imx<a class="headerlink" href="#linux-imx" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows the version of Linux Kernel provided by
+Freescale for each supported machine.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Board</th>
+<th class="head">Kernel Verion_FSL BSP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx28evk</td>
+<td>2.6.35_1.1.0</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>2.6.35_11.09.01</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>2.6.35_11.09.01</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>2.6.35_11.09.01</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td>3.0.35_3.0.0</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>3.0.35_1.1.0</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>3.0.35_1.1.0</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>3.0.35_12.10.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="linux-fslc">
+<h3>linux-fslc<a class="headerlink" href="#linux-fslc" title="Permalink to this headline">¶</a></h3>
+<p>linux-fslc provides the Linux Kernel 3.8.8 from mainline (kernel.org)
+with some backported fixes.</p>
+<p>For the mainline kernel some boards has a very good support, although
+other ones has only a basic support.</p>
+<p>Please, see in the following table which are the main features supported
+by mainline kernel for each supporte board.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Basic Feature List</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cgtqmx6</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx23evk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx28evk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx31pdk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx35pdk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-maxi</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-micro</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-mini</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabrelite</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>wandboard-dual</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>wandboard-solo</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>nitrogen6x</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span id="document-u-boot"></span><div class="section" id="u-boot">
+<h2>U-Boot<a class="headerlink" href="#u-boot" title="Permalink to this headline">¶</a></h2>
+<p>Fsl-community-bsp supports to sources for u-boot:</p>
+<ul class="simple">
+<li>u-boot-imx: U-Boot supported by Freescale</li>
+<li>u-boot-fslc: U-Boot mainline version with backported fixes (denx.de)</li>
+</ul>
+<div class="section" id="u-boot-imx">
+<h3>u-boot-imx<a class="headerlink" href="#u-boot-imx" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows the version of U-Boot provided by Freescale
+for each supported machine.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="27%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Board</th>
+<th class="head">u-boot Verion</th>
+<th class="head">FSL BSP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx28evk</td>
+<td>2009.08</td>
+<td>imx_2.6.35_10.12.01</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>2009.08</td>
+<td>imx_2.6.35_11.09.01</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>2009.08</td>
+<td>imx_2.6.35_11.09.01</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>2009.08</td>
+<td>imx_2.6.35_11.09.01</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td>2009.08</td>
+<td>imx_3.0.35_3.0.0</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>2009.08</td>
+<td>imx_3.0.35_1.1.0</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>2009.08</td>
+<td>imx_3.0.35_1.1.0</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>2009.08</td>
+<td>imx_3.0.35_12.10.02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="u-boot-fslc">
+<h3>u-boot-fslc<a class="headerlink" href="#u-boot-fslc" title="Permalink to this headline">¶</a></h3>
+<p>u-boot-fslc provides the U-Boot 2013.04 version with backported fixes
+and configuration patches related with meta-oe/yocto.</p>
+<p>The following table shows the supported boards.</p>
+</div>
+</div>
+<span id="document-hw-acceleration"></span><div class="section" id="hardware-acceleration">
+<h2>Hardware Acceleration<a class="headerlink" href="#hardware-acceleration" title="Permalink to this headline">¶</a></h2>
+<p>This section will show the version of each package (for each board)
+that provides some kind of hardware acceleration.</p>
+<div class="section" id="imx28evk">
+<h3>imx28evk<a class="headerlink" href="#imx28evk" title="Permalink to this headline">¶</a></h3>
+<p>Hardware Acceleration packages for imx28evk</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package Name</th>
+<th class="head">Package version (BSP from Freescale)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx-test</td>
+<td>2.6.35.3-1.1.0</td>
+</tr>
+<tr class="row-odd"><td>libfslparser</td>
+<td>3.0.6</td>
+</tr>
+<tr class="row-even"><td>gst-fsl-plugin</td>
+<td>3.0.6</td>
+</tr>
+<tr class="row-odd"><td>libfslcodec</td>
+<td>3.0.6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="imx53qsb">
+<h3>imx53qsb<a class="headerlink" href="#imx53qsb" title="Permalink to this headline">¶</a></h3>
+<p>Hardware Acceleration packages for imx53qsb</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package Name</th>
+<th class="head">Package version (BSP from Freescale)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx-test</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-odd"><td>imx-lib</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-even"><td>firmware-imx</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-odd"><td>amd-gpu-x11-bin-mx51</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-even"><td>xf86-video-imxfb</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-odd"><td>gst-fsl-plugin</td>
+<td>2.0.3</td>
+</tr>
+<tr class="row-even"><td>fsl-mm-codeclib</td>
+<td>2.0.3</td>
+</tr>
+<tr class="row-odd"><td>fsl-mm-flv-codeclib</td>
+<td>2.0.3</td>
+</tr>
+<tr class="row-even"><td>fsl-mm-mp3enc-codeclib</td>
+<td>2.0.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span id="document-known-issues"></span><div class="section" id="known-issues">
+<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
 </div>
 
 
@@ -73,22 +451,28 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Freescale Community BSP Release Notes</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-bsp-scope">BSP Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-kernel-linux">Linux Kernel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linux-imx">linux-imx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#linux-fslc">linux-fslc</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-u-boot">U-Boot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#u-boot-imx">u-boot-imx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#u-boot-fslc">u-boot-fslc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-hw-acceleration">Hardware Acceleration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#imx28evk">imx28evk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#imx53qsb">imx53qsb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-known-issues">Known Issues</a></li>
 </ul>
 
-  <h4>Next topic</h4>
-  <p class="topless"><a href="introduction.html"
-                        title="next chapter">Introduction</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -109,13 +493,7 @@
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="introduction.html" title="Introduction"
-             >next</a> |</li>
-        <li><a href="#">Freescale Community BSP Release Notes 1.4a documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">Freescale Community BSP Release Notes 1.4a documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

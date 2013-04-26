@@ -356,84 +356,301 @@ for each supported machine.</p>
 </div>
 <div class="section" id="u-boot-fslc">
 <h3>u-boot-fslc<a class="headerlink" href="#u-boot-fslc" title="Permalink to this headline">¶</a></h3>
-<p>u-boot-fslc provides the U-Boot 2013.04 version with backported fixes
+<p>u-boot-fslc provides the <strong>U-Boot 2013.04</strong> version with backported fixes
 and configuration patches related with meta-oe/yocto.</p>
 <p>The following table shows the supported boards.</p>
-</div>
-</div>
-<span id="document-hw-acceleration"></span><div class="section" id="hardware-acceleration">
-<h2>Hardware Acceleration<a class="headerlink" href="#hardware-acceleration" title="Permalink to this headline">¶</a></h2>
-<p>This section will show the version of each package (for each board)
-that provides some kind of hardware acceleration.</p>
-<div class="section" id="imx28evk">
-<h3>imx28evk<a class="headerlink" href="#imx28evk" title="Permalink to this headline">¶</a></h3>
-<p>Hardware Acceleration packages for imx28evk</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="30%" />
-<col width="70%" />
+<col width="71%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Supported</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx6qsabrelite</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>nitrogen6x</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>cgtqmx6</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx23evk</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx28evk</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx31pdk</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx35pdk</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td><strong>no</strong></td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-maxi</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-micro</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-mini</td>
+<td>yes</td>
+</tr>
+<tr class="row-odd"><td>wandboard-dual</td>
+<td>yes</td>
+</tr>
+<tr class="row-even"><td>wandboard-solo</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span id="document-userspace-pkg"></span><div class="section" id="userspace-packages">
+<h2>Userspace Packages<a class="headerlink" href="#userspace-packages" title="Permalink to this headline">¶</a></h2>
+<p>There is a huge number of userspace packages provided by Yocto.
+The following table shows some version for few highligthed packages.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="35%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package</th>
+<th class="head">Board/SOC family</th>
+<th class="head">Version</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gstreamer</td>
+<td>all</td>
+<td>0.10.36</td>
+</tr>
+<tr class="row-odd"><td>udev</td>
+<td>all</td>
+<td>182</td>
+</tr>
+<tr class="row-even"><td>xserver-xorg</td>
+<td>MX6</td>
+<td>1.11.4</td>
+</tr>
+<tr class="row-odd"><td>xserver-xorg</td>
+<td>all</td>
+<td>1.13</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span id="document-fsl-userspace-pkg"></span><div class="section" id="freescale-userspace-packages">
+<h2>Freescale Userspace Packages<a class="headerlink" href="#freescale-userspace-packages" title="Permalink to this headline">¶</a></h2>
+<p>This section shows the version package for each board.
+Those packages provides hardware acceleration for GPU or VPU,
+provides hardware optimization or some hardware test tools.</p>
+<p>Hardware acceleration is achieved using a different core
+for processing some specific task. In this case, GPU or VPU.</p>
+<p>Hardware optimization is achieved with some changes in source
+code in order to get a better performance for a specific task
+in a specific hardware. For example, audio decode made by software,
+but with optimizations for ARM.</p>
+<p>Hardware relate is applicable when the package was designed to
+be executed in a specific hardware, and it does not make sense
+in other hardware. For example, imx-test is a test package for
+imx boards. It can be cross-compiled for any other core, although
+it will only act as expect if executed on imx boards.</p>
+<div class="section" id="mx28">
+<h3>MX28<a class="headerlink" href="#mx28" title="Permalink to this headline">¶</a></h3>
+<p>Freescale userspace packages for mx28 SOC family.</p>
+<p>It includes:</p>
+<ul class="simple">
+<li>imx28evk</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="54%" />
+<col width="23%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Package Name</th>
 <th class="head">Package version (BSP from Freescale)</th>
+<th class="head">HW</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>imx-test</td>
 <td>2.6.35.3-1.1.0</td>
+<td>HW related</td>
 </tr>
 <tr class="row-odd"><td>libfslparser</td>
 <td>3.0.6</td>
+<td>HW optimization</td>
 </tr>
 <tr class="row-even"><td>gst-fsl-plugin</td>
 <td>3.0.6</td>
+<td>HW optimization</td>
 </tr>
 <tr class="row-odd"><td>libfslcodec</td>
 <td>3.0.6</td>
+<td>HW optimization</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="imx53qsb">
-<h3>imx53qsb<a class="headerlink" href="#imx53qsb" title="Permalink to this headline">¶</a></h3>
-<p>Hardware Acceleration packages for imx53qsb</p>
+<div class="section" id="mx5">
+<h3>MX5<a class="headerlink" href="#mx5" title="Permalink to this headline">¶</a></h3>
+<p>Freescale userspace packages for mx5 SOC family.</p>
+<p>It includes:</p>
+<ul class="simple">
+<li>imx51evk</li>
+<li>imx53ard</li>
+<li>imx53qsb</li>
+</ul>
 <table border="1" class="docutils">
 <colgroup>
-<col width="39%" />
-<col width="61%" />
+<col width="31%" />
+<col width="48%" />
+<col width="21%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Package Name</th>
 <th class="head">Package version (BSP from Freescale)</th>
+<th class="head">HW</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>imx-test</td>
 <td>11.09.01</td>
+<td>HW related</td>
 </tr>
 <tr class="row-odd"><td>imx-lib</td>
 <td>11.09.01</td>
+<td>HW related</td>
 </tr>
 <tr class="row-even"><td>firmware-imx</td>
 <td>11.09.01</td>
+<td>HW related</td>
 </tr>
 <tr class="row-odd"><td>amd-gpu-x11-bin-mx51</td>
 <td>11.09.01</td>
+<td>HW acceleration</td>
 </tr>
 <tr class="row-even"><td>xf86-video-imxfb</td>
 <td>11.09.01</td>
+<td>HW acceleration</td>
 </tr>
 <tr class="row-odd"><td>gst-fsl-plugin</td>
 <td>2.0.3</td>
+<td>HW related</td>
 </tr>
 <tr class="row-even"><td>fsl-mm-codeclib</td>
 <td>2.0.3</td>
+<td>HW acceleration</td>
 </tr>
 <tr class="row-odd"><td>fsl-mm-flv-codeclib</td>
 <td>2.0.3</td>
+<td>HW optimization</td>
 </tr>
 <tr class="row-even"><td>fsl-mm-mp3enc-codeclib</td>
 <td>2.0.3</td>
+<td>HW optimization</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mx6">
+<h3>MX6<a class="headerlink" href="#mx6" title="Permalink to this headline">¶</a></h3>
+<p>Freescale userspace packages for mx6 SOC family</p>
+<p>It includes:</p>
+<ul class="simple">
+<li>imx6qsabreauto</li>
+<li>imx6qsabresd</li>
+<li>imx6slevk</li>
+<li>imx6dlsabresd</li>
+<li>imx6slevk</li>
+<li>nitrogen6x</li>
+<li>cgtqmx6</li>
+<li>wandboard-solo</li>
+<li>imx6qsabrelite</li>
+<li>wandboard-dual</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="48%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Package Name</th>
+<th class="head">Package version (BSP from Freescale)</th>
+<th class="head">HW</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>imx-test</td>
+<td>1.1.0</td>
+<td>HW related</td>
+</tr>
+<tr class="row-odd"><td>imx-lib</td>
+<td>1.1.0</td>
+<td>HW related</td>
+</tr>
+<tr class="row-even"><td>firmware-imx</td>
+<td>1.1.0</td>
+<td>HW related</td>
+</tr>
+<tr class="row-odd"><td>gpu-viv-bin-mx6q</td>
+<td>1.1.0</td>
+<td>HW acceleration</td>
+</tr>
+<tr class="row-even"><td>xf86-dri-vivante</td>
+<td>1.1.0</td>
+<td>HW acceleration</td>
+</tr>
+<tr class="row-odd"><td>xf86-video-imxfb-vivante</td>
+<td>1.1.0</td>
+<td>HW acceleration</td>
+</tr>
+<tr class="row-even"><td>gst-fsl-plugin</td>
+<td>3.0.5</td>
+<td>HW related</td>
+</tr>
+<tr class="row-odd"><td>libfslcodec</td>
+<td>3.0.5</td>
+<td>HW acceleration</td>
+</tr>
+<tr class="row-even"><td>libfslparser</td>
+<td>3.0.5</td>
+<td>HW optimization</td>
+</tr>
+<tr class="row-odd"><td>libfslvpuwrap</td>
+<td>1.0.17</td>
+<td>HW related</td>
 </tr>
 </tbody>
 </table>
@@ -441,6 +658,14 @@ that provides some kind of hardware acceleration.</p>
 </div>
 <span id="document-known-issues"></span><div class="section" id="known-issues">
 <h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<p><strong>MX6</strong> Windowed mode acceleration</p>
+<dl class="docutils">
+<dt><strong>MX6DL</strong> Freescale userspace packages for MX6Q SOC family will be installed</dt>
+<dd>(if required) although they are not compatible.</dd>
+<dt><strong>MX6SL</strong> Freescale userspace packages for MX6Q SOC family will be installed</dt>
+<dd>(if required) although they are not compatible.</dd>
+</dl>
+<p><strong>MX23</strong> U-Boot DDR instability</p>
 </div>
 </div>
 </div>
@@ -465,9 +690,11 @@ that provides some kind of hardware acceleration.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#u-boot-fslc">u-boot-fslc</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-hw-acceleration">Hardware Acceleration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#imx28evk">imx28evk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#imx53qsb">imx53qsb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-userspace-pkg">Userspace Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-fsl-userspace-pkg">Freescale Userspace Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mx28">MX28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mx5">MX5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mx6">MX6</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-known-issues">Known Issues</a></li>

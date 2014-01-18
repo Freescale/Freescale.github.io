@@ -1,0 +1,54 @@
+#!/bin/sh
+
+git_update() {
+	url=$1
+	branch=$2
+	path=$3
+
+	if [ ! -d $path ]; then
+		echo "Cloning $url at $branch"
+		git clone -q $url -b $branch $path
+	else
+		echo "Updating $url at $branch"
+	    (cd $path && git fetch -q && git checkout -qB $branch origin/$branch)
+	fi
+}
+
+sphinx_update() {
+	doc=$1
+	dest=$2
+	symlink=$3
+
+	if [ -d $1/build ]; then
+		echo "Removing previous build"
+		rm -r $1/build
+	fi
+
+	echo Building $doc
+	(cd $1 && make singlehtml)
+
+	echo Updating $dest
+	rm -rf $dest
+	cp -r $1/build/singlehtml $dest
+
+	git add $dest
+	git commit -m"Update $dest" -s $dest
+
+	if [ -n "$symlink" ]; then
+		(cd $(dirname $dest) && rm -f current && ln -s $(basename $dest) current)
+		git add $(dirname $dest)/current
+		git commit -qm"Set $dest as current" -s $(dirname $dest)/current
+	fi
+}
+
+tmp=$(pwd)/tmp
+
+### Release notes
+
+# Dylan
+git_update https://github.com/Freescale/Documentation.git dylan $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.4
+
+# Dora
+git_update https://github.com/Freescale/Documentation.git dora $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.5 yes

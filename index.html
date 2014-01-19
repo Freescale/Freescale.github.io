@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Freescale Community BSP : " />
+    <meta name="description" content="Freescale Community BSP" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/offcanvas.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
     <title>Freescale Community BSP</title>
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Freescale Community BSP</a>
+          <!-- <a id="forkme_banner" href="https://github.com/Freescale"></a>
+               <h3>Freescale Community BSP</h3> -->
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Freescale">View on GitHub</a>
-
+    <section id="main_content" class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="jumbotron">
           <h1 id="project_title">Freescale Community BSP</h1>
-          <h2 id="project_tagline"></h2>
+          <p>Welcome to Freescale Community BSP page!</p>
+          <p>This page aggregates information about the Freescale Community
+            BSP (Board Support Package) for the Yocto Project.</p>
+        </div>
+        <p>There are some useful links, such as:</p>
+        <ul>
+          <li><a href="doc/release-notes/1.5">Release Notes for 1.5 release</a></li>
+          <li><a href="doc/release-notes/1.4">Release Notes for 1.4 release</a></li>
+          <li><a href="https://docs.google.com/forms/d/1y68-QjiDmv4ekc9Aq8vIOXUePZ5wvOu_5_1RpdfK7zY/viewform">Test report</a></li>
+        </ul>
+      </div>
+    </section>
 
-        </header>
-    </div>
+    <footer class="inner container">
+      <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+    </footer>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-freescale-community-bsp-page" class="anchor" href="#welcome-to-freescale-community-bsp-page"><span class="octicon octicon-link"></span></a>Welcome to Freescale Community BSP page</h3>
-
-<p>This page try to aggregate all information about the Freescale Community BSP.</p>
-
-<p>There are some useful links for you, as:</p>
-
-<ul>
-<li><a href="doc/release-notes/1.4">Release Notes for 1.4 release</a></li>
-<li><a href="doc/release-notes/1.5">Release Notes for 1.5 release</a></li>
-<li><a href="https://docs.google.com/forms/d/1y68-QjiDmv4ekc9Aq8vIOXUePZ5wvOu_5_1RpdfK7zY/viewform">Test report</a></li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

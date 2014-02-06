@@ -1,0 +1,45 @@
+@import url("default.css");
+
+th {
+	background-color: #f2f2f2;
+}
+
+table.docutils td {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #AAAAAA;
+}
+
+table.docutils tr.row-odd {
+    background-color: #eee;
+}
+
+table.docutils tr:hover {
+    background-color: lightyellow;
+}
+
+table.docutils th, table.docutils td {
+    text-align: center;
+}
+
+table.docutils td:first-child {
+    text-align: left;
+    border-left-style: none;
+}
+
+table.docutils td:last-child {
+    border-right-style: none;
+}
+
+#test-results span.test_result.success {
+    color: green;
+}
+
+#test-results span.test_result.error {
+    color: red;
+}
+
+#test-results span.test_result.warning {
+    color: orange;
+    font-weight: bold;
+}

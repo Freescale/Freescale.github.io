@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset='utf-8' />
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
     <meta name="description" content="FSL Community BSP" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -19,69 +21,116 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">FSL Community BSP</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="https://github.com/Freescale/fsl-community-bsp-base">Download</a></li>
-            <li><a href="javascript: alert('Nothing here, yet!')">Documentation</a></li>
-            <li><a href="javascript: alert('Nothing here, yet!')">Contributing</a></li>
-          </ul>
-        </div>
+
+    <header class="navbar navbar-fixed-top os-navbar">
+      <div class="navbar-header">
+        <button class="btn btn-primary navbar-toggle collapsed" data-target="navbar-collapse" data-toggle="collapse" type="button">
+          <span><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <a class="navbar-brand" href="#">FSL Community BSP</a>
+      </div>
+      <div id="os-navbar" class="collapse navbar-collapse navbar-right">
+        <ul id="main-nav" class="nav navbar-nav">
+          <li><a href="https://github.com/Freescale/fsl-community-bsp-base">Download</a></li>
+          <li><a href="javascript: alert('Nothing here, yet!')">Documentation</a></li>
+          <li><a href="javascript: alert('Nothing here, yet!')">Contributing</a></li>
+        </ul>
       </div>
     </header>
 
-    <section id="main_content" class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="jumbotron">
-          <h1 id="project_title">FSL Community BSP</h1>
-          <p>This page aggregates information about the FSL Community
-            BSP (Board Support Package) for the Yocto Project.</p>
-        </div>
+    <div id="content">
 
-        <div class="row">
-          <div class="col-md-4">
-            <p class="dashboard-element text-center">
-              <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <h3>Documentation</h3>
-            <p>Find the project documentation <a href="javascript: alert('Nothing here, yet!')">here</a>.</p>
-            <p>Having problem installing the BSP? Check out the <a href="javascript: alert('Nothing here, yet!')">installation notes</a>.</p>
-            <p>Read the <a href="javascript: alert('Nothing here, yet!')">FAQ</a>!</p>
-          </div>
-
-          <div class="col-md-4">
-            <h3>Contributing</h3>
-            <p>The project always welcome new contributions, have a look <a href="javascript: alert('Nothing here, yet!')">here</a> to learn how to do it.</p>
-            <p>Check out the <a href="javascript: alert('Nothing here, yet!')">mailing lists</a> to talk directly with the developers and other users.</p>
-            <p>You found a bug? Let us know at the project <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Bugzilla</a>!</p>
-            <p>We have some <a href="doc/release-notes/current/index.html#document-test-results">tests results</a> about the last relase. Have a look to see what's currently supported.</p>
+      <section id="header-section" class="os-section">
+        <div id="header-container" class="container">
+          <div id="overview" class="os-centered">
+            <h1 id="project_title">FSL Community BSP</h1>
+            <p class="lead">This page aggregates information about the FSL Community
+              BSP (Board Support Package) for the Yocto Project.</p>
           </div>
         </div>
+      </section>
+
+      <section id="main-section" class="os-section">
+        <div id="main-content" class="container">
+          <div id="items" class="row">
+            <div class="col-sm-4">
+              <div class="os-centered">
+                <span class="fa-stack fa-3x os-red-color">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4>Download</h4>
+                <p>
+                  <a class="btn" href="#download">Read More</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="os-centered">
+                <span class="fa-stack fa-3x os-green-color">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-file-text fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4>Documentation</h4>
+                <p>
+                  <a class="btn" href="#documentation">Read More</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="os-centered">
+                <span class="fa-stack fa-3x os-blue-color">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4>Contributing</h4>
+                <p>
+                  <a class="btn" href="#contributing">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="os-no-striped">
+        <div class="container">
+          <h3>Get the BSP</h3>
+          <p>You can easily download the latest BSP <a href="https://github.com/Freescale/fsl-community-bsp-base">here</a>.</p>
+          <p>Checkout the latest releases (new one every 6 months):</p>
+          <ul>
+            <li><a href="doc/release-notes/1.5/index.html">Release Notes for 1.5 release</a></li>
+            <li><a href="doc/release-notes/1.4/index.html">Release Notes for 1.4 release</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="documentation" class="os-striped">
+        <div class="container">
+          <h3>Documentation</h3>
+          <p>Find the project documentation <a href="javascript: alert('Nothing here, yet!')">here</a>.</p>
+          <p>Having problem installing the BSP? Check out the <a href="javascript: alert('Nothing here, yet!')">installation notes</a>.</p>
+          <p>Read the <a href="javascript: alert('Nothing here, yet!')">FAQ</a>!</p>
+        </div>
+      </section>
+
+      <section id="contributing" class="os-no-striped">
+        <div class="container">
+          <h3>Contributing</h3>
+          <p>The project always welcome new contributions, have a look <a href="javascript: alert('Nothing here, yet!')">here</a> to learn how to do it.</p>
+          <p>Check out the <a href="javascript: alert('Nothing here, yet!')">mailing lists</a> to talk directly with the developers and other users.</p>
+          <p>You found a bug? Let us know at the project <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Bugzilla</a>!</p>
+          <p>We have some <a href="doc/release-notes/current/index.html#document-test-results">tests results</a> about the last relase. Have a look to see what's currently supported.</p>
+        </div>
+      </section>
       </div>
-    </section>
 
-    <div id="#download">
-      <h3>Get the BSP</h3>
-      <p>You can easily download the latest BSP <a href="https://github.com/Freescale/fsl-community-bsp-base">here</a>.</p>
-      <p>Checkout the latest releases (new one every 6 months):</p>
-      <ul>
-        <li><a href="doc/release-notes/1.5/index.html">Release Notes for 1.5 release</a></li>
-        <li><a href="doc/release-notes/1.4/index.html">Release Notes for 1.4 release</a></li>
-      </ul>
-    </div>
+      <footer class="inner container">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
 
-    <footer class="inner container">
-      <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery.js"></script>
+      <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

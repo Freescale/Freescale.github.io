@@ -12,43 +12,43 @@
     background: none repeat scroll 0 0 #3A3A3A;
     opacity: 0.9;
     font-size: 0.8em;
-    padding: 10px 30px;
 }
 
 .os-navbar a {
     outline: medium none;
-    color: #FFFFFF;
-    opacity: 0.8;
+    color: #BBBBBB;
 }
 
-.os-navbar .navbar-brand {
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 14px;
+.os-navbar .navbar-toggle .icon-bar {
+    background: #FFFFFF;
+}
+
+.os-navbar a.navbar-brand {
+    height: auto;
+}
+
+.os-navbar #main-nav a {
+    font-weight: bold;
+}
+
+.os-navbar a.navbar-brand, .os-navbar #main-nav a {
+    -webkit-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+}
+
+.os-navbar .navbar-brand p {
+    margin: 0;
+    padding: 10px;
 }
 
 .os-navbar .navbar-nav > li > a {
-    border-radius: 5px;
+    padding: 25px;
     text-transform: uppercase;
 }
 
 .os-navbar a:hover, .os-navbar .navbar-nav > li > a:hover, .os-navbar .navbar-nav > li > a:focus {
-    opacity: 1;
     background-color: #3A3A3A;
-}
-
-.os-navbar .navbar-nav > .active > a {
-    background-color: #1A1A1A;
-    border-radius: 5px;
-}
-
-.os-navbar .navbar-nav > .active > a:hover, .os-navbar .navbar-nav > .active > a:focus {
-    background-color: #1A1A1A;
-}
-
-.os-navbar.scrolled {
-    border-bottom: 0 none;
-    opacity: 0.85;
+    color: #FFFFFF;
 }
 
 /********************************************/

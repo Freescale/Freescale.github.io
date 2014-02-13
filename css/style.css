@@ -121,11 +121,8 @@ h1, .h1 {
     background: none repeat scroll 0 0 rgba(58, 58, 58, 0.8);
 }
 
-#main-section #main-content {
-    padding: 20px 0;
-}
-
 #main-section #main-content #items {
+    padding: 20px 0;
     color: #FFFFFF;
 }
 
@@ -136,9 +133,10 @@ h1, .h1 {
 
 #main-section #main-content a {
     color: inherit;
-    border: 1px solid;
     border-radius: 5px;
-    opacity: 0.7;
+    opacity: 0.85;
+    -webkit-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
 }
 
 #main-section #main-content a:hover {

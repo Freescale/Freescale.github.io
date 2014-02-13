@@ -200,3 +200,46 @@ h1, .h1 {
 }
 
 /********************************************/
+
+/********* CSS to responsive design *********/
+
+@media (max-width: 767px) {
+    .os-navbar {
+        opacity: 1;
+    }
+
+    .os-navbar .navbar-brand p {
+        border: 0;
+        padding: 0;
+    }
+
+    .os-navbar .navbar-nav > li > a {
+        padding: 15px;
+    }
+
+    h1, .h1 {
+        font-size: 3em;
+    }
+
+    .fa-3x {
+        font-size: 2em;
+    }
+
+    #content {
+        padding-top: 51px;
+    }
+
+    #header-section #header-container {
+        width: 95%;
+        padding: 20px 0;
+    }
+
+    #header-section #header-container #overview {
+        padding-left: 5px;
+        padding-right: 5px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+/********************************************/

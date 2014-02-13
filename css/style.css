@@ -85,6 +85,10 @@ h1, .h1 {
     background-size: cover;
 }
 
+.os-section {
+    padding: 20px 0;
+}
+
 .os-page-header {
     border-bottom: 1px solid #EEEEEE;
     padding-bottom: 9px;

@@ -24,7 +24,7 @@
 
     <header class="navbar navbar-fixed-top os-navbar" role="navigation">
       <div class="container-fluid">
-        <div class="navbar-header">
+        <div class="navbar-header os-main-links">
           <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -35,11 +35,11 @@
             <p>FSL Community BSP</p>
           </a>
         </div>
-        <div id="os-navbar" class="collapse navbar-collapse navbar-right">
-          <ul id="main-nav" class="nav navbar-nav">
-            <li><a href="https://github.com/Freescale/fsl-community-bsp-base">Download</a></li>
-            <li><a href="javascript: alert('Nothing here, yet!')">Documentation</a></li>
-            <li><a href="javascript: alert('Nothing here, yet!')">Contributing</a></li>
+        <div id="os-navbar-links" class="collapse navbar-collapse navbar-right">
+          <ul id="main-nav" class="nav navbar-nav os-main-links">
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#contributing">Contributing</a></li>
+            <li><a href="#download">Download</a></li>
           </ul>
         </div>
       </div>
@@ -51,8 +51,6 @@
         <div id="header-container" class="container">
           <div id="overview" class="os-centered">
             <h1 id="project_title">FSL Community BSP</h1>
-            <p class="lead">This page aggregates information about the FSL Community
-              BSP (Board Support Package) for the Yocto Project.</p>
           </div>
         </div>
       </section>
@@ -61,18 +59,7 @@
         <div id="main-content" class="container">
           <div id="items" class="row">
             <div class="col-sm-4">
-              <div class="os-centered">
-                <a class="btn" href="#download">
-                  <span class="fa-stack fa-3x os-red-color">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                  </span>
-                  <h4>Download</h4>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="os-centered">
+              <div class="os-centered os-main-links">
                 <a class="btn" href="#documentation">
                   <span class="fa-stack fa-3x os-green-color">
                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -80,10 +67,11 @@
                   </span>
                   <h4>Documentation</h4>
                 </a>
+
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="os-centered">
+              <div class="os-centered os-main-links">
                 <a class="btn" href="#contributing">
                   <span class="fa-stack fa-3x os-blue-color">
                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -93,50 +81,94 @@
                 </a>
               </div>
             </div>
+            <div class="col-sm-4">
+              <div class="os-centered os-main-links">
+                <a class="btn" href="#download">
+                  <span class="fa-stack fa-3x os-red-color">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4>Download</h4>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="download" class="os-no-striped">
+      <section id="documentation" class="os-no-striped os-section">
         <div class="container">
-          <h3>Get the BSP</h3>
-          <p>You can easily download the latest BSP <a href="https://github.com/Freescale/fsl-community-bsp-base">here</a>.</p>
-          <p>Checkout the latest releases (new one every 6 months):</p>
-          <ul>
-            <li><a href="doc/release-notes/1.5/index.html">Release Notes for 1.5 release</a></li>
-            <li><a href="doc/release-notes/1.4/index.html">Release Notes for 1.4 release</a></li>
-          </ul>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="os-section-title">
+                <h1>Documentation</h1>
+              </div>
+            </div>
+            <div class="col-sm-7 os-border-left os-green-links">
+              <div class="os-section-content">
+                <p class="lead">Find the project documentation <a href="javascript: alert('Nothing here, yet!')">here</a>.</p>
+                <p class="lead">Having problem installing the BSP? Check out the <a href="javascript: alert('Nothing here, yet!')">installation notes</a>.</p>
+                <p class="lead">Read the <a href="javascript: alert('Nothing here, yet!')">FAQ</a>!</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="documentation" class="os-striped">
+      <section id="contributing" class="os-striped os-section">
         <div class="container">
-          <h3>Documentation</h3>
-          <p>Find the project documentation <a href="javascript: alert('Nothing here, yet!')">here</a>.</p>
-          <p>Having problem installing the BSP? Check out the <a href="javascript: alert('Nothing here, yet!')">installation notes</a>.</p>
-          <p>Read the <a href="javascript: alert('Nothing here, yet!')">FAQ</a>!</p>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="os-section-title">
+                <h1>Contributing</h1>
+              </div>
+            </div>
+            <div class="col-sm-7 os-border-left os-blue-links">
+              <div class="os-section-content">
+                <p class="lead">The project always welcome new contributions, have a look <a href="javascript: alert('Nothing here, yet!')">here</a> to learn how to do it.</p>
+                <p class="lead">Check out the <a href="javascript: alert('Nothing here, yet!')">mailing lists</a> to talk directly with the developers and other users.</p>
+                <p class="lead">You found a bug? Let us know at the project <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Bugzilla</a>!</p>
+                <p class="lead">We have some <a href="doc/release-notes/current/index.html#document-test-results">tests results</a> about the last relase. Have a look to see what's currently supported.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="contributing" class="os-no-striped">
+      <section id="download" class="os-section os-no-striped">
         <div class="container">
-          <h3>Contributing</h3>
-          <p>The project always welcome new contributions, have a look <a href="javascript: alert('Nothing here, yet!')">here</a> to learn how to do it.</p>
-          <p>Check out the <a href="javascript: alert('Nothing here, yet!')">mailing lists</a> to talk directly with the developers and other users.</p>
-          <p>You found a bug? Let us know at the project <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Bugzilla</a>!</p>
-          <p>We have some <a href="doc/release-notes/current/index.html#document-test-results">tests results</a> about the last relase. Have a look to see what's currently supported.</p>
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="os-section-title">
+                <h1>Get the BSP</h1>
+              </div>
+            </div>
+            <div class="col-sm-7 os-border-left os-red-links">
+              <div class="os-section-content">
+                <p class="lead">You can easily download the latest BSP <a class="os-inverted-red-links" href="https://github.com/Freescale/fsl-community-bsp-base" style="white-space:nowrap;"><i class="fa fa-download"></i> here</a>.</p>
+                <p class="lead">Checkout the latest releases (new one every 6 months):</p>
+                <ul class="fa-ul">
+                  <li><a href="doc/release-notes/1.5/index.html"><i class="fa fa-arrow-right fa-fw"></i> Release Notes for 1.5 release </a></li>
+                  <li><a href="doc/release-notes/1.4/index.html"><i class="fa fa-arrow-right fa-fw"></i> Release Notes for 1.4 release</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <div class="os-back-top os-main-links">
+        <a href="#"><i class="fa fa-chevron-up fa-2x"></i></a>
       </div>
+    </div>
 
     <footer class="os-footer">
       <div class="container os-centered">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
-            <p>You can visit this and all FSL Community Projects on
-              <a class="os-blue-color" href="https://github.com/Freescale">
-                 GitHub 
-                <i class="fa fa-github fa-2x"></i>
+            <p>Developed by 
+              <a href="http://www.ossystems.com.br">
+                <img class="os-logo" src="images/os_logo.png">
               </a>
             </p>
           </div>

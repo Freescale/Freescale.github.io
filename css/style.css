@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 h1, .h1 {
-    font-size: 4em;
+    font-size: 3em;
 }
 
 .os-code {
@@ -354,6 +354,25 @@ a.os-inverted-red-links {
 
 /********* CSS to responsive design *********/
 
+@media (max-width: 992px) {
+    h1, .h1 {
+        font-size: 3em;
+    }
+
+    .os-section-title {
+        padding: 0;
+        text-align: center;
+    }
+
+    .os-section-content {
+        padding: 0;
+    }
+
+    section.os-section h1 {
+        margin-bottom: 15px;
+    }
+}
+
 @media (max-width: 767px) {
     .os-navbar {
         opacity: 1;
@@ -366,10 +385,6 @@ a.os-inverted-red-links {
 
     .os-navbar .navbar-nav > li > a {
         padding: 15px;
-    }
-
-    h1, .h1 {
-        font-size: 3em;
     }
 
     .fa-3x {
@@ -385,22 +400,9 @@ a.os-inverted-red-links {
         padding: 50px 0;
     }
 
-    .os-section-title {
-        padding: 0;
-        text-align: center;
-    }
-
-    .os-section-content {
-        padding: 0;
-    }
-
     section.os-section a {
         font-size: 16px;
         padding: 2px 5px;
-    }
-
-    section.os-section h1 {
-        margin-bottom: 15px;
     }
 
     #header-section #header-container {

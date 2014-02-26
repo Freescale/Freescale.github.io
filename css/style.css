@@ -256,13 +256,14 @@ h1, .h1 {
 }
 
 .os-footer a {
-    opacity: 0.9;
+    opacity: 0.7;
     -webkit-transition: opacity 0.15s linear;
-    transition: opacity 1s linear;
+    transition: opacity 0.15s linear;
 }
 
 .os-footer a:hover {
     opacity: 1;
+    text-decoration: none;
 }
 
 .os-footer .os-logo {

@@ -1,55 +1,210 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Freescale Community BSP : " />
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="description" content="FSL Community BSP" />
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Freescale Community BSP</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <title>FSL Community BSP</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Freescale">View on GitHub</a>
+    <header class="navbar navbar-fixed-top os-navbar" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header os-main-links">
+          <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <p>FSL Community BSP</p>
+          </a>
+        </div>
+        <div id="os-navbar-links" class="collapse navbar-collapse navbar-right">
+          <ul id="main-nav" class="nav navbar-nav os-main-links">
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#contributing">Contributing</a></li>
+            <li><a href="#download">Download</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
 
-          <h1 id="project_title">Freescale Community BSP</h1>
-          <h2 id="project_tagline"></h2>
+    <div id="content">
 
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-freescale-community-bsp-page" class="anchor" href="#welcome-to-freescale-community-bsp-page"><span class="octicon octicon-link"></span></a>Welcome to Freescale Community BSP page</h3>
-
-<p>This page try to aggregate all information about the Freescale Community BSP.</p>
-
-<p>There are some useful links for you, as:</p>
-
-<ul>
-<li><a href="doc/release-notes/1.4">Release Notes for 1.4 release</a></li>
-<li><a href="doc/release-notes/1.5">Release Notes for 1.5 release</a></li>
-<li><a href="https://docs.google.com/forms/d/1y68-QjiDmv4ekc9Aq8vIOXUePZ5wvOu_5_1RpdfK7zY/viewform">Test report</a></li>
-</ul>
+      <section id="header-section">
+        <div id="header-container" class="container">
+          <div id="overview" class="os-centered">
+            <h1 id="project_title">FSL Community BSP</h1>
+          </div>
+        </div>
       </section>
+
+      <section id="main-section">
+        <div id="main-content" class="container">
+          <div id="items" class="row">
+            <div class="col-sm-4">
+              <div class="os-centered os-main-links">
+                <a class="btn" href="#documentation">
+                  <span class="fa-stack fa-3x os-green-color">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-file-text fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4>Documentation</h4>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="os-centered os-main-links">
+                <a class="btn" href="#contributing">
+                  <span class="fa-stack fa-3x os-blue-color">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-group fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4>Contributing</h4>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="os-centered os-main-links">
+                <a class="btn" href="#download">
+                  <span class="fa-stack fa-3x os-red-color">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                  </span>
+                  <h4>Download</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="documentation" class="os-no-striped os-section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="os-section-title">
+                <h1>Documentation</h1>
+              </div>
+            </div>
+            <div class="col-sm-8 os-border-left os-green-links">
+              <div class="os-section-content">
+                <p class="lead">The FSL Community BSP is a community driven project to provide and maintain a Board Support Package meta layer to be used with <a href="http://www.openembedded.org/wiki/OpenEmbedded-Core">OpenEmbedded-Core</a> and <a href="https://www.yoctoproject.org/tools-resources/projects/poky">Poky</a>.</p>
+                <p class="lead">It is composed by three main layers:</p>
+                <ul>
+                  <li><strong>meta-fsl-arm:</strong> provides the base support and Freescale ARM reference boards;</li>
+                  <li><strong>meta-fsl-arm-extra:</strong> provides support for 3rd party and partner boards;</li>
+                  <li><strong>meta-fsl-demos:</strong> provides images recipes, demo recipes, and packagegroups used to easy the development with Yocto Project.</li>
+                </ul>
+                <p class="lead"><strong>Release Notes:</strong></p>
+                <ul class="fa-ul">
+                  <li><a href="http://freescale.github.io/doc/release-notes/1.6/"><i class="fa fa-arrow-right fa-fw"></i> 1.6 Development - master - Next stable</a></li>
+                  <li><a href="http://freescale.github.io/doc/release-notes/1.5/"><i class="fa fa-arrow-right fa-fw"></i> 1.5 Codename Dora - current stable</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contributing" class="os-striped os-section">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="os-section-title">
+                <h1>Contributing</h1>
+              </div>
+            </div>
+            <div class="col-sm-8 os-border-left os-blue-links">
+              <div class="os-section-content">
+                <p class="lead">The development is centralized in the meta-freescale mailing list.</p>
+                <p class="lead">The mailing list is used to coordinate and handle contributions for meta-fsl-arm, meta-fsl-arm-extra, meta-fsl-ppc and meta-fsl-demos.</p>
+                <p class="lead"><a href="https://lists.yoctoproject.org/listinfo/meta-freescale">Subscribe</a> the mailing lists to talk directly with the developers and other users.</p>
+                <p class="lead">See the latest discussions in our <a href="http://news.gmane.org/gmane.linux.embedded.yocto.meta-freescale">archive</a>.</p>
+                <p class="lead">The known bugs are handled using the <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Yocto Project Bugzilla</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="os-section os-no-striped">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="os-section-title">
+                <h1>Get the BSP</h1>
+              </div>
+            </div>
+            <div class="col-sm-8 os-border-left os-red-links">
+              <div class="os-section-content">
+                <p class="lead">The FSL Community BSP follow the same release schedule used in Yocto Project. The releases are done every <em>6 months</em>, in April and October</p>
+                <p class="lead">To get the BSP you need to have repo installed.</p>
+                <p class="lead"><strong>Install the repo utility:</strong></p>
+                <div class="os-code-install os-code">
+                  <ul class="nav">
+                    <li><i class="fa fa-dollar fa-fw"></i>mkdir ~/bin</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>chmod a+x ~/bin/repo</li>
+                  </ul>
+                </div>
+                <br/>
+                <p class="lead"><strong>Download the BSP source code</strong></p>
+                <div class="os-code-setup os-code">
+                  <ul class="nav">
+                    <li><i class="fa fa-dollar fa-fw"></i>PATH=${PATH}:~/bin</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>mkdir fsl-community-bsp</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>cd fsl-community-bsp</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b dora</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>repo sync</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="os-back-top os-main-links">
+        <a href="#"><i class="fa fa-chevron-up fa-2x"></i></a>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+    <footer class="os-footer">
+      <div class="container os-centered">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <p>Developed by 
+              <a href="http://www.ossystems.com.br">
+                <img class="os-logo" src="images/os_logo.png">
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    
-
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/perfect-scrollbar-mousewheel.min.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

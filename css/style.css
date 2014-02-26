@@ -67,6 +67,46 @@ h1, .h1 {
     font-size: 4em;
 }
 
+.os-code {
+    padding: 10px 0;
+    background-color: #F9F2F4;
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ps-container .ps-scrollbar-x-rail {
+    opacity: 0.9;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.ps-container .ps-scrollbar-x-rail:hover,
+.ps-container .ps-scrollbar-x-rail.hover {
+    background-color: #F9F2F4;
+}
+
+.ps-container .ps-scrollbar-x {
+    background-color: #F2D0D0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.ps-container .ps-scrollbar-x-rail:hover .ps-scrollbar-x,
+.ps-container .ps-scrollbar-x-rail.hover .ps-scrollbar-x {
+    background-color: #F2D0D0;
+}
+
+.os-section .os-code li {
+    background-color: transparent;
+    color: #C7254E;
+    padding: 5px;
+}
+
 #content {
     padding: 0;
     background-image: url("../images/community.jpg");
@@ -370,6 +410,14 @@ a.os-inverted-red-links {
         padding-right: 5px;
         -webkit-transform: translateY(0);
         transform: translateY(0);
+    }
+
+    .os-section .os-code-install ul {
+        width: 660px;
+    }
+
+    .os-section .os-code-setup ul {
+        width: 600px;
     }
 }
 

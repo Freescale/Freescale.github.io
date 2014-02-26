@@ -173,6 +173,14 @@ $('document').ready(function() {
     if(!$isMobile()) {
         $updateNavbarAndBackButton();
         $handlerHeaderSection.updateHeight($window.height(), $handlerMainSection.getOuterHeight());
+    } else {
+        // Initilaize the custom scrollbar
+        $('.os-code-install').perfectScrollbar({
+            suppressScrollY: true
+        });
+        $('.os-code-setup').perfectScrollbar({
+            suppressScrollY: true
+        });
     }
 
     $goToSection({

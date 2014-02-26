@@ -125,12 +125,10 @@ h1, .h1 {
 
 .os-section a {
     color: #FFFFFF;
-    padding: 4px 7px;
     font-size: 21px;
     font-weight: bold;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 3px;
     opacity: 0.8;
     -webkit-transition: opacity 0.15s linear;
     transition: opacity 0.15s linear;
@@ -140,8 +138,13 @@ h1, .h1 {
     opacity: 1;
 }
 
+.os-section ul {
+    list-style-type: none;
+}
+
 .os-section li {
     padding: 3px;
+    font-size: 17px;
 }
 
 .os-section-title {
@@ -255,7 +258,7 @@ h1, .h1 {
 .os-back-top {
     display: none;
     position: fixed;
-    bottom: 77px;
+    bottom: 60px;
     right: 10px;
 }
 

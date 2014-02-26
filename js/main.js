@@ -1,6 +1,6 @@
 $('document').ready(function() {
 
-    /****************************************** Class declaration ******************************************/
+    /****************************************** Classes declaration ******************************************/
 
     var Navbar = (function() {
         function Navbar() {
@@ -119,7 +119,6 @@ $('document').ready(function() {
         var targetName = "section" + options.targetId;
         var animationTime = options.animationTime;
         var targetTop;
-        var computedElements;
 
         // Checks whether the destination is the top
         if(targetId === "#")
@@ -127,7 +126,7 @@ $('document').ready(function() {
         else
             targetTop = $(targetName).offset().top - ($handlerNavbar.getOuterHeight() - 20);
 
-        $('html').animate({
+        $('html, body').animate({
             scrollTop: targetTop
         }, animationTime, function() {
             // Changes the URL

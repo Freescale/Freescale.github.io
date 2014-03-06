@@ -67,6 +67,15 @@ h1, .h1 {
     font-size: 3em;
 }
 
+.yocto {
+    width: 35%;
+    padding: 5% 5%;
+}
+
+.yocto > img {
+    width: 100%;
+}
+
 .os-code {
     padding: 10px 0;
     background-color: #F9F2F4;

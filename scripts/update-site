@@ -43,7 +43,7 @@ sphinx_update() {
 
 tmp=$(pwd)/tmp
 
-### Release notes
+### Release Notes
 
 # Dylan
 git_update https://github.com/Freescale/Documentation.git dylan $tmp/docs
@@ -56,3 +56,9 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.5
 # Master
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
 sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 yes
+
+### User Guide
+
+# Master
+git_update https://github.com/Freescale/Documentation.git master $tmp/docs
+sphinx_update $tmp/docs/user-guide doc/user-guide/1.6 yes

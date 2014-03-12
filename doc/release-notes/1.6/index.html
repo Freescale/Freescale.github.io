@@ -61,7 +61,8 @@ Please, see in next table the complete supported board list.</p>
 <li><strong>linux-boundary</strong>:</li>
 <li><strong>linux-cfa</strong>: Linux Kernel mainline 3.10 with added drivers</li>
 <li><strong>linux-denx</strong>:</li>
-<li><strong>linux-timesys</strong>:</li>
+<li><strong>linux-timesys</strong>: Linux Kernel version 3.0.15 with added drivers and board
+support for Vybrid-based platforms.</li>
 <li><strong>linux-wandboard</strong>:</li>
 <li><strong>linux-cubox-i</strong>: Boundary Devices Kernel 3.0.35 supported by SolidRun
 with additional machine specific patches</li>
@@ -72,9 +73,9 @@ with additional machine specific patches</li>
 FSL Community BSP for each supported machine.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="32%" />
-<col width="32%" />
-<col width="36%" />
+<col width="30%" />
+<col width="30%" />
+<col width="41%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Board</th>
@@ -207,6 +208,14 @@ FSL Community BSP for each supported machine.</p>
 <td>linux-boundary</td>
 <td>3.0.35_4.1.0</td>
 </tr>
+<tr class="row-odd"><td>pcl052</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
+<tr class="row-even"><td>pcm052</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
 <tr class="row-odd"><td>twr-vf65gs10</td>
 <td>linux-timesys</td>
 <td>3.0.15_vybrid</td>
@@ -320,6 +329,8 @@ at this point are additional boards (nit6xlite is not yet in main-line), support
 for additional displays, and support for custom boards.</li>
 <li><strong>u-boot-cubox-i</strong>: provides the U-Boot 2013.10 version supported by SolidRun
 with additional patches for SPL and CuBox-i support.</li>
+<li><strong>u-boot-timesys</strong>: provides the U-Boot 2011.12 version with additional
+patches for pcl052 and pcm052 support.</li>
 </ul>
 <div class="section" id="default-u-boot">
 <h3>Default u-boot<a class="headerlink" href="#default-u-boot" title="Permalink to this headline">¶</a></h3>
@@ -433,6 +444,14 @@ supported boards.</p>
 <tr class="row-odd"><td>nitrogen6x-lite</td>
 <td>u-boot-boundary</td>
 <td>2013.07</td>
+</tr>
+<tr class="row-even"><td>pcl052</td>
+<td>u-boot-timesys</td>
+<td>2011.12</td>
+</tr>
+<tr class="row-odd"><td>pcm052</td>
+<td>u-boot-timesys</td>
+<td>2011.12</td>
 </tr>
 <tr class="row-even"><td>twr-vf65gs10</td>
 <td>u-boot-fslc</td>
@@ -2111,7 +2130,7 @@ is on next table.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Freescale Community BSP Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>

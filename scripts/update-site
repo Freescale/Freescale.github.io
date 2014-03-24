@@ -62,3 +62,9 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 yes
 # Master
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
 sphinx_update $tmp/docs/user-guide doc/user-guide/1.6 yes
+
+### FAQ
+
+# Master
+git_update https://github.com/Freescale/Documentation.git master $tmp/docs
+sphinx_update $tmp/docs/FAQ doc/faq

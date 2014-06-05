@@ -45,27 +45,433 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This document has the release notes of the FSL Community BSP 1.6
 which is a communty effort to improve Freescale&#8217;s
-processors support in OpenEmbedded and Yocto.</p>
+processors support in OpenEmbedded and in the Yocto Project.</p>
 </div>
 <span id="document-bsp-scope"></span><div class="section" id="bsp-scope">
 <h2>BSP Scope<a class="headerlink" href="#bsp-scope" title="Permalink to this headline">¶</a></h2>
 <p>The scope of this release includes both meta-fsl-arm and meta-fsl-arm-extra.
 Please, see in next table the complete supported board list.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="43%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Name</th>
+<th class="head">SoC</th>
+<th class="head">Layer</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cfa10036</td>
+<td>Crystalfontz CFA-10036</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>cfa10037</td>
+<td>Crystalfontz CFA-10037</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>cfa10049</td>
+<td>Crystalfontz CFA-10049</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>cfa10055</td>
+<td>Crystalfontz CFA-10055</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>cfa10056</td>
+<td>Crystalfontz CFA-10056</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>cfa10057</td>
+<td>Crystalfontz CFA-10057</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>cfa10058</td>
+<td>Crystalfontz CFA-10058</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>cgtqmx6</td>
+<td>Congatec Qmx6</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>cubox-i</td>
+<td>SolidRun CuBox-i</td>
+<td>i.MX6 Q/DL</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-maxi</td>
+<td>OLIMEX iMX233-OLinuXino-Maxi</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-micro</td>
+<td>OLIMEX iMX233-OLinuXino-Micro</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-mini</td>
+<td>OLIMEX iMX233-OLinuXino-Mini</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-nano</td>
+<td>OLIMEX iMX233-OLinuXino-Nano</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>imx23evk</td>
+<td>Freescale i.MX23 Evaluation Kit</td>
+<td>i.MX23</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx28evk</td>
+<td>Freescale i.MX28 Evaluation Kit</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx31pdk</td>
+<td>Freescale i.MX31 Platform Development Kit</td>
+<td>i.MX31</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx35pdk</td>
+<td>Freescale i.MX35 Platform Development Kit</td>
+<td>i.MX35</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx51evk</td>
+<td>Freescale i.MX51 Evaluation Kit</td>
+<td>i.MX51</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx53ard</td>
+<td>Freescale i.MX53 SABRE Automotive Board</td>
+<td>i.MX53</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx53qsb</td>
+<td>Freescale i.MX53 Quick Start Board</td>
+<td>i.MX53</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabreauto</td>
+<td>Freescale i.MX6DL SABRE Automotive</td>
+<td>i.MX6DL</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6dlsabresd</td>
+<td>Freescale i.MX6DL SABRE Smart Device</td>
+<td>i.MX6DL</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx6qsabreauto</td>
+<td>Freescale i.MX6Q SABRE Automotive</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabrelite</td>
+<td>Boundary Devices i.MX6Q SABRE Lite</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>imx6qsabresd</td>
+<td>Freescale i.MX6Q SABRE Smart Device</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6slevk</td>
+<td>Freescale i.MX6SL Evaluation Kit</td>
+<td>i.MX6SL</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>imx6solosabreauto</td>
+<td>Freescale i.MX6Solo SABRE Automotive</td>
+<td>i.MX6S</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-odd"><td>imx6solosabresd</td>
+<td>Freescale i.MX6Solo SABRE Smart Device</td>
+<td>i.MX6S</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>m28evk</td>
+<td>DENX M28 SoM Evaluation Kit</td>
+<td>i.MX28</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>m53evk</td>
+<td>DENX M53 SoM Evaluation Kit</td>
+<td>i.MX53</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>nitrogen6x</td>
+<td>Boundary Devices Nitrogen6X</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>nitrogen6x-lite</td>
+<td>Boundary Devices Nitrogen6X Lite</td>
+<td>i.MX6 Solo</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>pcl052</td>
+<td>Phytec Cosmic Vybrid Development Kit</td>
+<td>vf60</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>pcm052</td>
+<td>Phytec phyCORE Vybrid Development Kit</td>
+<td>vf60</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>quartz</td>
+<td>Device Solutions Quartz Vybrid Development Kit</td>
+<td>vf60</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>twr-vf65gs10</td>
+<td>Freescale Vybrid TWR-VF65GS10</td>
+<td>vf60</td>
+<td>meta-fsl-arm</td>
+</tr>
+<tr class="row-even"><td>wandboard-dual</td>
+<td>Wandboard i.MX6 Wandboard Duallite</td>
+<td>i.MX6DL</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-odd"><td>wandboard-quad</td>
+<td>Wandboard i.MX6 Wandboard Quad</td>
+<td>i.MX6Q</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+<tr class="row-even"><td>wandboard-solo</td>
+<td>Wandboard i.MX6 Wandboard Solo</td>
+<td>i.MX6S</td>
+<td>meta-fsl-arm-extra</td>
+</tr>
+</tbody>
+</table>
+</div>
+<span id="document-machines-maintainers"></span><div class="section" id="machine-mantainers">
+<h2>Machine Mantainers<a class="headerlink" href="#machine-mantainers" title="Permalink to this headline">¶</a></h2>
+<p>Since FSL Community BSP Release 1.6 (Daisy), the maintainer field in machine configuration file of
+meta-fsl-arm and meta-fsl-arm-extra machines is mandatory for any new board to be added.</p>
+<p>So now on, every new board must have someone assigned as maintainer.
+This ensures, in long term, all boards with a maintainer assigned.
+Current orphan boards are not going to be removed unless it causes maintenance
+problem and the fix is not straightforward.</p>
+<dl class="docutils">
+<dt>The maintainer duties:</dt>
+<dd><ul class="first last simple">
+<li>The one with casting vote when a deadlock is faced.</li>
+<li>Responsible to keep that machine working (that means, booting and with some stability)</li>
+<li>Keep kernel, u-boot updated/tested/working.</li>
+<li>Keep release notes updated</li>
+<li>Keep test cycle updated</li>
+<li>Keep the most usual images building and booting</li>
+</ul>
+</dd>
+</dl>
+<p>When a build error is faced, the maintainer will &#8220;fix&#8221; it. For those maintainers with kernel control (meta-fsl-arm-extra),
+it is expected that they properly fix the kernel issue (when it&#8217;s a kernel issue). However anything out of community control
+should be worked around anyway.</p>
+<div class="section" id="machines-with-maintainers">
+<h3>Machines with maintainers<a class="headerlink" href="#machines-with-maintainers" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cfa10036</td>
+<td>Crystalfontz CFA-10036</td>
+</tr>
+<tr class="row-odd"><td>cfa10037</td>
+<td>Crystalfontz CFA-10037</td>
+</tr>
+<tr class="row-even"><td>cfa10049</td>
+<td>Crystalfontz CFA-10049</td>
+</tr>
+<tr class="row-odd"><td>cfa10055</td>
+<td>Crystalfontz CFA-10055</td>
+</tr>
+<tr class="row-even"><td>cfa10056</td>
+<td>Crystalfontz CFA-10056</td>
+</tr>
+<tr class="row-odd"><td>cfa10057</td>
+<td>Crystalfontz CFA-10057</td>
+</tr>
+<tr class="row-even"><td>cfa10058</td>
+<td>Crystalfontz CFA-10058</td>
+</tr>
+<tr class="row-odd"><td>cubox-i</td>
+<td>SolidRun CuBox-i</td>
+</tr>
+<tr class="row-even"><td>imx23evk</td>
+<td>Freescale i.MX23 Evaluation Kit</td>
+</tr>
+<tr class="row-odd"><td>imx28evk</td>
+<td>Freescale i.MX28 Evaluation Kit</td>
+</tr>
+<tr class="row-even"><td>imx51evk</td>
+<td>Freescale i.MX51 Evaluation Kit</td>
+</tr>
+<tr class="row-odd"><td>imx53ard</td>
+<td>Freescale i.MX53 SABRE Automotive Board</td>
+</tr>
+<tr class="row-even"><td>imx53qsb</td>
+<td>Freescale i.MX53 Quick Start Board</td>
+</tr>
+<tr class="row-odd"><td>imx6dlsabreauto</td>
+<td>Freescale i.MX6DL SABRE Automotive</td>
+</tr>
+<tr class="row-even"><td>imx6dlsabresd</td>
+<td>Freescale i.MX6DL SABRE Smart Device</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabreauto</td>
+<td>Freescale i.MX6Q SABRE Automotive</td>
+</tr>
+<tr class="row-even"><td>imx6qsabrelite</td>
+<td>Boundary Devices i.MX6Q SABRE Lite</td>
+</tr>
+<tr class="row-odd"><td>imx6qsabresd</td>
+<td>Freescale i.MX6Q SABRE Smart Device</td>
+</tr>
+<tr class="row-even"><td>imx6slevk</td>
+<td>Freescale i.MX6SL Evaluation Kit</td>
+</tr>
+<tr class="row-odd"><td>imx6solosabresd</td>
+<td>Freescale i.MX6Solo SABRE Smart Device</td>
+</tr>
+<tr class="row-even"><td>nitrogen6x</td>
+<td>Boundary Devices Nitrogen6X</td>
+</tr>
+<tr class="row-odd"><td>nitrogen6x-lite</td>
+<td>Boundary Devices Nitrogen6X Lite</td>
+</tr>
+<tr class="row-even"><td>pcl052</td>
+<td>Phytec Cosmic Vybrid Development Kit</td>
+</tr>
+<tr class="row-odd"><td>pcm052</td>
+<td>Phytec phyCORE Vybrid Development Kit</td>
+</tr>
+<tr class="row-even"><td>quartz</td>
+<td>Device Solutions Quartz Vybrid Development Kit</td>
+</tr>
+<tr class="row-odd"><td>twr-vf65gs10</td>
+<td>Freescale Vybrid TWR-VF65GS10</td>
+</tr>
+<tr class="row-even"><td>wandboard-dual</td>
+<td>Wandboard i.MX6 Wandboard Duallite</td>
+</tr>
+<tr class="row-odd"><td>wandboard-quad</td>
+<td>Wandboard i.MX6 Wandboard Quad</td>
+</tr>
+<tr class="row-even"><td>wandboard-solo</td>
+<td>Wandboard i.MX6 Wandboard Solo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="machines-without-a-maintainer">
+<h3>Machines without a maintainer<a class="headerlink" href="#machines-without-a-maintainer" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Machine</th>
+<th class="head">Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cgtqmx6</td>
+<td>Congatec Qmx6</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-maxi</td>
+<td>OLIMEX iMX233-OLinuXino-Maxi</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-micro</td>
+<td>OLIMEX iMX233-OLinuXino-Micro</td>
+</tr>
+<tr class="row-odd"><td>imx233-olinuxino-mini</td>
+<td>OLIMEX iMX233-OLinuXino-Mini</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-nano</td>
+<td>OLIMEX iMX233-OLinuXino-Nano</td>
+</tr>
+<tr class="row-odd"><td>imx31pdk</td>
+<td>Freescale i.MX31 Platform Development Kit</td>
+</tr>
+<tr class="row-even"><td>imx35pdk</td>
+<td>Freescale i.MX35 Platform Development Kit</td>
+</tr>
+<tr class="row-odd"><td>imx6solosabreauto</td>
+<td>Freescale i.MX6Solo SABRE Automotive</td>
+</tr>
+<tr class="row-even"><td>m28evk</td>
+<td>DENX M28 SoM Evaluation Kit</td>
+</tr>
+<tr class="row-odd"><td>m53evk</td>
+<td>DENX M53 SoM Evaluation Kit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<span id="document-soc-hierarchy"></span><div class="section" id="soc-hierarchy">
+<span id="id1"></span><h2>SoC Hierarchy<a class="headerlink" href="#soc-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>The following tree shows the SoC hierarchy:</p>
+<div class="highlight-none"><div class="highlight"><pre>SoCs
+├── mx3
+│    ├── mx31
+│    └── mx35
+├── mx5
+│    ├── mx51
+│    └── mx53
+├── mx6
+│    ├──
+│    ├── mx6dl
+│    ├── mx6q
+│    └── mx6sl
+├── mxs
+│    ├── mx23
+│    └── mx28
+└── vf60
+</pre></div>
+</div>
 </div>
 <span id="document-kernel-linux"></span><div class="section" id="linux-kernel">
 <h2>Linux Kernel<a class="headerlink" href="#linux-kernel" title="Permalink to this headline">¶</a></h2>
 <p>Fsl-community-bsp supports the following sources for Linux Kernel:</p>
 <ul class="simple">
-<li><strong>linux-imx</strong>: Linux Kernel provided and supported by Freescale</li>
-<li><strong>linux-fslc</strong>: Linux Kernel mainline with backported fixes (kernel.org)</li>
-<li><strong>linux-boundary</strong>:</li>
-<li><strong>linux-cfa</strong>: Linux Kernel mainline 3.10 with added drivers</li>
-<li><strong>linux-denx</strong>:</li>
-<li><strong>linux-timesys</strong>: Linux Kernel version 3.0.15 with added drivers and board
-support for Vybrid-based platforms.</li>
-<li><strong>linux-wandboard</strong>:</li>
-<li><strong>linux-cubox-i</strong>: Boundary Devices Kernel 3.0.35 supported by SolidRun
-with additional machine specific patches</li>
+<li><strong>linux-boundary</strong>: Linux kernel for Boundary Devices boards.</li>
+<li><strong>linux-cfa</strong>: Linux kernel for Crystalfontz boards.</li>
+<li><strong>linux-congatec</strong>: Linux Kernel based on Freescale Linux kernel to add support for Congatec boards.</li>
+<li><strong>linux-cubox-i</strong>: Boundary Devices Kernel 3.0.35 supported by SolidRun with additional machine specific patches.</li>
+<li><strong>linux-denx</strong>: DENX mainline based Linux kernel.</li>
+<li><strong>linux-fslc</strong>: Linux kernel based on mainline kernel used by FSL Community BSP in order to provide support for some backported features and fixes, or because it was applied in linux-next and takes some time to become part of a stable version, or because it is not applicable for upstreaming.</li>
+<li><strong>linux-imx</strong>: Linux Kernel provided and supported by Freescale with focus on i.MX Family Reference Boards. It includes support for many IPs such as GPU, VPU and IPU.</li>
+<li><strong>linux-timesys</strong>: Linux Kernel with added drivers and board support for Vybrid-based platforms.</li>
+<li><strong>linux-wandboard</strong>: Linux kernel for Wandboard.</li>
 </ul>
 <div class="section" id="default-linux-providers">
 <h3>Default Linux Providers<a class="headerlink" href="#default-linux-providers" title="Permalink to this headline">¶</a></h3>
@@ -73,9 +479,9 @@ with additional machine specific patches</li>
 FSL Community BSP for each supported machine.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="30%" />
-<col width="30%" />
-<col width="41%" />
+<col width="43%" />
+<col width="29%" />
+<col width="27%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Board</th>
@@ -86,320 +492,269 @@ FSL Community BSP for each supported machine.</p>
 <tbody valign="top">
 <tr class="row-even"><td>cfa10036</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-odd"><td>cfa10037</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-even"><td>cfa10049</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-odd"><td>cfa10055</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-even"><td>cfa10056</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-odd"><td>cfa10057</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-even"><td>cfa10058</td>
 <td>linux-cfa</td>
-<td>3.10</td>
+<td>3.12</td>
 </tr>
 <tr class="row-odd"><td>cgtqmx6</td>
-<td>linux-imx</td>
-<td>3.0.35_4.0.0</td>
+<td>linux-congatec</td>
+<td>3.0.35</td>
 </tr>
 <tr class="row-even"><td>cubox-i</td>
 <td>linux-cubox-i</td>
-<td>3.0.35_4.1.0</td>
+<td>3.0.35</td>
 </tr>
 <tr class="row-odd"><td>imx233-olinuxino-maxi</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
+<td>linux-fslc</td>
+<td>3.14+git</td>
 </tr>
 <tr class="row-even"><td>imx233-olinuxino-micro</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
+<td>linux-fslc</td>
+<td>3.14+git</td>
 </tr>
 <tr class="row-odd"><td>imx233-olinuxino-mini</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
-</tr>
-<tr class="row-even"><td>imx23evk</td>
 <td>linux-fslc</td>
-<td>3.11</td>
+<td>3.14+git</td>
 </tr>
-<tr class="row-odd"><td>imx28evk</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
-</tr>
-<tr class="row-even"><td>imx31pdk</td>
+<tr class="row-even"><td>imx233-olinuxino-nano</td>
 <td>linux-fslc</td>
-<td>3.11</td>
+<td>3.14+git</td>
 </tr>
-<tr class="row-odd"><td>imx35pdk</td>
+<tr class="row-odd"><td>imx23evk</td>
 <td>linux-fslc</td>
-<td>3.11</td>
+<td>3.14+git</td>
 </tr>
-<tr class="row-even"><td>imx51evk</td>
+<tr class="row-even"><td>imx28evk</td>
 <td>linux-imx</td>
-<td>2.6.35_maintain</td>
+<td>2.6.35.3</td>
 </tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td>linux-imx</td>
-<td>2.6.35_maintain</td>
-</tr>
-<tr class="row-odd"><td>imx6dlsabreauto</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-even"><td>imx6dlsabresd</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabreauto</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-even"><td>imx6qsabrelite</td>
-<td>linux-boundary</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabresd</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-even"><td>imx6slevk</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-odd"><td>imx6solosabreauto</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-even"><td>imx6solosabresd</td>
-<td>linux-imx</td>
-<td>3.0.35_4.1.0</td>
-</tr>
-<tr class="row-odd"><td>m28evk</td>
+<tr class="row-odd"><td>imx31pdk</td>
 <td>linux-fslc</td>
-<td>3.11</td>
+<td>3.14+git</td>
 </tr>
-<tr class="row-even"><td>m53evk</td>
-<td>linux-denx</td>
-<td>denx</td>
+<tr class="row-even"><td>imx35pdk</td>
+<td>linux-fslc</td>
+<td>3.14+git</td>
 </tr>
-<tr class="row-odd"><td>nitrogen6x</td>
-<td>linux-boundary</td>
-<td>3.0.35_4.1.0</td>
+<tr class="row-odd"><td>imx51evk</td>
+<td>linux-imx</td>
+<td>2.6.35.3</td>
 </tr>
-<tr class="row-even"><td>nitrogen6x-lite</td>
-<td>linux-boundary</td>
-<td>3.0.35_4.1.0</td>
+<tr class="row-even"><td>imx53ard</td>
+<td>linux-imx</td>
+<td>2.6.35.3</td>
 </tr>
-<tr class="row-odd"><td>pcl052</td>
-<td>linux-timesys</td>
-<td>3.0.15</td>
+<tr class="row-odd"><td>imx53qsb</td>
+<td>linux-imx</td>
+<td>2.6.35.3</td>
 </tr>
-<tr class="row-even"><td>pcm052</td>
-<td>linux-timesys</td>
-<td>3.0.15</td>
-</tr>
-<tr class="row-odd"><td>quartz</td>
-<td>linux-timesys</td>
-<td>3.0.15</td>
-</tr>
-<tr class="row-even"><td>twr-vf65gs10</td>
-<td>linux-timesys</td>
-<td>3.0.15_vybrid</td>
-</tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td>linux-wandboard</td>
-<td>3.0.35_4.0.0</td>
-</tr>
-<tr class="row-even"><td>wandboard-quad</td>
-<td>linux-wandboard</td>
-<td>3.0.35_4.0.0</td>
-</tr>
-<tr class="row-odd"><td>wandboard-solo</td>
-<td>linux-wandboard</td>
-<td>3.0.35_4.0.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="linux-fslc">
-<h3>linux-fslc<a class="headerlink" href="#linux-fslc" title="Permalink to this headline">¶</a></h3>
-<p>linux-fslc provides the Linux Kernel 3.11 from mainline (kernel.org)
-with some backported fixes.</p>
-<p>For the mainline kernel some boards has a very good support, although
-other ones has only a basic support.</p>
-<p>Please, see in the following table which are the main features supported
-by mainline kernel for each supporte board.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="67%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Machine</th>
-<th class="head">Basic Feature List</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>cgtqmx6</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx233-olinuxino-maxi</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-micro</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx233-olinuxino-mini</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx23evk</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx28evk</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx31pdk</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx35pdk</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx51evk</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td>&nbsp;</td>
+<tr class="row-even"><td>imx6dlsabreauto</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-odd"><td>imx6dlsabresd</td>
-<td>&nbsp;</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-even"><td>imx6qsabreauto</td>
-<td>&nbsp;</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-odd"><td>imx6qsabrelite</td>
-<td>&nbsp;</td>
+<td>linux-boundary</td>
+<td>3.0.35</td>
 </tr>
 <tr class="row-even"><td>imx6qsabresd</td>
-<td>&nbsp;</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-odd"><td>imx6slevk</td>
-<td>&nbsp;</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
+</tr>
+<tr class="row-even"><td>imx6solosabreauto</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
+</tr>
+<tr class="row-odd"><td>imx6solosabresd</td>
+<td>linux-imx</td>
+<td>3.10.17</td>
+</tr>
+<tr class="row-even"><td>m28evk</td>
+<td>linux-fslc</td>
+<td>3.14+git</td>
+</tr>
+<tr class="row-odd"><td>m53evk</td>
+<td>linux-denx</td>
+<td>3.9</td>
 </tr>
 <tr class="row-even"><td>nitrogen6x</td>
-<td>&nbsp;</td>
+<td>linux-boundary</td>
+<td>3.0.35</td>
 </tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td>&nbsp;</td>
+<tr class="row-odd"><td>nitrogen6x-lite</td>
+<td>linux-boundary</td>
+<td>3.0.35</td>
+</tr>
+<tr class="row-even"><td>pcl052</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
+<tr class="row-odd"><td>pcm052</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
+<tr class="row-even"><td>quartz</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
+<tr class="row-odd"><td>twr-vf65gs10</td>
+<td>linux-timesys</td>
+<td>3.0.15</td>
+</tr>
+<tr class="row-even"><td>wandboard-dual</td>
+<td>linux-wandboard</td>
+<td>3.10.17</td>
+</tr>
+<tr class="row-odd"><td>wandboard-quad</td>
+<td>linux-wandboard</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-even"><td>wandboard-solo</td>
-<td>&nbsp;</td>
+<td>linux-wandboard</td>
+<td>3.10.17</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<span id="document-u-boot"></span><div class="section" id="u-boot">
-<h2>U-Boot<a class="headerlink" href="#u-boot" title="Permalink to this headline">¶</a></h2>
-<p>Fsl-community-bsp supports two sources for u-boot:</p>
+<span id="document-bootloaders"></span><div class="section" id="bootloaders">
+<h2>Bootloaders<a class="headerlink" href="#bootloaders" title="Permalink to this headline">¶</a></h2>
+<p>Fsl-community-bsp supports barebox and u-boot as bootloaders.</p>
 <ul class="simple">
-<li><strong>u-boot-imx</strong>: U-Boot supported by Freescale</li>
-<li><strong>u-boot-fslc</strong>: provides the U-Boot 2013.10 version with backported
-fixes and configuration patches related with meta-oe/yocto.</li>
-<li><strong>u-boot-boundary</strong>: provides the U-Boot 2013.07 supported by
-Boundary Devices. This repository is basicaly kept in-line with true main-line U-Boot,
-but used it as a staging area due to responsive to customer needs. The primary deltas
-at this point are additional boards (nit6xlite is not yet in main-line), support
-for additional displays, and support for custom boards.</li>
-<li><strong>u-boot-cubox-i</strong>: provides the U-Boot 2013.10 version supported by SolidRun
-with additional patches for SPL and CuBox-i support.</li>
-<li><strong>u-boot-timesys</strong>: provides the U-Boot 2011.12 version with additional
-patches for pcl052 and pcm052 support.</li>
+<li><strong>barebox</strong>: Barebox - a bootloader that inherits the best of U-Boot and the Linux kernel</li>
+<li><strong>u-boot-boundary</strong>: Universal Boot Loader for embedded devices.</li>
+<li><strong>u-boot-cubox-i</strong>: Universal Boot Loader for embedded devices.</li>
+<li><strong>u-boot-fslc</strong>: U-boot bootloader for Freescale ARM platforms</li>
+<li><strong>u-boot-imx</strong>: bootloader for imx platforms</li>
+<li><strong>u-boot-timesys</strong>: bootloader for Vybrid platforms</li>
 </ul>
-<div class="section" id="default-u-boot">
-<h3>Default u-boot<a class="headerlink" href="#default-u-boot" title="Permalink to this headline">¶</a></h3>
-<p>The following table shows the default u-boot version and provider for all
-supported boards.</p>
+<p>The following table shows the default bootloaders (and their
+versions) for the supported boards.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="32%" />
-<col width="32%" />
-<col width="36%" />
+<col width="40%" />
+<col width="27%" />
+<col width="33%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Board</th>
-<th class="head">u-boot Provider</th>
-<th class="head">u-boot Version</th>
+<th class="head">Bootloader</th>
+<th class="head">Bootloader version</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>cgtqmx6</td>
+<tr class="row-even"><td>cfa10036</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-odd"><td>cfa10037</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-even"><td>cfa10049</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-odd"><td>cfa10055</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-even"><td>cfa10056</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-odd"><td>cfa10057</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-even"><td>cfa10058</td>
+<td>barebox</td>
+<td>2013.08.0</td>
+</tr>
+<tr class="row-odd"><td>cgtqmx6</td>
 <td>u-boot-imx</td>
 <td>2009.08</td>
 </tr>
-<tr class="row-odd"><td>cubox-i</td>
+<tr class="row-even"><td>cubox-i</td>
 <td>u-boot-cubox-i</td>
-<td>2013.10</td>
+<td>v2013.10+git</td>
 </tr>
-<tr class="row-even"><td>imx233-olinuxino-maxi</td>
+<tr class="row-odd"><td>imx233-olinuxino-maxi</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
-<tr class="row-odd"><td>imx233-olinuxino-micro</td>
+<tr class="row-even"><td>imx233-olinuxino-micro</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
-<tr class="row-even"><td>imx233-olinuxino-mini</td>
+<tr class="row-odd"><td>imx233-olinuxino-mini</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
+</tr>
+<tr class="row-even"><td>imx233-olinuxino-nano</td>
+<td>u-boot-fslc</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx23evk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx28evk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx31pdk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx35pdk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx51evk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx53ard</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx53qsb</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx6dlsabreauto</td>
 <td>u-boot-imx</td>
@@ -407,225 +762,108 @@ supported boards.</p>
 </tr>
 <tr class="row-odd"><td>imx6dlsabresd</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx6qsabreauto</td>
-<td>u-boot-imx</td>
-<td>2013.04</td>
+<td>u-boot-fslc</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx6qsabrelite</td>
 <td>u-boot-boundary</td>
-<td>2013.07</td>
+<td>v2014.01+git</td>
 </tr>
 <tr class="row-even"><td>imx6qsabresd</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>imx6slevk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>imx6solosabreauto</td>
 <td>u-boot-imx</td>
 <td>2013.04</td>
 </tr>
 <tr class="row-odd"><td>imx6solosabresd</td>
-<td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>u-boot-imx</td>
+<td>2013.04</td>
 </tr>
 <tr class="row-even"><td>m28evk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>m53evk</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>nitrogen6x</td>
 <td>u-boot-boundary</td>
-<td>2013.07</td>
+<td>v2014.01+git</td>
 </tr>
 <tr class="row-odd"><td>nitrogen6x-lite</td>
 <td>u-boot-boundary</td>
-<td>2013.07</td>
+<td>v2014.01+git</td>
 </tr>
 <tr class="row-even"><td>pcl052</td>
 <td>u-boot-timesys</td>
-<td>2011.12</td>
+<td>v2011.12</td>
 </tr>
 <tr class="row-odd"><td>pcm052</td>
 <td>u-boot-timesys</td>
-<td>2011.12</td>
+<td>v2011.12</td>
 </tr>
 <tr class="row-even"><td>quartz</td>
 <td>u-boot-timesys</td>
-<td>2011.12</td>
+<td>v2011.12</td>
 </tr>
 <tr class="row-odd"><td>twr-vf65gs10</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>wandboard-dual</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-odd"><td>wandboard-quad</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
+<td>v2014.01</td>
 </tr>
 <tr class="row-even"><td>wandboard-solo</td>
 <td>u-boot-fslc</td>
-<td>2013.10</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="u-boot-imx">
-<h3>u-boot-imx<a class="headerlink" href="#u-boot-imx" title="Permalink to this headline">¶</a></h3>
-<p>The following table shows the version of U-Boot provided and supported by Freescale
-for each supported machine.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="24%" />
-<col width="32%" />
-<col width="44%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Board</th>
-<th class="head">u-boot Version</th>
-<th class="head">FSL BSP</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>imx28evk</td>
-<td>2009.08</td>
-<td>imx_2.6.35_10.12.01 branch</td>
-</tr>
-<tr class="row-odd"><td>imx51evk</td>
-<td>2009.08</td>
-<td>imx_2.6.35_11.09.01</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td>2009.08</td>
-<td>imx_2.6.35_11.09.01</td>
-</tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td>2009.08</td>
-<td>imx_2.6.35_11.09.01</td>
-</tr>
-<tr class="row-even"><td>imx6slevk</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-odd"><td>imx6solosabreauto</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-even"><td>imx6solosabresd</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-odd"><td>imx6dlsabreauto</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-even"><td>imx6dlsabresd</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabreauto</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-<tr class="row-even"><td>imx6qsabresd</td>
-<td>2013.04</td>
-<td>imx_v2013.04_3.5.7_1.0.0_alpha</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<span id="document-barebox"></span><div class="section" id="barebox">
-<h2>Barebox<a class="headerlink" href="#barebox" title="Permalink to this headline">¶</a></h2>
-<p>Fsl-community-bsp supports the mainline barebox version 2013.08.</p>
-<p>The following table shows the barebox version and provider for all
-supported boards.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="31%" />
-<col width="31%" />
-<col width="37%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Board</th>
-<th class="head">barebox Provider</th>
-<th class="head">barebox Version</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>cfa10036</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-odd"><td>cfa10037</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-even"><td>cfa10049</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-odd"><td>cfa10055</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-even"><td>cfa10056</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-odd"><td>cfa10057</td>
-<td>barebox</td>
-<td>2013.08</td>
-</tr>
-<tr class="row-even"><td>cfa10058</td>
-<td>barebox</td>
-<td>2013.08</td>
+<td>v2014.01</td>
 </tr>
 </tbody>
 </table>
 </div>
 <span id="document-userspace-pkg"></span><div class="section" id="userspace-packages">
 <h2>Userspace Packages<a class="headerlink" href="#userspace-packages" title="Permalink to this headline">¶</a></h2>
-<p>There is a huge number of userspace packages provided by Yocto.
-The following table shows some version for few highligthed packages.</p>
+<p>There is a huge number of userspace packages provided by the Yocto
+Project.  The following table shows some version for few highligthed
+packages.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="31%" />
-<col width="35%" />
-<col width="33%" />
+<col width="28%" />
+<col width="50%" />
+<col width="22%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Package</th>
-<th class="head">Board/SOC family</th>
+<th class="head">Board/SoC Family</th>
 <th class="head">Version</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>gstreamer</td>
-<td>all</td>
+<td>All</td>
 <td>0.10.36</td>
 </tr>
 <tr class="row-odd"><td>libdrm</td>
-<td>all</td>
-<td>2.4.46</td>
+<td>All</td>
+<td>2.4.52</td>
 </tr>
 <tr class="row-even"><td>udev</td>
-<td>all</td>
+<td>All</td>
 <td>182</td>
-</tr>
-<tr class="row-odd"><td>xserver-xorg</td>
-<td>all</td>
-<td>1.14</td>
 </tr>
 </tbody>
 </table>
@@ -635,213 +873,367 @@ The following table shows some version for few highligthed packages.</p>
 <p>This section shows the version package for each board.
 Those packages provide hardware acceleration for GPU or VPU,
 hardware optimization or some hardware test tools.</p>
-<p>Hardware acceleration is achieved using a different core
-for processing some specific task. In this case, GPU or VPU.</p>
-<p>Hardware optimization is achieved with some changes in source
+<blockquote>
+<div><ul class="simple">
+<li><strong>Hardware acceleration</strong> is achieved using a different core
+for processing some specific task. In this case, GPU or VPU.</li>
+<li><strong>Hardware optimization</strong> is achieved with some changes in source
 code in order to get a better performance for a specific task
 on a specific hardware. For example, audio decode made by software,
-but with optimizations for ARM.</p>
-<p>Hardware-specific is applicable when the package was designed to
+but with optimizations for ARM.</li>
+<li><strong>Hardware-specific</strong> is applicable when the package was designed to
 be executed in a specific hardware, and it does not make sense
 in other hardware. For example, imx-test is a test package for
 imx boards. It can be cross-compiled for any other core, although
-it will only act as expect if executed on imx boards.</p>
-<div class="section" id="mx28">
-<h3>MX28<a class="headerlink" href="#mx28" title="Permalink to this headline">¶</a></h3>
-<p>Freescale userspace packages for mx28 SOC family.</p>
-<p>It includes:</p>
-<ul class="simple">
-<li>cfa10036</li>
-<li>cfa10037</li>
-<li>cfa10049</li>
-<li>cfa10055</li>
-<li>cfa10056</li>
-<li>cfa10057</li>
-<li>cfa10058</li>
-<li>imx28evk</li>
-<li>m28evk</li>
+it will only act as expect if executed on imx boards.</li>
 </ul>
+</div></blockquote>
+<p>The package version and variety varies on <a class="reference internal" href="index.html#soc-hierarchy"><em>SoC Hierarchy</em></a>.
+For example, machines with i.MX28 SoC does not have VPU, the recipe imx-vpu is not needed.
+There are differences, as well, in GPU support recipes.</p>
+<div class="section" id="version-by-soc-hierarchy">
+<h3>Version by <a class="reference internal" href="index.html#soc-hierarchy"><em>SoC Hierarchy</em></a><a class="headerlink" href="#version-by-soc-hierarchy" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows the version of each package depending on the <a class="reference internal" href="index.html#soc-hierarchy"><em>SoC Hierarchy</em></a>.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="54%" />
-<col width="23%" />
+<col width="27%" />
+<col width="10%" />
+<col width="15%" />
+<col width="19%" />
+<col width="19%" />
+<col width="10%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Package Name</th>
-<th class="head">Package version (BSP from Freescale)</th>
-<th class="head">HW</th>
+<tr class="row-odd"><th class="head">Package name</th>
+<th class="head">mx28</th>
+<th class="head">mx5</th>
+<th class="head">mx6q / mx6dl</th>
+<th class="head">mx6sl</th>
+<th class="head">vf60</th>
 </tr>
 </thead>
 <tbody valign="top">
+<tr class="row-even"><td>amd-gpu-bin-mx51</td>
+<td>&#8211;</td>
+<td>11.09.01</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>amd-gpu-x11-bin-mx51</td>
+<td>&#8211;</td>
+<td>11.09.01</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>directfb</td>
+<td>1.7.1</td>
+<td>1.7.1</td>
+<td>1.6.3</td>
+<td>1.6.3</td>
+<td>1.7.1</td>
+</tr>
+<tr class="row-odd"><td>directfb-examples</td>
+<td>1.7.0</td>
+<td>1.7.0</td>
+<td>1.6.0</td>
+<td>1.6.0</td>
+<td>1.7.0</td>
+</tr>
+<tr class="row-even"><td>firmware-imx</td>
+<td>&#8211;</td>
+<td>3.0.35-4.0.0</td>
+<td>3.5.7-1.0.0</td>
+<td>3.5.7-1.0.0</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>fsl-alsa-plugins</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>1.0.25</td>
+<td>1.0.25</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>gpu-viv-bin-mx6q</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>3.10.17-1.0.0-hfp</td>
+<td>3.10.17-1.0.0-hfp</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>gpu-viv-g2d</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>&#8211;</td>
+</tr>
 <tr class="row-even"><td>gst-fsl-plugin</td>
-<td>3.0.8</td>
-<td>HW optimization</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>gstreamer1.0-plugins-imx</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>0.9.5</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>imx-lib</td>
+<td>&#8211;</td>
+<td>11.09.02</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>imx-test</td>
-<td>2.6.35.3-1.1.0</td>
-<td>HW-specific</td>
+<td>00.00.00</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>00.00.00</td>
 </tr>
-<tr class="row-even"><td>libfslcodec</td>
-<td>3.0.8</td>
-<td>HW optimization</td>
-</tr>
-<tr class="row-odd"><td>libfslparser</td>
-<td>3.0.8</td>
-<td>HW optimization</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="mx5">
-<h3>MX5<a class="headerlink" href="#mx5" title="Permalink to this headline">¶</a></h3>
-<p>Freescale userspace packages for mx5 SOC family.</p>
-<p>It includes:</p>
-<ul class="simple">
-<li>imx51evk</li>
-<li>imx53ard</li>
-<li>imx53qsb</li>
-<li>m53evk</li>
-</ul>
-<table border="1" class="docutils">
-<colgroup>
-<col width="31%" />
-<col width="48%" />
-<col width="21%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Package Name</th>
-<th class="head">Package version (BSP from Freescale)</th>
-<th class="head">HW</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>amd-gpu-x11-bin-mx51</td>
-<td>11.09.01</td>
-<td>HW acceleration</td>
-</tr>
-<tr class="row-odd"><td>firmware-imx</td>
-<td>3.0.35-4.0.0</td>
-<td>HW-specific</td>
-</tr>
-<tr class="row-even"><td>gst-fsl-plugin</td>
-<td>3.0.8</td>
-<td>HW-specific</td>
-</tr>
-<tr class="row-odd"><td>imx-lib</td>
-<td>11.09.02</td>
-<td>HW-specific</td>
-</tr>
-<tr class="row-even"><td>imx-test</td>
-<td>11.09.01</td>
-<td>HW-specific</td>
+<tr class="row-even"><td>imx-uuc</td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.4</td>
+<td>0.4</td>
 </tr>
 <tr class="row-odd"><td>imx-vpu</td>
+<td>&#8211;</td>
 <td>11.09.02</td>
-<td>HW acceleration</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-even"><td>libfslcodec</td>
-<td>3.0.8</td>
-<td>HW acceleration</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>libfslparser</td>
-<td>3.0.8</td>
-<td>HW optimization</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>3.0.10</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>libfslvpuwrap</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>1.0.45</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>libmcc</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>1.04</td>
 </tr>
 <tr class="row-even"><td>libz160</td>
 <td>11.09.01</td>
-<td>HW-specific</td>
+<td>11.09.01</td>
+<td>11.09.01</td>
+<td>11.09.01</td>
+<td>11.09.01</td>
+</tr>
+<tr class="row-odd"><td>mqxboot</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>1.0</td>
+</tr>
+<tr class="row-even"><td>mxsldr</td>
+<td>0.0.0+git</td>
+<td>0.0.0+git</td>
+<td>0.0.0+git</td>
+<td>0.0.0+git</td>
+<td>0.0.0+git</td>
 </tr>
 <tr class="row-odd"><td>xf86-video-imxfb</td>
+<td>&#8211;</td>
 <td>11.09.01</td>
-<td>HW acceleration</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>xf86-video-imxfb-vivante</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>&#8211;</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="mx6">
-<h3>MX6<a class="headerlink" href="#mx6" title="Permalink to this headline">¶</a></h3>
-<p>Freescale userspace packages for mx6 SOC family</p>
-<p>It includes:</p>
-<ul class="simple">
-<li>cgtqmx6</li>
-<li>imx6dlsabreauto</li>
-<li>imx6dlsabresd</li>
-<li>imx6qsabreauto</li>
-<li>imx6qsabrelite</li>
-<li>imx6qsabresd</li>
-<li>imx6slevk</li>
-<li>imx6solosabreauto</li>
-<li>imx6solosabresd</li>
-<li>nitrogen6x</li>
-<li>wandboard-dual</li>
-<li>wandboard-quad</li>
-<li>wandboard-solo</li>
-</ul>
+<div class="section" id="hardware-relation-by-soc-hierarchy">
+<h3>Hardware relation by <a class="reference internal" href="index.html#soc-hierarchy"><em>SoC Hierarchy</em></a><a class="headerlink" href="#hardware-relation-by-soc-hierarchy" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows how packages interact with hardware depending on the <a class="reference internal" href="index.html#soc-hierarchy"><em>SoC Hierarchy</em></a></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="32%" />
-<col width="48%" />
+<col width="30%" />
 <col width="19%" />
+<col width="19%" />
+<col width="19%" />
+<col width="14%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Package Name</th>
-<th class="head">Package version (BSP from Freescale)</th>
-<th class="head">HW</th>
+<th class="head">mx28</th>
+<th class="head">mx5</th>
+<th class="head">mx6</th>
+<th class="head">vf60</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>firmware-imx</td>
-<td>3.5.7-1.0.0</td>
+<tr class="row-even"><td>imx-test</td>
 <td>HW-specific</td>
-</tr>
-<tr class="row-odd"><td>fsl-alsa-plugins</td>
-<td>1.0.25</td>
 <td>HW-specific</td>
-</tr>
-<tr class="row-even"><td>gpu-viv-bin-mx6q</td>
-<td>3.5.7-1.0.0</td>
-<td>HW acceleration</td>
-</tr>
-<tr class="row-odd"><td>gpu-viv-g2d</td>
-<td>3.5.7-1.0.0</td>
 <td>HW-specific</td>
+<td>&#8211;</td>
 </tr>
-<tr class="row-even"><td>gst-fsl-plugin</td>
-<td>3.0.8</td>
+<tr class="row-odd"><td>gst-fsl-plugin</td>
 <td>HW-specific</td>
-</tr>
-<tr class="row-odd"><td>imx-kobs</td>
-<td>3.5.7-1.0.0</td>
 <td>HW-specific</td>
-</tr>
-<tr class="row-even"><td>imx-lib</td>
-<td>3.5.7-1.0.0</td>
 <td>HW-specific</td>
-</tr>
-<tr class="row-odd"><td>imx-test</td>
-<td>3.5.7-1.0.0</td>
-<td>HW-specific</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-even"><td>libfslcodec</td>
-<td>3.0.8</td>
+<td>HW optimization</td>
 <td>HW acceleration</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>libfslparser</td>
-<td>3.0.8</td>
 <td>HW optimization</td>
+<td>HW optimization</td>
+<td>HW optimization</td>
+<td>&#8211;</td>
 </tr>
-<tr class="row-even"><td>libfslvpuwrap</td>
-<td>1.0.38</td>
+<tr class="row-even"><td>imx-vpu</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>imx-lib</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>firmware-imx</td>
+<td>&#8211;</td>
 <td>HW-specific</td>
+<td>HW-specific</td>
+<td>&#8211;</td>
 </tr>
-<tr class="row-odd"><td>xf86-dri-vivante</td>
-<td>3.5.7-1.0.0</td>
-<td>HW acceleration</td>
+<tr class="row-odd"><td>mxsldr</td>
+<td>HW-specific</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
 </tr>
-<tr class="row-even"><td>xf86-video-imxfb-vivante</td>
-<td>3.5.7-1.0.0</td>
+<tr class="row-even"><td>gpu-viv-g2d</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&nbsp;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>xf86-video-imxfb-vivante</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
 <td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>gpu-viv-bin-mx6q</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>directfb</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>directfb-examples</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>xf86-video-imxfb</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>amd-gpu-bin-mx51</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>libz160</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>amd-gpu-x11-bin-mx51</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>libfslvpuwrap</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>fsl-alsa-plugins</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW-specific</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>gstreamer1.0-plugins-imx</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW acceleration</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-even"><td>imx-uuc</td>
+<td>HW-specific</td>
+<td>HW-specific</td>
+<td>HW-specific</td>
+<td>&#8211;</td>
+</tr>
+<tr class="row-odd"><td>libmcc</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>mqxboot</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>HW-specific</td>
 </tr>
 </tbody>
 </table>
@@ -849,996 +1241,218 @@ it will only act as expect if executed on imx boards.</p>
 </div>
 <span id="document-test-results"></span><div class="section" id="test-results">
 <h2>Test results<a class="headerlink" href="#test-results" title="Permalink to this headline">¶</a></h2>
-<p>The test result is a Community effort. Please, see who participated on test cycle
-on Acknowledgement Section.</p>
-<div class="section" id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h3>
-<p>The principles of the FSL BSP Community test cycle is make sure the integration
-of packages provided by Freescale and by community is correct. There is no intention
-of stress test for one single kernel feature, or one used case.</p>
-<p>The release was tested focusing on following goals:</p>
-<dl class="docutils">
-<dt>MUST HAVE:</dt>
-<dd><ul class="first last simple">
-<li>all 35 boards MUST reach the user space prompt</li>
-<li>all 35 boards MUST have some[#f1]_ stability</li>
-<li>all IMX6 boards MUST have X11 up and running accelerated</li>
-</ul>
-</dd>
-<dt>SHOULD HAVE:</dt>
-<dd><ul class="first last simple">
-<li>all boards SHOULD play at least one movie</li>
-<li>all boards SHOULD encode at least one kind of movie</li>
-<li>all boards SHOULD have minimal kernel defconfig enabled by default (USB/SDcard/aplay)</li>
-</ul>
-</dd>
-<dt>BONUS POINT:</dt>
-<dd><ul class="first last simple">
-<li>all IMX6 boards SHOULD have GPU and VPU support for both SFP and HFP</li>
-<li>all board SHOULD have overnight stability[#f2]_</li>
-</ul>
-</dd>
-</dl>
-<table class="docutils footnote" frame="void" id="f1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td>some stability now is defined as being alive during the form tests</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="f2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[2]</td><td>overnight stability now is defined by the board being alive after more than 10 hours testing memtester 50M (last question from form, Bonus Point)</td></tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="definition">
-<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
-<p>For following tables, please, consider this definition:</p>
-<blockquote>
-<div><ul class="simple">
-<li><span class="test_result error">&#x2717;</span>           : error on every test</li>
-<li><span class="test_result success">&#x2713;</span>       : success on every test</li>
-<li><span class="test_result warning">?</span> : at least one error</li>
-<li>—          : not applicable</li>
-<li><strong>empty</strong>          : no test reported</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="must-have">
-<h3>MUST HAVE<a class="headerlink" href="#must-have" title="Permalink to this headline">¶</a></h3>
-<p>Three goals provided the very basic features the boards must achieve in order to
-be considered &#8216;alive&#8217;. Please see the results for each board</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="26%" />
-<col width="23%" />
-<col width="26%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Board</th>
-<th class="head">Reach Userspace Prompt</th>
-<th class="head">Alive during tests</th>
-<th class="head">Accelerated and up X11</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>imx6qsabrelite</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>nitrogen6x</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>nitrogen6x-lite</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cgtqmx6</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10036</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>cfa10037</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-even"><td>cfa10049</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>cfa10055</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>cfa10056</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>cfa10057</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>cfa10058</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>m28evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>m53evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx23evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx28evk</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>imx31pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx35pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx51evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6dlsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6dlsabresd</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6qsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabresd</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6slevk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6solosabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6solosabresd</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>twr-vf65gs10</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-maxi</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx233-olinuxino-micro</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-mini</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>wandboard-quad</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-solo</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>From the table, the following boards may be considered OK:</p>
-<blockquote>
-<div><ul class="simple">
-<li>cfa10036</li>
-<li>cfa10037</li>
-<li>cfa10049</li>
-<li>cfa10055</li>
-<li>cfa10056</li>
-<li>cfa10057</li>
-<li>cfa10058</li>
-<li>imx28evk</li>
-<li>imx53qsb</li>
-<li>imx53ard</li>
-<li>imx6qsabrelite</li>
-<li>wandboard-dual</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="should-have">
-<h3>SHOULD HAVE<a class="headerlink" href="#should-have" title="Permalink to this headline">¶</a></h3>
-<p>The <em>should have</em> goals intend to garantee the minimum set of features of a functional
-system such as VPU playback, VPU encoding, and minimum kernel config integration.
-Please, find the test results on next table.</p>
-<p>Aplay results is specily important because aplay does use several part to be functional
-audio codec, sdma firmware and integration, spi transfer.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="15%" />
-<col width="11%" />
-<col width="8%" />
-<col width="12%" />
-<col width="10%" />
-<col width="13%" />
-<col width="12%" />
-<col width="10%" />
-<col width="8%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Board</th>
-<th class="head">Play one movie</th>
-<th class="head">Play mp3</th>
-<th class="head">Encode one movie</th>
-<th class="head">Functional USB</th>
-<th class="head">Functional SDCard</th>
-<th class="head">Functional aplay</th>
-<th class="head">memtester 50M</th>
-<th class="head">DirectFB</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>imx6qsabrelite</td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>nitrogen6x</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>nitrogen6x-lite</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cgtqmx6</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10036</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>cfa10037</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-even"><td>cfa10049</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>cfa10055</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-even"><td>cfa10056</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>cfa10057</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-even"><td>cfa10058</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>m28evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>m53evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx23evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx28evk</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr class="row-odd"><td>imx31pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx35pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx51evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result error">&#x2717;</span></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result error">&#x2717;</span></td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6dlsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6dlsabresd</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6qsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabresd</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>imx6slevk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6solosabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6solosabresd</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>twr-vf65gs10</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-maxi</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx233-olinuxino-micro</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-mini</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td><span class="test_result success">&#x2713;</span></td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>wandboard-quad</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-solo</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>The following boards has been tested by one (or more) people, and
-submitted the results for accounting.</p>
-</div>
-<div class="section" id="bonus-point">
-<h3>Bonus Point!<a class="headerlink" href="#bonus-point" title="Permalink to this headline">¶</a></h3>
-<p>This release is the first one to introduce SFP and HFP binaries for imx6 boards.
-The overnight memtester test is a good stress test for both memory and system.</p>
-<p>Please, find the test results in the following table:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="44%" />
-<col width="18%" />
-<col width="38%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Board</th>
-<th class="head">SFP</th>
-<th class="head">memtester overnight</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>imx6qsabrelite</td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>nitrogen6x</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>nitrogen6x-lite</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cgtqmx6</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10036</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cfa10037</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10049</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cfa10055</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10056</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>cfa10057</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>cfa10058</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>m28evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>m53evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx23evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx28evk</td>
-<td>—</td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>imx31pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx35pdk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx51evk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx53qsb</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-odd"><td>imx53ard</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>imx6dlsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6dlsabresd</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6qsabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6qsabresd</td>
-<td>&nbsp;</td>
-<td><span class="test_result success">&#x2713;</span></td>
-</tr>
-<tr class="row-even"><td>imx6slevk</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx6solosabreauto</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx6solosabresd</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>twr-vf65gs10</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-maxi</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>imx233-olinuxino-micro</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>imx233-olinuxino-mini</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-even"><td>wandboard-quad</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr class="row-odd"><td>wandboard-solo</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>Freescale has a complete test cycle for the BSP released. It
+includes tests for Linux Kernel for the GPU package and for
+the VPU package (and all other package needed by the BSP, such as imx-lib)</p>
+<p>The results and known issues, from Linux Kernel, GPU and VPU
+packages can be found in the Freescale Release Notes
+(Download tab of freescale.com/imx)</p>
+<p>For boards from meta-fsl-arm-extra, the test cycle is performed by
+each mantainer.</p>
 </div>
 <span id="document-Acknowledgement"></span><div class="section" id="acknowledgement">
 <h2>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h2>
-<p>The FSL BSP Community is a community effort of keeping and mantaining an Yocto
-BSP meta layer for Freescale boards/chips.</p>
-<div class="section" id="dora-source-code">
-<h3>Dora Source Code<a class="headerlink" href="#dora-source-code" title="Permalink to this headline">¶</a></h3>
+<p>The FSL BSP Community is a community effort of keeping and mantaining
+a Freescale boards/chips layer for the Yocto Project.</p>
+<div class="section" id="release-name-source-code">
+<h3>Daisy Source Code<a class="headerlink" href="#release-name-source-code" title="Permalink to this headline">¶</a></h3>
 <p>The following people helped to construct the source code for the release:</p>
 <div class="highlight-python"><div class="highlight"><pre>Statistics for meta-fsl-arm
 ---------------------------
 
-Processed 226 csets from 23 developers
-12 employers found
-A total of 9918 lines added, 31735 removed (delta -21817)
+Processed 212 csets from 27 developers
+10 employers found
+A total of 10773 lines added, 14170 removed (delta -3397)
 
 Developers with the most changesets
- Otavio Salvador            123 (54.4%)
- Daiane Angolini             36 (15.9%)
- Lauren Post                 12 (5.3%)
- Eric BENARD                  9 (4.0%)
- Mario Domenech Goulart       8 (3.5%)
- Alexandre Belloni            6 (2.7%)
- Fabio Estevam                5 (2.2%)
- Andy Voltz                   5 (2.2%)
- Rogerio Nunes                3 (1.3%)
- Mahesh Mahadevan             3 (1.3%)
- Eric Nelson                  2 (0.9%)
- Thomas Senyk                 2 (0.9%)
- Javier Viguera               2 (0.9%)
- Khem Raj                     1 (0.4%)
- Christoph Settgast           1 (0.4%)
- Erik Botö                   1 (0.4%)
- John Weber                   1 (0.4%)
- Abhijit Potnis               1 (0.4%)
- Samuli Piippo                1 (0.4%)
- Simon Braunschmidt           1 (0.4%)
- Philip Craig                 1 (0.4%)
- Andrei Gherzan               1 (0.4%)
- Diego Rondini                1 (0.4%)
+Otavio Salvador            106 (50.0%)
+Lauren Post                 39 (18.4%)
+Daiane Angolini             12 (5.7%)
+Mario Domenech Goulart       8 (3.8%)
+Andy Voltz                   6 (2.8%)
+Carlos Rafael Giani          4 (1.9%)
+Javier Viguera               4 (1.9%)
+Rogerio Nunes                4 (1.9%)
+Prabhu Sundararaj            3 (1.4%)
+Anthony Felice               3 (1.4%)
+John Weber                   3 (1.4%)
+Jacob Kroon                  2 (0.9%)
+Eric Nelson                  2 (0.9%)
+Gary Thomas                  2 (0.9%)
+Mahesh Mahadevan             2 (0.9%)
+stefan                       1 (0.5%)
+Trevor Woerner               1 (0.5%)
+Ann Thornton                 1 (0.5%)
+Alexandre Belloni            1 (0.5%)
+David Nyström               1 (0.5%)
+Andreas Henriksson           1 (0.5%)
+Sébastien Taylor            1 (0.5%)
+Stéphane Cerveau            1 (0.5%)
+Dan McGregor                 1 (0.5%)
+Mats Kärrman                1 (0.5%)
+Lucas Dutra Nunes            1 (0.5%)
+Christopher Larson           1 (0.5%)
 
 Developers with the most changed lines
-Rogerio Nunes             25679 (65.8%)
-Otavio Salvador           4895 (12.5%)
-Daiane Angolini           1985 (5.1%)
-Alexandre Belloni         1038 (2.7%)
-Lauren Post                920 (2.4%)
-Andy Voltz                 367 (0.9%)
-Eric BENARD                321 (0.8%)
-Fabio Estevam              109 (0.3%)
-Erik Botö                  74 (0.2%)
-Abhijit Potnis              62 (0.2%)
-Mario Domenech Goulart      58 (0.1%)
-Eric Nelson                 55 (0.1%)
-Thomas Senyk                51 (0.1%)
-Diego Rondini               47 (0.1%)
-Javier Viguera              33 (0.1%)
-Philip Craig                25 (0.1%)
-Mahesh Mahadevan            11 (0.0%)
-Khem Raj                     4 (0.0%)
-Simon Braunschmidt           3 (0.0%)
-John Weber                   1 (0.0%)
-Samuli Piippo                1 (0.0%)
-Andrei Gherzan               1 (0.0%)
+Otavio Salvador           9870 (42.0%)
+Lauren Post               4226 (18.0%)
+Daiane Angolini           3298 (14.0%)
+Jacob Kroon                680 (2.9%)
+Prabhu Sundararaj          281 (1.2%)
+Andy Voltz                  89 (0.4%)
+Mario Domenech Goulart      70 (0.3%)
+Carlos Rafael Giani         43 (0.2%)
+Javier Viguera              40 (0.2%)
+Dan McGregor                32 (0.1%)
+Rogerio Nunes               11 (0.0%)
+Stéphane Cerveau           10 (0.0%)
+Anthony Felice               8 (0.0%)
+Gary Thomas                  4 (0.0%)
+Alexandre Belloni            3 (0.0%)
+John Weber                   2 (0.0%)
+Eric Nelson                  2 (0.0%)
+Mahesh Mahadevan             2 (0.0%)
+Christopher Larson           2 (0.0%)
+stefan                       1 (0.0%)
+Trevor Woerner               1 (0.0%)
+Ann Thornton                 1 (0.0%)
+David Nyström               1 (0.0%)
+Andreas Henriksson           1 (0.0%)
+Mats Kärrman                1 (0.0%)
+Lucas Dutra Nunes            1 (0.0%)
 
 Developers with the most lines removed
-Rogerio Nunes             24728 (77.9%)
-Alexandre Belloni          980 (3.1%)
-Fabio Estevam              105 (0.3%)
-Philip Craig                 5 (0.0%)
-Mahesh Mahadevan             4 (0.0%)
+Otavio Salvador           7837 (55.3%)
+Andy Voltz                  70 (0.5%)
 
-Developers with the most signoffs (total 7)
-Otavio Salvador              4 (57.1%)
-Fabio Estevam                1 (14.3%)
-Evan Kotara                  1 (14.3%)
-Lauren Post                  1 (14.3%)
+Developers with the most signoffs (total 59)
+Otavio Salvador             48 (81.4%)
+Lauren Post                  4 (6.8%)
+Anthony Felice               2 (3.4%)
+John Weber                   1 (1.7%)
+Fabio Estevam                1 (1.7%)
+H. Peter Anvin               1 (1.7%)
+Michal Marek                 1 (1.7%)
+Wang Shengjiu                1 (1.7%)
 
-Developers with the most reviews (total 0)
+Developers with the most reviews (total 1)
+Alexandre Belloni            1 (100.0%)
 
-Developers with the most test credits (total 2)
-Eric Nelson                  1 (50.0%)
-Daiane Angolini              1 (50.0%)
+Developers with the most test credits (total 6)
+John Weber                   2 (33.3%)
+Gary Thomas                  2 (33.3%)
+Eric Nelson                  1 (16.7%)
+Daiane Angolini              1 (16.7%)
 
-Developers who gave the most tested-by credits (total 2)
-Otavio Salvador              1 (50.0%)
-Javier Viguera               1 (50.0%)
+Developers who gave the most tested-by credits (total 6)
+Otavio Salvador              6 (100.0%)
 
-Developers with the most report credits (total 7)
-Daiane Angolini              1 (14.3%)
-Fabio Estevam                1 (14.3%)
-Evan Kotara                  1 (14.3%)
-Alexandre Belloni            1 (14.3%)
-Philippe Mangaud             1 (14.3%)
-Sébastien Taylor            1 (14.3%)
-Jeremy Stashluk              1 (14.3%)
+Developers with the most report credits (total 8)
+Richard Purdie               2 (25.0%)
+Fabio Estevam                1 (12.5%)
+Ilya Smelykh                 1 (12.5%)
+Tarek El-Sherbiny            1 (12.5%)
+Fabio Labruna                1 (12.5%)
+Alfonso Tamés               1 (12.5%)
+Jānis Čoders               1 (12.5%)
 
-Developers who gave the most report credits (total 7)
-Otavio Salvador              6 (85.7%)
-Eric BENARD                  1 (14.3%)
+Developers who gave the most report credits (total 8)
+Otavio Salvador              8 (100.0%)
 
 Top changeset contributors by employer
-O.S. Systems               131 (58.0%)
-Freescale                   56 (24.8%)
-Eukrea Electromatique        9 (4.0%)
-(Unknown)                    9 (4.0%)
-Free Electrons               6 (2.7%)
-Timesys                      5 (2.2%)
-Pelagicore AB                3 (1.3%)
-Digi International           2 (0.9%)
+O.S. Systems               115 (54.2%)
+Freescale                   60 (28.3%)
+(Unknown)                   17 (8.0%)
+Timesys                      9 (4.2%)
+Digi International           4 (1.9%)
 Boundary Devices             2 (0.9%)
-ZOHO Corp                    1 (0.4%)
-emlix GmbH                   1 (0.4%)
-(None)                       1 (0.4%)
+(Consultant)                 2 (0.9%)
+Endian Technologies          1 (0.5%)
+Linaro                       1 (0.5%)
+Free Electrons               1 (0.5%)
 
 Top lines changed by employer
-Freescale                 29073 (74.4%)
-O.S. Systems              7636 (19.6%)
-Free Electrons            1090 (2.8%)
-Eukrea Electromatique      511 (1.3%)
-Timesys                    367 (0.9%)
-Pelagicore AB              125 (0.3%)
-(Unknown)                  107 (0.3%)
-Boundary Devices            56 (0.1%)
-ZOHO Corp                   47 (0.1%)
-Digi International          33 (0.1%)
-(None)                       4 (0.0%)
-emlix GmbH                   3 (0.0%)
+O.S. Systems              11784 (50.1%)
+Freescale                 10800 (45.9%)
+(Unknown)                  776 (3.3%)
+Timesys                    103 (0.4%)
+Digi International          40 (0.2%)
+(Consultant)                 4 (0.0%)
+Free Electrons               3 (0.0%)
+Boundary Devices             2 (0.0%)
+Endian Technologies          1 (0.0%)
+Linaro                       1 (0.0%)
 
-Employers with the most signoffs (total 7)
-O.S. Systems                 4 (57.1%)
-Freescale                    3 (42.9%)
+Employers with the most signoffs (total 59)
+O.S. Systems                48 (81.4%)
+Freescale                    6 (10.2%)
+Timesys                      2 (3.4%)
+(Unknown)                    1 (1.7%)
+Novell                       1 (1.7%)
+Intel                        1 (1.7%)
 
-Employers with the most hackers (total 24)
-(Unknown)                    7 (29.2%)
-Freescale                    5 (20.8%)
-O.S. Systems                 2 (8.3%)
-Pelagicore AB                2 (8.3%)
-Free Electrons               1 (4.2%)
-Eukrea Electromatique        1 (4.2%)
-Timesys                      1 (4.2%)
-Boundary Devices             1 (4.2%)
-ZOHO Corp                    1 (4.2%)
-Digi International           1 (4.2%)
-(None)                       1 (4.2%)
-emlix GmbH                   1 (4.2%)
+Employers with the most hackers (total 28)
+(Unknown)                   11 (39.3%)
+Freescale                    6 (21.4%)
+O.S. Systems                 3 (10.7%)
+Timesys                      2 (7.1%)
+Digi International           1 (3.6%)
+(Consultant)                 1 (3.6%)
+Free Electrons               1 (3.6%)
+Boundary Devices             1 (3.6%)
+Endian Technologies          1 (3.6%)
+Linaro                       1 (3.6%)
 
 
 Statistics for meta-fsl-arm-extra
 ---------------------------------
 
-Processed 66 csets from 13 developers
+Processed 88 csets from 16 developers
 8 employers found
-A total of 10983 lines added, 11307 removed (delta -324)
+A total of 16099 lines added, 5796 removed (delta 10303)
 
 Developers with the most changesets
-Otavio Salvador             18 (27.3%)
-Alexandre Belloni           14 (21.2%)
-Daiane Angolini              8 (12.1%)
-Eric Nelson                  5 (7.6%)
-John Weber                   5 (7.6%)
-Lucas Dutra Nunes            3 (4.5%)
-Eric Bénard                 3 (4.5%)
-Matthias Benesch             3 (4.5%)
-Marek Vasut                  2 (3.0%)
-SARTRE Leo                   2 (3.0%)
-Fabio Estevam                1 (1.5%)
-Erik Botö                   1 (1.5%)
-Jeremy Stashluk              1 (1.5%)
+Otavio Salvador             24 (27.3%)
+Eric Nelson                 12 (13.6%)
+Alexandre Belloni           10 (11.4%)
+John Weber                  10 (11.4%)
+Anthony Felice               9 (10.2%)
+Mario Domenech Goulart       5 (5.7%)
+Carlos Rafael Giani          4 (4.5%)
+Philip Balister              4 (4.5%)
+Gary Thomas                  2 (2.3%)
+Pavel Kopylov                2 (2.3%)
+Daiane Angolini              1 (1.1%)
+Christopher Larson           1 (1.1%)
+Patrick Keil                 1 (1.1%)
+Andreas Henriksson           1 (1.1%)
+Dan McGregor                 1 (1.1%)
+Lucas Dutra Nunes            1 (1.1%)
 
 Developers with the most changed lines
-Otavio Salvador           8945 (41.2%)
-Eric Nelson               2649 (12.2%)
-SARTRE Leo                 581 (2.7%)
-Alexandre Belloni          528 (2.4%)
-Matthias Benesch           383 (1.8%)
-Marek Vasut                343 (1.6%)
-Lucas Dutra Nunes          284 (1.3%)
-John Weber                  86 (0.4%)
-Jeremy Stashluk             22 (0.1%)
-Daiane Angolini             16 (0.1%)
-Eric Bénard                 8 (0.0%)
-Fabio Estevam                6 (0.0%)
-Erik Botö                   1 (0.0%)
+Otavio Salvador           12953 (59.6%)
+Carlos Rafael Giani       1201 (5.5%)
+Eric Nelson                677 (3.1%)
+Anthony Felice             608 (2.8%)
+John Weber                 373 (1.7%)
+Alexandre Belloni          222 (1.0%)
+Mario Domenech Goulart      33 (0.2%)
+Philip Balister              9 (0.0%)
+Daiane Angolini              9 (0.0%)
+Gary Thomas                  8 (0.0%)
+Lucas Dutra Nunes            6 (0.0%)
+Pavel Kopylov                4 (0.0%)
+Dan McGregor                 4 (0.0%)
+Christopher Larson           2 (0.0%)
+Patrick Keil                 2 (0.0%)
+Andreas Henriksson           1 (0.0%)
 
 Developers with the most lines removed
-Eric Nelson               2530 (22.4%)
-SARTRE Leo                 329 (2.9%)
-Jeremy Stashluk             10 (0.1%)
+Mario Domenech Goulart      13 (0.2%)
 
-Developers with the most signoffs (total 2)
-Otavio Salvador              2 (100.0%)
+Developers with the most signoffs (total 13)
+Otavio Salvador             12 (92.3%)
+John Weber                   1 (7.7%)
 
 Developers with the most reviews (total 0)
 
@@ -1846,76 +1460,82 @@ Developers with the most test credits (total 1)
 Eric Nelson                  1 (100.0%)
 
 Developers who gave the most tested-by credits (total 1)
-Lucas Dutra Nunes            1 (100.0%)
-
-Developers with the most report credits (total 1)
-Rene Fichter                 1 (100.0%)
-
-Developers who gave the most report credits (total 1)
 Otavio Salvador              1 (100.0%)
 
+Developers with the most report credits (total 3)
+Gary Thomas                  1 (33.3%)
+Diego                        1 (33.3%)
+Omar Pighi                   1 (33.3%)
+
+Developers who gave the most report credits (total 3)
+Eric Nelson                  2 (66.7%)
+Otavio Salvador              1 (33.3%)
+
 Top changeset contributors by employer
-O.S. Systems                21 (31.8%)
-Free Electrons              14 (21.2%)
-(Unknown)                   11 (16.7%)
-Freescale                    9 (13.6%)
-Boundary Devices             5 (7.6%)
-Eukrea Electromatique        3 (4.5%)
-DENX Software Engineering    2 (3.0%)
-Pelagicore AB                1 (1.5%)
+O.S. Systems                30 (34.1%)
+(Unknown)                   23 (26.1%)
+Boundary Devices            12 (13.6%)
+Free Electrons              10 (11.4%)
+Timesys                      9 (10.2%)
+(Consultant)                 2 (2.3%)
+Freescale                    1 (1.1%)
+Endian Technologies          1 (1.1%)
 
 Top lines changed by employer
-O.S. Systems              16979 (78.2%)
-Boundary Devices          2732 (12.6%)
-(Unknown)                 1096 (5.0%)
-Free Electrons             530 (2.4%)
-DENX Software Engineering  343 (1.6%)
-Freescale                   22 (0.1%)
-Eukrea Electromatique        8 (0.0%)
-Pelagicore AB                1 (0.0%)
+O.S. Systems              18594 (85.6%)
+(Unknown)                 1595 (7.3%)
+Boundary Devices           682 (3.1%)
+Timesys                    608 (2.8%)
+Free Electrons             237 (1.1%)
+Freescale                    9 (0.0%)
+(Consultant)                 8 (0.0%)
+Endian Technologies          1 (0.0%)
 
-Employers with the most signoffs (total 2)
-O.S. Systems                 2 (100.0%)
+Employers with the most signoffs (total 13)
+O.S. Systems                12 (92.3%)
+(Unknown)                    1 (7.7%)
 
-Employers with the most hackers (total 13)
-(Unknown)                    4 (30.8%)
-O.S. Systems                 2 (15.4%)
-Freescale                    2 (15.4%)
-Boundary Devices             1 (7.7%)
-Free Electrons               1 (7.7%)
-DENX Software Engineering    1 (7.7%)
-Eukrea Electromatique        1 (7.7%)
-Pelagicore AB                1 (7.7%)
+Employers with the most hackers (total 16)
+(Unknown)                    7 (43.8%)
+O.S. Systems                 3 (18.8%)
+Boundary Devices             1 (6.2%)
+Timesys                      1 (6.2%)
+Free Electrons               1 (6.2%)
+Freescale                    1 (6.2%)
+(Consultant)                 1 (6.2%)
+Endian Technologies          1 (6.2%)
 
 
 Statistics for meta-fsl-demos
 -----------------------------
 
-Processed 18 csets from 6 developers
+Processed 22 csets from 6 developers
 4 employers found
-A total of 1094 lines added, 363 removed (delta 731)
+A total of 389 lines added, 757 removed (delta -368)
 
 Developers with the most changesets
-Otavio Salvador             10 (55.6%)
-Daiane Angolini              3 (16.7%)
-Diego Rondini                2 (11.1%)
-Rogerio Nunes                1 (5.6%)
-Leonardo Sandoval            1 (5.6%)
-Fabio Estevam                1 (5.6%)
+Rogerio Nunes               10 (45.5%)
+Mario Domenech Goulart       5 (22.7%)
+Otavio Salvador              4 (18.2%)
+Evan Kotara                  1 (4.5%)
+John Weber                   1 (4.5%)
+Eric Nelson                  1 (4.5%)
 
 Developers with the most changed lines
-Diego Rondini             1065 (95.1%)
-Otavio Salvador             29 (2.6%)
-Daiane Angolini              7 (0.6%)
-Fabio Estevam                2 (0.2%)
-Rogerio Nunes                1 (0.1%)
-Leonardo Sandoval            1 (0.1%)
+Rogerio Nunes              606 (57.0%)
+Otavio Salvador            145 (13.6%)
+Mario Domenech Goulart      68 (6.4%)
+Evan Kotara                 40 (3.8%)
+John Weber                  25 (2.4%)
+Eric Nelson                  1 (0.1%)
 
 Developers with the most lines removed
-Otavio Salvador             10 (2.8%)
-Leonardo Sandoval            1 (0.3%)
+Rogerio Nunes              363 (48.0%)
+Otavio Salvador            133 (17.6%)
 
-Developers with the most signoffs (total 0)
+Developers with the most signoffs (total 2)
+Rogerio Nunes                1 (50.0%)
+Otavio Salvador              1 (50.0%)
 
 Developers with the most reviews (total 0)
 
@@ -1928,24 +1548,153 @@ Developers with the most report credits (total 0)
 Developers who gave the most report credits (total 0)
 
 Top changeset contributors by employer
-O.S. Systems                10 (55.6%)
-Freescale                    5 (27.8%)
-ZOHO Corp                    2 (11.1%)
-(Unknown)                    1 (5.6%)
+Freescale                   11 (50.0%)
+O.S. Systems                 9 (40.9%)
+Boundary Devices             1 (4.5%)
+(Unknown)                    1 (4.5%)
 
 Top lines changed by employer
-ZOHO Corp                 1065 (95.1%)
-O.S. Systems                44 (3.9%)
-Freescale                   10 (0.9%)
-(Unknown)                    1 (0.1%)
+Freescale                  813 (76.5%)
+O.S. Systems               224 (21.1%)
+(Unknown)                   25 (2.4%)
+Boundary Devices             1 (0.1%)
 
-Employers with the most signoffs (total 0)
+Employers with the most signoffs (total 2)
+Freescale                    1 (50.0%)
+O.S. Systems                 1 (50.0%)
 
 Employers with the most hackers (total 6)
-Freescale                    3 (50.0%)
-ZOHO Corp                    1 (16.7%)
-O.S. Systems                 1 (16.7%)
+Freescale                    2 (33.3%)
+O.S. Systems                 2 (33.3%)
 (Unknown)                    1 (16.7%)
+Boundary Devices             1 (16.7%)
+
+
+Statistics for base
+-------------------
+
+Processed 10 csets from 6 developers
+5 employers found
+A total of 30 lines added, 66 removed (delta -36)
+
+Developers with the most changesets
+Trevor Woerner               4 (40.0%)
+Otavio Salvador              2 (20.0%)
+Mario Domenech Goulart       1 (10.0%)
+Alexandre Belloni            1 (10.0%)
+Timur Aydin                  1 (10.0%)
+Daiane Angolini              1 (10.0%)
+
+Developers with the most changed lines
+Daiane Angolini             46 (59.7%)
+Trevor Woerner              12 (15.6%)
+Otavio Salvador              9 (11.7%)
+Alexandre Belloni            3 (3.9%)
+Mario Domenech Goulart       1 (1.3%)
+Timur Aydin                  1 (1.3%)
+
+Developers with the most lines removed
+Daiane Angolini             42 (63.6%)
+
+Developers with the most signoffs (total 6)
+Otavio Salvador              6 (100.0%)
+
+Developers with the most reviews (total 0)
+
+Developers with the most test credits (total 0)
+
+Developers who gave the most tested-by credits (total 0)
+
+Developers with the most report credits (total 0)
+
+Developers who gave the most report credits (total 0)
+
+Top changeset contributors by employer
+Linaro                       4 (40.0%)
+O.S. Systems                 3 (30.0%)
+Freescale                    1 (10.0%)
+Free Electrons               1 (10.0%)
+(Unknown)                    1 (10.0%)
+
+Top lines changed by employer
+Freescale                   46 (59.7%)
+Linaro                      14 (18.2%)
+O.S. Systems                13 (16.9%)
+Free Electrons               3 (3.9%)
+(Unknown)                    1 (1.3%)
+
+Employers with the most signoffs (total 6)
+O.S. Systems                 6 (100.0%)
+
+Employers with the most hackers (total 6)
+O.S. Systems                 2 (33.3%)
+Freescale                    1 (16.7%)
+Linaro                       1 (16.7%)
+Free Electrons               1 (16.7%)
+(Unknown)                    1 (16.7%)
+
+
+Statistics for Documentation
+----------------------------
+
+Processed 43 csets from 6 developers
+4 employers found
+A total of 3970 lines added, 843 removed (delta 3127)
+
+Developers with the most changesets
+Mario Domenech Goulart      18 (41.9%)
+Daiane Angolini             13 (30.2%)
+Leonardo Sandoval            5 (11.6%)
+Otavio Salvador              3 (7.0%)
+Anthony Felice               3 (7.0%)
+Carlos Rafael Giani          1 (2.3%)
+
+Developers with the most changed lines
+Leonardo Sandoval         1872 (45.0%)
+Mario Domenech Goulart    1736 (41.7%)
+Daiane Angolini            320 (7.7%)
+Otavio Salvador             18 (0.4%)
+Anthony Felice              17 (0.4%)
+Carlos Rafael Giani          7 (0.2%)
+
+Developers with the most lines removed
+
+Developers with the most signoffs (total 4)
+Otavio Salvador              2 (50.0%)
+Mario Domenech Goulart       1 (25.0%)
+Leonardo Sandoval            1 (25.0%)
+
+Developers with the most reviews (total 0)
+
+Developers with the most test credits (total 0)
+
+Developers who gave the most tested-by credits (total 0)
+
+Developers with the most report credits (total 0)
+
+Developers who gave the most report credits (total 0)
+
+Top changeset contributors by employer
+O.S. Systems                21 (48.8%)
+Freescale                   17 (39.5%)
+Timesys                      3 (7.0%)
+(Unknown)                    2 (4.7%)
+
+Top lines changed by employer
+O.S. Systems              1853 (44.5%)
+Freescale                 1532 (36.8%)
+(Unknown)                  758 (18.2%)
+Timesys                     17 (0.4%)
+
+Employers with the most signoffs (total 4)
+O.S. Systems                 3 (75.0%)
+(Unknown)                    1 (25.0%)
+
+Employers with the most hackers (total 7)
+O.S. Systems                 2 (28.6%)
+(Unknown)                    2 (28.6%)
+Freescale                    2 (28.6%)
+Timesys                      1 (14.3%)
 </pre></div>
 </div>
 </div>
@@ -2092,34 +1841,26 @@ is on next table.</p>
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-introduction">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-bsp-scope">BSP Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-machines-maintainers">Machine Mantainers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#machines-with-maintainers">Machines with maintainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#machines-without-a-maintainer">Machines without a maintainer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-soc-hierarchy">SoC Hierarchy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-kernel-linux">Linux Kernel</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#default-linux-providers">Default Linux Providers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#linux-fslc">linux-fslc</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-u-boot">U-Boot</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#default-u-boot">Default u-boot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#u-boot-imx">u-boot-imx</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-barebox">Barebox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-bootloaders">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-userspace-pkg">Userspace Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-fsl-userspace-pkg">Freescale Userspace Packages</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#mx28">MX28</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#mx5">MX5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#mx6">MX6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#version-by-soc-hierarchy">Version by <tt class="docutils literal"><span class="pre">soc-hierarchy</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hardware-relation-by-soc-hierarchy">Hardware relation by <tt class="docutils literal"><span class="pre">soc-hierarchy</span></tt></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-test-results">Test results</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#goals">Goals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#definition">Definition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#must-have">MUST HAVE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#should-have">SHOULD HAVE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#bonus-point">Bonus Point!</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-test-results">Test results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-Acknowledgement">Acknowledgement</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#dora-source-code">Dora Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#release-name-source-code">Daisy Source Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#test-cycle">Test Cycle</a></li>
 </ul>
 </li>

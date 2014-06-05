@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Freescale Community BSP User Guide 1.5 documentation</title>
+    <title>Freescale Community BSP User Guide 1.6 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.5',
+        VERSION:     '1.6',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -29,7 +29,7 @@
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html#document-index">Freescale Community BSP User Guide 1.5 documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">Freescale Community BSP User Guide 1.6 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -511,6 +511,52 @@ repeat the steps but this time the patch&#8217;s subject changes to
 </ul>
 </div>
 </div>
+<span id="document-weston"></span><div class="section" id="weston">
+<h2>Weston<a class="headerlink" href="#weston" title="Permalink to this headline">¶</a></h2>
+<p>In order to test Weston the reference implementation of a Wayland compositor use the image <em>core-image-weston</em></p>
+<p>Add the following to conf/local.conf:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">DISTRO_FEATURES_remove</span> <span class="o">=</span> <span class="s">&quot;x11&quot;</span>
+</pre></div>
+</div>
+<p>And bake the image:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ bitbake core-image-weston
+</pre></div>
+</div>
+<p>Remember to use a clean build-dir when changing <cite>DISTRO_FEATURES</cite></p>
+<div class="section" id="simple-tests">
+<h3>Simple tests<a class="headerlink" href="#simple-tests" title="Permalink to this headline">¶</a></h3>
+<p>In order to access Weston examples via console:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ export XDG_RUNTIME_DIR=/var/run/user/root
+$ weston-simple-shm =&gt; basic wayland example
+$ weston-simple-egl =&gt; basic wayland example. To make sure egl integration works fine
+$ weston-terminal =&gt; To make sure cairo integration works fine.
+</pre></div>
+</div>
+</div>
+<div class="section" id="enabling-multibuffering">
+<h3>Enabling multibuffering<a class="headerlink" href="#enabling-multibuffering" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>$ export FB_MULTI_BUFFER=2
+$ /etc/init.d/weston restart
+</pre></div>
+</div>
+<p>How to start with <cite>gal2d</cite> compositor:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ /etc/init.d/weston stop
+$ weston –tty=1 –use-gl=0 –use-gal2d=1 &amp;
+</pre></div>
+</div>
+<p>Using Multi (extended) display, make sure <cite>/dev/fb0</cite> and <cite>/dev/fb1</cite> has
+same color depth:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ /etc/init.d/weston stop
+$ weston –tty=1 –use-gl=0 –use-gal2d=1 –device=”dev/fb0,/dev/fb2” &amp;
+</pre></div>
+</div>
+<p>Using QT5, need to build meta-qt5 with qtwayland package. Then run
+with:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ hellogl_es2 –platform wayland-egl
+</pre></div>
+</div>
+</div>
+</div>
 <span id="document-machines"></span><div class="section" id="machines">
 <span id="id1"></span><h2>Machines<a class="headerlink" href="#machines" title="Permalink to this headline">¶</a></h2>
 <p>The scope of this release includes both meta-fsl-arm and meta-fsl-arm-extra.
@@ -761,6 +807,11 @@ Please, see in next table the complete supported board list.</p>
 <li class="toctree-l2"><a class="reference internal" href="index.html#contributing">Contributing</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-weston">Weston</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#simple-tests">Simple tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#enabling-multibuffering">Enabling multibuffering</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-machines">Machines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-images">Images</a></li>
 </ul>
@@ -772,7 +823,7 @@ Please, see in next table the complete supported board list.</p>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html#document-index">Freescale Community BSP User Guide 1.5 documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">Freescale Community BSP User Guide 1.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -46,11 +46,46 @@
 <p>This document has the release notes of the FSL Community BSP 1.6
 which is a communty effort to improve Freescale&#8217;s
 processors support in OpenEmbedded and in the Yocto Project.</p>
+<div class="section" id="release-schedule">
+<h3>Release Schedule<a class="headerlink" href="#release-schedule" title="Permalink to this headline">¶</a></h3>
+<p>The FSL Communtiy BSP follows the same release schedule from Yocto Project.
+Since Yocto Project release 1.3 (denzil) meta-fsl-arm, meta-fsl-demos and meta-fsl-arm-extra
+follow the same <em>release schedule</em> and the same <em>branch naming</em> from Yocto Project.</p>
+<p>See the <a class="reference external" href="https://wiki.yoctoproject.org/wiki/Releases">Yocto Projec Release</a>, for details
+on the Yocto Project.</p>
 </div>
-<span id="document-bsp-scope"></span><div class="section" id="bsp-scope">
-<h2>BSP Scope<a class="headerlink" href="#bsp-scope" title="Permalink to this headline">¶</a></h2>
-<p>The scope of this release includes both meta-fsl-arm and meta-fsl-arm-extra.
-Please, see in next table the complete supported board list.</p>
+</div>
+<span id="document-bsp-scope"></span><div class="section" id="scope">
+<h2>Scope<a class="headerlink" href="#scope" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fsl-community-bsp-scope">
+<h3>FSL Community BSP Scope<a class="headerlink" href="#fsl-community-bsp-scope" title="Permalink to this headline">¶</a></h3>
+<p>The scope of this Release Notes includes the FSL Community BSP meta layers:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/?h=daisy">meta-fsl-arm</a>:
+provides the base support and Freescale ARM reference boards;</li>
+<li><a class="reference external" href="https://github.com/Freescale/meta-fsl-arm-extra/tree/daisy">meta-fsl-arm-extra</a>:
+provides support for 3rd party and partner boards;</li>
+<li><a class="reference external" href="https://github.com/Freescale/meta-fsl-demos/tree/daisy">meta-fsl-demos</a>:
+provides images recipes, demo recipes, and packagegroups used to easy the development with Yocto Project.</li>
+<li><a class="reference external" href="https://github.com/Freescale/Documentation">Documentation</a>
+provides the source code for FSL Community BSP Release Notes (RN), User Guide (UG) and
+Frequentely Asked Question (FAQ)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="kernel-release-notes">
+<h3>Kernel Release Notes<a class="headerlink" href="#kernel-release-notes" title="Permalink to this headline">¶</a></h3>
+<p>The FSL Community BSP include support for several kernel providers, each machine
+may have a different Linux Kernel provider.</p>
+<p>For the provider <strong>linux-imx</strong>, Freescale has a Release Notes for each version released,
+this document has a list of known issues, new features, list of kernel arguments, and the
+linux-imx kernel scope for each Freescale Reference Board.</p>
+<p>See the respective Linux Kernel provider for your machine in section <a class="reference internal" href="index.html#linux-providers"><em>Linux Kernel</em></a></p>
+</div>
+<div class="section" id="supported-board-list">
+<h3>Supported Board List<a class="headerlink" href="#supported-board-list" title="Permalink to this headline">¶</a></h3>
+<p>Please, see in next table the complete supported board list.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -107,7 +142,7 @@ Please, see in next table the complete supported board list.</p>
 <td>meta-fsl-arm-extra</td>
 </tr>
 <tr class="row-even"><td>cubox-i</td>
-<td>SolidRun CuBox-i</td>
+<td>SolidRun CuBox-i and HummingBoard</td>
 <td>i.MX6 Q/DL</td>
 <td>meta-fsl-arm-extra</td>
 </tr>
@@ -264,6 +299,7 @@ Please, see in next table the complete supported board list.</p>
 </tbody>
 </table>
 </div>
+</div>
 <span id="document-machines-maintainers"></span><div class="section" id="machine-mantainers">
 <h2>Machine Mantainers<a class="headerlink" href="#machine-mantainers" title="Permalink to this headline">¶</a></h2>
 <p>Since FSL Community BSP Release 1.6 (Daisy), the maintainer field in machine configuration file of
@@ -322,7 +358,7 @@ should be worked around anyway.</p>
 <td>Crystalfontz CFA-10058</td>
 </tr>
 <tr class="row-odd"><td>cubox-i</td>
-<td>SolidRun CuBox-i</td>
+<td>SolidRun CuBox-i and HummingBoard</td>
 </tr>
 <tr class="row-even"><td>imx23evk</td>
 <td>Freescale i.MX23 Evaluation Kit</td>
@@ -448,7 +484,6 @@ should be worked around anyway.</p>
 │    ├── mx51
 │    └── mx53
 ├── mx6
-│    ├──
 │    ├── mx6dl
 │    ├── mx6q
 │    └── mx6sl
@@ -460,13 +495,13 @@ should be worked around anyway.</p>
 </div>
 </div>
 <span id="document-kernel-linux"></span><div class="section" id="linux-kernel">
-<h2>Linux Kernel<a class="headerlink" href="#linux-kernel" title="Permalink to this headline">¶</a></h2>
+<span id="linux-providers"></span><h2>Linux Kernel<a class="headerlink" href="#linux-kernel" title="Permalink to this headline">¶</a></h2>
 <p>Fsl-community-bsp supports the following sources for Linux Kernel:</p>
 <ul class="simple">
 <li><strong>linux-boundary</strong>: Linux kernel for Boundary Devices boards.</li>
 <li><strong>linux-cfa</strong>: Linux kernel for Crystalfontz boards.</li>
 <li><strong>linux-congatec</strong>: Linux Kernel based on Freescale Linux kernel to add support for Congatec boards.</li>
-<li><strong>linux-cubox-i</strong>: Boundary Devices Kernel 3.0.35 supported by SolidRun with additional machine specific patches.</li>
+<li><strong>linux-cubox-i</strong>: Freescale Kernel 3.0.35 supported by SolidRun with additional machine specific patches.</li>
 <li><strong>linux-denx</strong>: DENX mainline based Linux kernel.</li>
 <li><strong>linux-fslc</strong>: Linux kernel based on mainline kernel used by FSL Community BSP in order to provide support for some backported features and fixes, or because it was applied in linux-next and takes some time to become part of a stable version, or because it is not applicable for upstreaming.</li>
 <li><strong>linux-imx</strong>: Linux Kernel provided and supported by Freescale with focus on i.MX Family Reference Boards. It includes support for many IPs such as GPU, VPU and IPU.</li>
@@ -584,7 +619,7 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-odd"><td>imx6qsabrelite</td>
 <td>linux-boundary</td>
-<td>3.0.35</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-even"><td>imx6qsabresd</td>
 <td>linux-imx</td>
@@ -612,11 +647,11 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-even"><td>nitrogen6x</td>
 <td>linux-boundary</td>
-<td>3.0.35</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-odd"><td>nitrogen6x-lite</td>
 <td>linux-boundary</td>
-<td>3.0.35</td>
+<td>3.10.17</td>
 </tr>
 <tr class="row-even"><td>pcl052</td>
 <td>linux-timesys</td>
@@ -770,7 +805,7 @@ versions) for the supported boards.</p>
 </tr>
 <tr class="row-odd"><td>imx6qsabrelite</td>
 <td>u-boot-boundary</td>
-<td>v2014.01+git</td>
+<td>v2014.04+git</td>
 </tr>
 <tr class="row-even"><td>imx6qsabresd</td>
 <td>u-boot-fslc</td>
@@ -798,11 +833,11 @@ versions) for the supported boards.</p>
 </tr>
 <tr class="row-even"><td>nitrogen6x</td>
 <td>u-boot-boundary</td>
-<td>v2014.01+git</td>
+<td>v2014.04+git</td>
 </tr>
 <tr class="row-odd"><td>nitrogen6x-lite</td>
 <td>u-boot-boundary</td>
-<td>v2014.01+git</td>
+<td>v2014.04+git</td>
 </tr>
 <tr class="row-even"><td>pcl052</td>
 <td>u-boot-timesys</td>
@@ -944,8 +979,8 @@ There are differences, as well, in GPU support recipes.</p>
 <tr class="row-even"><td>firmware-imx</td>
 <td>&#8211;</td>
 <td>3.0.35-4.0.0</td>
-<td>3.5.7-1.0.0</td>
-<td>3.5.7-1.0.0</td>
+<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.0</td>
 <td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>fsl-alsa-plugins</td>
@@ -958,8 +993,8 @@ There are differences, as well, in GPU support recipes.</p>
 <tr class="row-even"><td>gpu-viv-bin-mx6q</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>3.10.17-1.0.0-hfp</td>
-<td>3.10.17-1.0.0-hfp</td>
+<td>3.10.17-1.0.1-hfp</td>
+<td>3.10.17-1.0.1-hfp</td>
 <td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>gpu-viv-g2d</td>
@@ -970,16 +1005,16 @@ There are differences, as well, in GPU support recipes.</p>
 <td>&#8211;</td>
 </tr>
 <tr class="row-even"><td>gst-fsl-plugin</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
 <td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>gstreamer1.0-plugins-imx</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>0.9.5</td>
+<td>0.9.7</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
 </tr>
@@ -998,11 +1033,11 @@ There are differences, as well, in GPU support recipes.</p>
 <td>00.00.00</td>
 </tr>
 <tr class="row-even"><td>imx-uuc</td>
-<td>0.4</td>
-<td>0.4</td>
-<td>0.4</td>
-<td>0.4</td>
-<td>0.4</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0.5</td>
+<td>0.5</td>
 </tr>
 <tr class="row-odd"><td>imx-vpu</td>
 <td>&#8211;</td>
@@ -1012,23 +1047,23 @@ There are differences, as well, in GPU support recipes.</p>
 <td>&#8211;</td>
 </tr>
 <tr class="row-even"><td>libfslcodec</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
 <td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>libfslparser</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
-<td>3.0.10</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
+<td>3.0.11</td>
 <td>&#8211;</td>
 </tr>
 <tr class="row-even"><td>libfslvpuwrap</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>1.0.45</td>
+<td>1.0.46</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
 </tr>
@@ -1037,14 +1072,14 @@ There are differences, as well, in GPU support recipes.</p>
 <td>&#8211;</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>1.04</td>
+<td>1.05</td>
 </tr>
 <tr class="row-even"><td>libz160</td>
+<td>&#8211;</td>
 <td>11.09.01</td>
-<td>11.09.01</td>
-<td>11.09.01</td>
-<td>11.09.01</td>
-<td>11.09.01</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
+<td>&#8211;</td>
 </tr>
 <tr class="row-odd"><td>mqxboot</td>
 <td>&#8211;</td>
@@ -1070,8 +1105,8 @@ There are differences, as well, in GPU support recipes.</p>
 <tr class="row-even"><td>xf86-video-imxfb-vivante</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>3.10.17-1.0.0</td>
-<td>3.10.17-1.0.0</td>
+<td>3.10.17-1.0.1</td>
+<td>3.10.17-1.0.1</td>
 <td>&#8211;</td>
 </tr>
 </tbody>
@@ -1868,8 +1903,16 @@ is on next table.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html#document-index">Table Of Contents</a></h3>
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-introduction">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-bsp-scope">BSP Scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-introduction">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#release-schedule">Release Schedule</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-bsp-scope">Scope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#fsl-community-bsp-scope">FSL Community BSP Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#kernel-release-notes">Kernel Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#supported-board-list">Supported Board List</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-machines-maintainers">Machine Mantainers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#machines-with-maintainers">Machines with maintainers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#machines-without-a-maintainer">Machines without a maintainer</a></li>

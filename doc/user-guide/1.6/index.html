@@ -48,7 +48,7 @@
 <li><p class="first">Check <a class="reference external" href="https://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#packages">required host packages</a> packages for your Linux Distribution</p>
 </li>
 <li><p class="first">Download the <a class="reference external" href="http://source.android.com/source/downloading.html">repo</a> tool:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ mkdir ~/bin
+<div class="highlight-python"><div class="highlight"><pre>$ mkdir -p ~/bin
 $ PATH=~/bin:${PATH}
 $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
 $ chmod a+x ~/bin/repo
@@ -82,10 +82,10 @@ build $ bitbake &lt;selected image&gt;    # Bake! The first time can take severa
 # Type &#39;$ dmesg | tail&#39; to see the device node being used, e.g /dev/sdb
 # In case the SD to be flashed has already some partitions, the host system may have
 # mounted these, so unmount them, e.g. &#39;$ sudo umount /dev/sdb?&#39;.
-build $ ls -la &#39;tmp/deploy/images/*.sdcard&#39;
+build $ ls -la &#39;tmp/deploy/images/&lt;selected machine&gt;/*.sdcard&#39;
 
 # Flash the soft link one
-build $ sudo dd if=tmp/deploy/images/&lt;selected image&gt;-&lt;select machine&gt;.sdcard \
+build $ sudo dd if=tmp/deploy/images/&lt;selected machine&gt;/&lt;selected image&gt;-&lt;selected machine&gt;.sdcard \
                 of=/dev/sdX \
                 bs=1M \
                 conf=fsync
@@ -756,19 +756,14 @@ Please, see in next table the complete supported board list.</p>
 </div>
 <span id="document-images"></span><div class="section" id="images">
 <span id="id1"></span><h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="29%" />
-<col width="59%" />
-<col width="12%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Image</td>
-<td>Description</td>
-<td>Layer</td>
-</tr>
-</tbody>
-</table>
+<ul class="simple">
+<li><strong>fsl-image-machine-test</strong>: A console-only image that includes gstreamer packages, Freescale&#8217;s multimedia packages (VPU and GPU) when available, and test and benchmark applications.</li>
+<li><strong>fsl-image-mfgtool-initramfs</strong>: Small image to be used with Manufacturing Tool (mfg-tool) in a production environment.</li>
+<li><strong>fsl-image-multimedia</strong>: A console-only image that includes gstreamer packages and Freescale&#8217;s multimedia packages (VPU and GPU) when available for the specific machine.</li>
+<li><strong>fsl-image-multimedia-full</strong>: A console-only image that includes gstreamer packages and Freescale&#8217;s multimedia packages (VPU and GPU) when available for the specific machine.</li>
+<li><strong>qt-in-use-image</strong>: qt-in-use-image version 1.0-r0.</li>
+<li><strong>qte-in-use-image</strong>: qte-in-use-image version 1.0-r0.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -828,7 +823,7 @@ Please, see in next table the complete supported board list.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Freescale Community BSP Team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
   </body>
 </html>

@@ -53,9 +53,13 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.4
 git_update https://github.com/Freescale/Documentation.git dora $tmp/docs
 sphinx_update $tmp/docs/release-notes doc/release-notes/1.5
 
-# Master
-git_update https://github.com/Freescale/Documentation.git master $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 yes
+# Daisy
+git_update https://github.com/Freescale/Documentation.git daisy $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.6
+
+# Dizzi
+git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes
 
 ### User Guide
 

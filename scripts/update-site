@@ -45,17 +45,9 @@ tmp=$(pwd)/tmp
 
 ### Release Notes
 
-# Dylan
-git_update https://github.com/Freescale/Documentation.git dylan $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.4
-
-# Dora
-git_update https://github.com/Freescale/Documentation.git dora $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.5
-
 # Daisy
 git_update https://github.com/Freescale/Documentation.git daisy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.6
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no
 
 # Dizzi
 git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs

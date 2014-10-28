@@ -10,7 +10,7 @@ git_update() {
 		git clone -q $url -b $branch $path
 	else
 		echo "Updating $url at $branch"
-	    (cd $path && git fetch -q && git checkout -qB $branch origin/$branch)
+		(cd $path && git fetch -q && git checkout -qB $branch origin/$branch)
 	fi
 }
 
@@ -18,19 +18,50 @@ sphinx_update() {
 	doc=$1
 	dest=$2
 	symlink=$3
+	draft=$4
+	pdf=$5
+	ebook=$6
 
 	if [ -d $1/build ]; then
 		echo "Removing previous build"
 		rm -r $1/build
 	fi
 
-	echo Building $doc
-	(cd $1 && make singlehtml)
+	if [ "$draft" != "no" ]; then
+		DRAFTOPTS="-t draft"
+	fi
+
+	echo Building HTML $doc
+	(cd $doc && make singlehtml SPHINXOPTS="$DRAFTOPTS")
+	rm -rf $dest
+	cp -r $doc/build/singlehtml $dest
+
+	if [ "$pdf" = "yes" ]; then
+		(cd $1 && make latexpdf SPHINXOPTS="$DRAFTOPTS")
+		rm $doc/build/latex/blockdiag-*.pdf
+		for p in `ls -1 $doc/build/latex/*.pdf`; do
+			cp $p $dest/`basename $p | sed 's,\.pdf$,-view.pdf,g'`
+		done
+
+		(cd $1 && make latexpdf SPHINXOPTS="$DRAFTOPTS -t lettertwoside")
+		rm $doc/build/latex/blockdiag-*.pdf
+		for p in `ls -1 $doc/build/latex/*.pdf`; do
+			cp $p $dest/`basename $p | sed 's,\.pdf$,-print-letter.pdf,g'`
+		done
+
+		(cd $1 && make latexpdf SPHINXOPTS="$DRAFTOPTS -t a4twoside")
+		rm $doc/build/latex/blockdiag-*.pdf
+		for p in `ls -1 $doc/build/latex/*.pdf`; do
+			cp $p $dest/`basename $p | sed 's,\.pdf$,-print-a4.pdf,g'`
+		done
+	fi
+
+	if [ "$ebook" = "yes" ]; then
+		(cd $1 && make epub SPHINXOPTS="$DRAFTOPTS")
+		cp $doc/build/epub/*.epub $dest
+	fi
 
 	echo Updating $dest
-	rm -rf $dest
-	cp -r $1/build/singlehtml $dest
-
 	git add $dest
 	git commit -m"Update $dest" -s $dest
 
@@ -47,11 +78,11 @@ tmp=$(pwd)/tmp
 
 # Daisy
 git_update https://github.com/Freescale/Documentation.git daisy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no no no no
 
 # Dizzi
 git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes yes yes yes
 
 ### User Guide
 

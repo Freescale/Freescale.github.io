@@ -247,6 +247,39 @@ h1, .h1 {
     opacity: 1;
 }
 
+#documentation #documentation-icons {
+    padding: 10px 0 0 0;
+}
+
+#documentation #documentation-icons i {
+    margin-bottom: 5px;
+}
+
+#documentation #documentation-icons p {
+    margin-bottom: 0;
+}
+
+#documentation #documentation-icons a {
+    font-size: 16px;
+    color: #8CA924;
+    opacity: 0.65;
+    -webkit-transition: opacity 0.15s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
+}
+
+#documentation #documentation-icons a:hover {
+    opacity: 1;
+}
+
+#documentation h3 {
+    margin-top: 10px;
+    font-family: inherit;
+}
+
+#documentation h4 {
+    margin: 5px 0;
+}
+
 /********************************************/
 
 /******** CSS to background sections ********/

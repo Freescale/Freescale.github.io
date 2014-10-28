@@ -34,7 +34,7 @@ sphinx_update() {
 	git add $dest
 	git commit -m"Update $dest" -s $dest
 
-	if [ -n "$symlink" ]; then
+	if [ "$symlink" = "yes" ]; then
 		(cd $(dirname $dest) && rm -f current && ln -s $(basename $dest) current)
 		git add $(dirname $dest)/current
 		git commit -qm"Set $dest as current" -s $(dirname $dest)/current

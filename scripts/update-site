@@ -78,11 +78,11 @@ tmp=$(pwd)/tmp
 
 # Daisy
 git_update https://github.com/Freescale/Documentation.git daisy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no no no no
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no no no
 
 # Dizzi
 git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes yes yes yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes yes yes
 
 ### User Guide
 

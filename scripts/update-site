@@ -82,7 +82,7 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no no no
 
 # Dizzi
 git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes yes yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes no yes
 
 ### User Guide
 

@@ -38,45 +38,43 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-freescale-community-bsp-faq-s-documentation">
-<h1>Welcome to Freescale Community BSP FAQ&#8217;s documentation!<a class="headerlink" href="#welcome-to-freescale-community-bsp-faq-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-freescale-community-s-bsp-faq">
+<h1>Welcome to Freescale Community&#8217;s BSP FAQ!<a class="headerlink" href="#welcome-to-freescale-community-s-bsp-faq" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <span id="document-all"></span><div class="section" id="how-can-i-contribute-to-the-project">
 <h2>How can I contribute to the project?<a class="headerlink" href="#how-can-i-contribute-to-the-project" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Subscribe to the <a class="reference external" href="http://freescale.github.io/#contributing">list</a></li>
-<li>Check the <tt class="docutils literal"><span class="pre">README</span></tt> file of the layer you are trying to patch, it has the
-steps to start contributing. In resume, create your commits locally,
+<li>Subscribe to the <a class="reference external" href="http://freescale.github.io/#contributing">mailing list</a></li>
+<li>Check the <tt class="docutils literal"><span class="pre">README</span></tt> file of the layer you are trying to patch. It lists the
+steps to start contributing. To summarize: create your commits locally,
 format them into patches (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">format-patch</span></tt>) and send them to the
 list (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">send-email</span></tt>)</li>
 </ul>
 </div>
 <div class="section" id="how-can-i-build-an-image">
 <h2>How can I build an image?<a class="headerlink" href="#how-can-i-build-an-image" title="Permalink to this headline">¶</a></h2>
-<p>Steps are detailed on <a class="reference external" href="https://github.com/Freescale/fsl-community-bsp-platform">fsl-community-bsp-platform</a> repository.</p>
+<p>Steps are detailed here: <a class="reference external" href="https://github.com/Freescale/fsl-community-bsp-platform">fsl-community-bsp-platform</a></p>
 </div>
 <div class="section" id="bitbake-encountered-an-error-what-can-i-do">
-<h2>Bitbake encountered an error, what can I do?<a class="headerlink" href="#bitbake-encountered-an-error-what-can-i-do" title="Permalink to this headline">¶</a></h2>
-<p>A final answer can not be given due to the full range of possible errors. Some suggestions:</p>
+<h2>BitBake encountered an error, what can I do?<a class="headerlink" href="#bitbake-encountered-an-error-what-can-i-do" title="Permalink to this headline">¶</a></h2>
+<p>A single answer can not be given due to the full range of possible errors. However, here are some suggestions:</p>
 <ul class="simple">
-<li>Check on the mailing list if this error has been reported</li>
-<li>Clean-State the recipe raising the problem: <tt class="docutils literal"><span class="pre">bitbake</span> <span class="pre">-c</span> <span class="pre">cleansstate</span> <span class="pre">$PN</span></tt> where <tt class="docutils literal"><span class="pre">PN</span></tt>
-is the recipe&#8217;s name.</li>
-<li>Check the log carefully and look at <tt class="docutils literal"><span class="pre">log</span></tt> files pointed by <tt class="docutils literal"><span class="pre">bitbake</span></tt></li>
+<li>Check the mailing list to see if this error has been previously reported</li>
+<li>Clean-State the recipe that raised the error: <tt class="docutils literal"><span class="pre">bitbake</span> <span class="pre">-c</span> <span class="pre">cleansstate</span> <span class="pre">&lt;PN&gt;</span></tt> where <tt class="docutils literal"><span class="pre">PN</span></tt> is the recipe&#8217;s name</li>
+<li>Check the log carefully by looking at the <tt class="docutils literal"><span class="pre">log</span></tt> files listed by the output from <tt class="docutils literal"><span class="pre">bitbake</span></tt></li>
 </ul>
 </div>
-<div class="section" id="which-packages-are-included-on-an-images">
-<h2>Which packages are included on an images?<a class="headerlink" href="#which-packages-are-included-on-an-images" title="Permalink to this headline">¶</a></h2>
-<p>Generate the <cite>dot</cite> file and filter native packages:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ bitbake -g &lt;image name&gt; &amp;&amp; cat pn-depends.dot | grep -v &#39;native&#39;
-</pre></div>
-</div>
-<p>where <tt class="docutils literal"><span class="pre">&lt;image</span> <span class="pre">name&gt;</span></tt> is the name of the image you are building, i.e. <tt class="docutils literal"><span class="pre">core-image-minimal</span></tt></p>
+<div class="section" id="which-packages-are-included-in-an-image">
+<h2>Which packages are included in an image?<a class="headerlink" href="#which-packages-are-included-in-an-image" title="Permalink to this headline">¶</a></h2>
+<p>Generate the <cite>dot</cite> file and filter out the native packages:</p>
+<blockquote>
+<div>$ bitbake -g &lt;image-name&gt; &amp;&amp; cat pn-depends.dot | grep -v &#8216;native&#8217; | more</div></blockquote>
+<p>where <tt class="docutils literal"><span class="pre">&lt;image-name&gt;</span></tt> is the name of the image you are building, i.e. <tt class="docutils literal"><span class="pre">core-image-minimal</span></tt></p>
 </div>
 <div class="section" id="which-packages-are-available-to-be-installed">
 <h2>Which packages are available to be installed?<a class="headerlink" href="#which-packages-are-available-to-be-installed" title="Permalink to this headline">¶</a></h2>
 <p>Use the <tt class="docutils literal"><span class="pre">bitbake-layers</span></tt> script:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ bitbake-layers show-recipes
+<div class="highlight-python"><div class="highlight"><pre>$ bitbake-layers show-recipes | more
 </pre></div>
 </div>
 </div>
@@ -87,23 +85,22 @@ is the recipe&#8217;s name.</li>
 </pre></div>
 </div>
 </div>
-<div class="section" id="how-do-i-add-a-package-into-an-image">
-<h2>How do I add a package into an image?<a class="headerlink" href="#how-do-i-add-a-package-into-an-image" title="Permalink to this headline">¶</a></h2>
-<p>Two ways:</p>
+<div class="section" id="how-do-i-add-a-package-to-an-image">
+<h2>How do I add a package to an image?<a class="headerlink" href="#how-do-i-add-a-package-to-an-image" title="Permalink to this headline">¶</a></h2>
+<p>Two of the ways are:</p>
 <ul class="simple">
-<li>Append <tt class="docutils literal"><span class="pre">IMAGE_INSTALL_append</span> <span class="pre">=</span> <span class="pre">&quot;</span> <span class="pre">package-name-1</span> <span class="pre">package-name-2</span> <span class="pre">...&quot;</span></tt> into your
-<tt class="docutils literal"><span class="pre">local.conf</span></tt> file. Just make sure there is a space as the beginning!</li>
-<li>Append <tt class="docutils literal"><span class="pre">CORE_IMAGE_EXTRA_INSTALL</span> <span class="pre">=</span> <span class="pre">&quot;package-name-1</span> <span class="pre">package-name-2</span> <span class="pre">...&quot;</span></tt> into your
-<tt class="docutils literal"><span class="pre">local.conf</span></tt> file</li>
+<li>Add <tt class="docutils literal"><span class="pre">IMAGE_INSTALL_append</span> <span class="pre">=</span> <span class="pre">&quot;</span> <span class="pre">package-name-1</span> <span class="pre">package-name-2</span> <span class="pre">...&quot;</span></tt> to your
+<tt class="docutils literal"><span class="pre">local.conf</span></tt> file. Make sure there is a space after the opening quote &#8216;&#8221;&#8217;!</li>
+<li>Add <tt class="docutils literal"><span class="pre">CORE_IMAGE_EXTRA_INSTALL</span> <span class="pre">=</span> <span class="pre">&quot;package-name-1</span> <span class="pre">package-name-2</span> <span class="pre">...&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt> file</li>
 </ul>
 </div>
-<div class="section" id="how-can-i-build-an-image-containing-mainline-linux-kernel">
-<h2>How can I build an image containing mainline Linux Kernel?<a class="headerlink" href="#how-can-i-build-an-image-containing-mainline-linux-kernel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-can-i-build-an-image-containing-the-mainline-linux-kernel">
+<h2>How can I build an image containing the mainline Linux Kernel?<a class="headerlink" href="#how-can-i-build-an-image-containing-the-mainline-linux-kernel" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Append <tt class="docutils literal"><span class="pre">PREFERRED_PROVIDER_virtual/kernel</span> <span class="pre">=</span> <span class="pre">&quot;linux-fslc&quot;</span></tt> on your <tt class="docutils literal"><span class="pre">local.conf</span></tt>
+<li><p class="first">Add <tt class="docutils literal"><span class="pre">PREFERRED_PROVIDER_virtual/kernel</span> <span class="pre">=</span> <span class="pre">&quot;linux-fslc&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt>
 file.</p>
 </li>
-<li><p class="first">Clean the Kernel&#8217;s provider and bake the image again:</p>
+<li><p class="first">Clean the kernel&#8217;s provider (state) and bake the image again:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ bitbake -c cleansstate virtual/kernel
 $ bitbake $IMAGE_NAME
 </pre></div>
@@ -112,74 +109,74 @@ $ bitbake $IMAGE_NAME
 </ul>
 </div>
 <div class="section" id="how-can-i-switch-to-soft-floating-point">
-<h2>How can I switch to Soft Floating-Point?<a class="headerlink" href="#how-can-i-switch-to-soft-floating-point" title="Permalink to this headline">¶</a></h2>
-<p>By default, the system is configure as Hard Float-Point, so to change to Soft Float-Point,
-append <tt class="docutils literal"><span class="pre">DEFAULTTUNE_mx6</span> <span class="pre">=</span> <span class="pre">&quot;cortexa9-neon&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt> file (or machine file).</p>
+<h2>How can I switch to Soft Floating Point?<a class="headerlink" href="#how-can-i-switch-to-soft-floating-point" title="Permalink to this headline">¶</a></h2>
+<p>By default, the system is configured for hard floating point. To change to soft floating point,
+add <tt class="docutils literal"><span class="pre">DEFAULTTUNE_mx6</span> <span class="pre">=</span> <span class="pre">&quot;cortexa9-neon&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt> file (or machine file).</p>
 </div>
 <div class="section" id="how-do-i-enable-chromiun">
 <h2>How do I enable Chromiun?<a class="headerlink" href="#how-do-i-enable-chromiun" title="Permalink to this headline">¶</a></h2>
+<p>To be added</p>
 </div>
 <div class="section" id="how-do-i-enable-qt5-2">
 <h2>How do I enable QT5.2?<a class="headerlink" href="#how-do-i-enable-qt5-2" title="Permalink to this headline">¶</a></h2>
+<p>To be added</p>
 </div>
-<div class="section" id="how-can-i-modify-source-code-and-compile">
-<h2>How can I modify source code and compile?<a class="headerlink" href="#how-can-i-modify-source-code-and-compile" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-can-i-modify-source-code-and-compile-it">
+<h2>How can I modify source code and compile it?<a class="headerlink" href="#how-can-i-modify-source-code-and-compile-it" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Do any code change under the corresponding <a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#finding-the-temporary-source-code">tmp/work</a> folder</p>
+<li><p class="first">Make your source code changes in the appropriate <a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#finding-the-temporary-source-code">tmp/work</a> folder</p>
 </li>
-<li><p class="first">Force compiling and build:</p>
+<li><p class="first">Force compilation and (re)build:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ bitbake -c compile -f &lt;recipe name&gt;
 $ bitbake &lt;recipe name&gt;
 </pre></div>
 </div>
-<p>where <tt class="docutils literal"><span class="pre">&lt;recipe</span> <span class="pre">name&gt;</span></tt> is the name of the recipe involved.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="how-can-i-create-a-patch">
 <h2>How can I create a patch?<a class="headerlink" href="#how-can-i-create-a-patch" title="Permalink to this headline">¶</a></h2>
-<p>Yocto was not intended as a package development framework but in case you need to patch
-a recipe, follow <a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#patching-the-kernel">the Kernel patching</a> guide. For Yocto Project, the Kernel is like any
-other recipe, so this guide can be applied to any recipe.</p>
+<p>Yocto was not intended to be a package development framework, but in case you need to patch
+a recipe, follow the <a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#patching-the-kernel">kernel patching guide</a> . For the Yocto Project, the kernel is like any other recipe, so this guide can be applied to any recipe.</p>
 </div>
 <div class="section" id="how-do-i-create-a-layer">
 <h2>How do I create a layer?<a class="headerlink" href="#how-do-i-create-a-layer" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><p class="first">Create the layer with the <tt class="docutils literal"><span class="pre">yocto-layer</span></tt> script:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ yocto-layer create &lt;layer name&gt;
+<li><p class="first">Create the new layer with the <tt class="docutils literal"><span class="pre">yocto-layer</span></tt> script:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ yocto-layer create &lt;layer-name&gt;
 </pre></div>
 </div>
-<p>where <tt class="docutils literal"><span class="pre">layer</span> <span class="pre">name</span></tt> is the name of the layer you want, resulting in <tt class="docutils literal"><span class="pre">meta-&lt;layer</span> <span class="pre">name&gt;</span></tt>.</p>
+<p>where <tt class="docutils literal"><span class="pre">layer-name</span></tt> is the name of the layer you want to create.</p>
 </li>
-<li><p class="first">Enable your <a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#enabling-your-layer">layer</a></p>
+<li><p class="first"><a class="reference external" href="http://www.yoctoproject.org/docs/current/dev-manual/dev-manual.html#enabling-your-layer">Enable</a> your layer</p>
 </li>
 </ul>
 </div>
-<div class="section" id="what-are-the-host-s-packages-needed-for-yocto-project">
-<h2>What are the host&#8217;s packages needed for Yocto Project?<a class="headerlink" href="#what-are-the-host-s-packages-needed-for-yocto-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-are-the-host-packages-needed-for-yocto-project">
+<h2>What are the host packages needed for Yocto Project?<a class="headerlink" href="#what-are-the-host-packages-needed-for-yocto-project" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Make sure your Linux Host is <a class="reference external" href="http://www.yoctoproject.org/docs/1.5.1/ref-manual/ref-manual.html#detailed-supported-distros">supported</a></li>
+<li>Make sure your Linux host / distribution is <a class="reference external" href="http://www.yoctoproject.org/docs/1.5.1/ref-manual/ref-manual.html#detailed-supported-distros">supported</a> by the Yocto Project.</li>
 <li>Packages <a class="reference external" href="http://www.yoctoproject.org/docs/1.5.1/ref-manual/ref-manual.html#required-packages-for-the-host-development-system">needed</a></li>
 </ul>
 </div>
-<div class="section" id="how-can-i-save-space-after-a-built">
-<h2>How can I save space after a built?<a class="headerlink" href="#how-can-i-save-space-after-a-built" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-can-i-save-space-after-a-build">
+<h2>How can I save space after a build?<a class="headerlink" href="#how-can-i-save-space-after-a-build" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Append <tt class="docutils literal"><span class="pre">INHERIT</span> <span class="pre">+=</span> <span class="pre">&quot;rm_work&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt> file. This feature will indicate
-<tt class="docutils literal"><span class="pre">bitbake</span></tt> to remove the working folder <tt class="docutils literal"><span class="pre">tmp/work</span></tt> after (bit)baking so next
-time you create an image, it will basically execute all recipes&#8217; tasks except the
+<li>Add  <tt class="docutils literal"><span class="pre">INHERIT</span> <span class="pre">+=</span> <span class="pre">&quot;rm_work&quot;</span></tt> to your <tt class="docutils literal"><span class="pre">local.conf</span></tt> file. This feature will instruct
+<tt class="docutils literal"><span class="pre">BitBake</span></tt> to remove the working folder <tt class="docutils literal"><span class="pre">tmp/work</span></tt> after (bit)baking, so the next
+time you create an image it will basically execute all recipe tasks except the
 fetching step.</li>
-<li>In case you just need a particular file system&#8217;s type, append <tt class="docutils literal"><span class="pre">IMAGE_FSTYPES</span> <span class="pre">=</span> <span class="pre">&quot;tar.bz2&quot;</span></tt>
+<li>In case you just need a particular file system type, add <tt class="docutils literal"><span class="pre">IMAGE_FSTYPES</span> <span class="pre">=</span> <span class="pre">&quot;tar.bz2&quot;</span></tt>
 to your <tt class="docutils literal"><span class="pre">local.conf</span></tt>.</li>
 </ul>
 </div>
 <div class="section" id="where-do-i-check-for-known-bugs">
 <h2>Where do I check for known bugs?<a class="headerlink" href="#where-do-i-check-for-known-bugs" title="Permalink to this headline">¶</a></h2>
-<p>The known bugs are handled using the <a class="reference external" href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Yocto Project Bugzilla</a></p>
+<p>The known bugs are tracked using <a class="reference external" href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm">Yocto Project Bugzilla</a></p>
 </div>
 <div class="section" id="are-there-prebuilt-images-available">
 <h2>Are there prebuilt images available?<a class="headerlink" href="#are-there-prebuilt-images-available" title="Permalink to this headline">¶</a></h2>
-<p>Kindly provided by <a class="reference external" href="http://ci.ossystems.com.br/public/fsl-community-bsp/">O.S. Systems</a></p>
+<p>Yes, kindly provided by <a class="reference external" href="http://ci.ossystems.com.br/public/fsl-community-bsp/">O.S. Systems</a></p>
 </div>
 </div>
 </div>
@@ -202,20 +199,20 @@ to your <tt class="docutils literal"><span class="pre">local.conf</span></tt>.</
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-all">How can I contribute to the project?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-build-an-image">How can I build an image?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#bitbake-encountered-an-error-what-can-i-do">Bitbake encountered an error, what can I do?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#which-packages-are-included-on-an-images">Which packages are included on an images?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#bitbake-encountered-an-error-what-can-i-do">BitBake encountered an error, what can I do?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#which-packages-are-included-in-an-image">Which packages are included in an image?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#which-packages-are-available-to-be-installed">Which packages are available to be installed?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#which-layers-do-i-have-configured">Which layers do I have configured?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#how-do-i-add-a-package-into-an-image">How do I add a package into an image?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-build-an-image-containing-mainline-linux-kernel">How can I build an image containing mainline Linux Kernel?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-switch-to-soft-floating-point">How can I switch to Soft Floating-Point?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#how-do-i-add-a-package-to-an-image">How do I add a package to an image?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-build-an-image-containing-the-mainline-linux-kernel">How can I build an image containing the mainline Linux Kernel?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-switch-to-soft-floating-point">How can I switch to Soft Floating Point?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#how-do-i-enable-chromiun">How do I enable Chromiun?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#how-do-i-enable-qt5-2">How do I enable QT5.2?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-modify-source-code-and-compile">How can I modify source code and compile?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-modify-source-code-and-compile-it">How can I modify source code and compile it?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-create-a-patch">How can I create a patch?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#how-do-i-create-a-layer">How do I create a layer?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#what-are-the-host-s-packages-needed-for-yocto-project">What are the host&#8217;s packages needed for Yocto Project?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-save-space-after-a-built">How can I save space after a built?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#what-are-the-host-packages-needed-for-yocto-project">What are the host packages needed for Yocto Project?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#how-can-i-save-space-after-a-build">How can I save space after a build?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#where-do-i-check-for-known-bugs">Where do I check for known bugs?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#are-there-prebuilt-images-available">Are there prebuilt images available?</a></li>
 </ul>

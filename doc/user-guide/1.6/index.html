@@ -38,14 +38,14 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-freescale-community-bsp-user-guide-s-documentation">
-<h1>Welcome to Freescale Community BSP User Guide&#8217;s documentation!<a class="headerlink" href="#welcome-to-freescale-community-bsp-user-guide-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="welcome-to-the-freescale-community-s-bsp-user-guide">
+<h1>Welcome to the Freescale Community&#8217;s BSP User Guide!<a class="headerlink" href="#welcome-to-the-freescale-community-s-bsp-user-guide" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <span id="document-nsteps"></span><div class="section" id="build-and-boot-in-n-steps">
 <h2>Build and boot in <em>N</em>-steps<a class="headerlink" href="#build-and-boot-in-n-steps" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Check <a class="reference external" href="https://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#packages">required host packages</a> packages for your Linux Distribution</p>
+<li><p class="first">Check <a class="reference external" href="https://www.yoctoproject.org/docs/current/yocto-project-qs/yocto-project-qs.html#packages">required host packages</a> for your Linux Distribution</p>
 </li>
 <li><p class="first">Download the <a class="reference external" href="http://source.android.com/source/downloading.html">repo</a> tool:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ mkdir -p ~/bin
@@ -60,7 +60,7 @@ $ chmod a+x ~/bin/repo
 $ cd fsl-community-bsp
 fsl-community-bsp $ repo init \
                         -u https://github.com/Freescale/fsl-community-bsp-platform \
-                        -b dora
+                        -b dizzy
 fsl-community-bsp $ repo sync
 </pre></div>
 </div>
@@ -88,34 +88,33 @@ build $ ls -la &#39;tmp/deploy/images/&lt;selected machine&gt;/*.sdcard&#39;
 build $ sudo dd if=tmp/deploy/images/&lt;selected machine&gt;/&lt;selected image&gt;-&lt;selected machine&gt;.sdcard \
                 of=/dev/sdX \
                 bs=1M \
-                conf=fsync
+                conv=fsync
 </pre></div>
 </div>
 </li>
 <li><p class="first">Place your SD Card in the correct board&#8217;s slot and boot!</p>
 </li>
 </ol>
-<p>Found Errors? Subscribe and report it to <a class="reference external" href="https://lists.yoctoproject.org/listinfo/meta-freescale">meta-freescale list</a></p>
+<p>Found errors? Subscribe and report it to <a class="reference external" href="https://lists.yoctoproject.org/listinfo/meta-freescale">meta-freescale list</a></p>
 </div>
 <span id="document-folders"></span><div class="section" id="folders">
 <h2>Folders<a class="headerlink" href="#folders" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>fsl-community-bsp</strong>: Base (<tt class="docutils literal"><span class="pre">BASE</span></tt>) directory where all Yocto data resides (recipes, source code, built packages, images, etc)</li>
-<li><strong>BASE/sources</strong>: Source (<tt class="docutils literal"><span class="pre">SOURCE</span></tt>) directory where metadata (layers) resides</li>
-<li><strong>BASE/build</strong>: Build (<tt class="docutils literal"><span class="pre">BUILD</span></tt>) directory where <tt class="docutils literal"><span class="pre">bitbake</span></tt> commands are executed</li>
-<li><strong>BASE/build/tmp</strong>: Target (<tt class="docutils literal"><span class="pre">TMP</span></tt>) directory for all bitbake commands</li>
-<li><strong>BASE/build/tmp/work</strong>: Working (<tt class="docutils literal"><span class="pre">WORKING</span></tt>) directory for recipes tasks</li>
-<li><strong>BASE/build/tmp/deploy</strong>: Deploy (<tt class="docutils literal"><span class="pre">DEPLOY</span></tt>) directory where bitbake&#8217;s output data is found</li>
+<li><strong>fsl-community-bsp</strong>: Base (<tt class="docutils literal"><span class="pre">BASE</span></tt>) directory where all Yocto data reside (recipes, source code, built packages, images, etc.)</li>
+<li><strong>BASE/sources</strong>: Source directory where metadata (layers) reside</li>
+<li><strong>BASE/build</strong>: Build directory where <tt class="docutils literal"><span class="pre">bitbake</span></tt> commands are executed</li>
+<li><strong>BASE/build/tmp</strong>: Target directory for all bitbake commands</li>
+<li><strong>BASE/build/tmp/work</strong>: Working directory that holds the task output and source from each recipe</li>
+<li><strong>BASE/build/tmp/deploy</strong>: Deploy directory where bitbake&#8217;s deployable output files are copied</li>
 <li><strong>BASE/build/tmp/deploy/images</strong>: Complete and partial images are found under this folder</li>
 </ul>
 </div>
 <span id="document-metadata"></span><div class="section" id="metadata">
 <h2>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h2>
-<p>BitBake handles the parsing and execution of the data files. The data itself is of
-various types:</p>
+<p>BitBake handles the parsing and execution of the data files, which consist of various types:</p>
 <ul class="simple">
-<li><strong>Recipes</strong>: Provides details about particular pieces of software.</li>
-<li><strong>Class Data</strong>: Abstracts common build information (e.g. how to build a Linux kernel).</li>
+<li><strong>Recipes</strong>: Provides details and build information about particular pieces of software</li>
+<li><strong>Classes</strong>: Abstracts common build subroutines and information (e.g. how to build a Linux kernel)</li>
 <li><strong>Configuration Data</strong>: Defines machine-specific settings, policy decisions, and so forth.
 Configuration data acts as the glue to bind everything together.</li>
 </ul>
@@ -125,14 +124,14 @@ Configuration data acts as the glue to bind everything together.</li>
 <li>Metadata is organized into multiple <tt class="docutils literal"><span class="pre">layers</span></tt>.</li>
 <li>Layers allow you to isolate different types of customizations from each other.</li>
 <li>DO NOT do your modifications in existing layers, instead create a layer and
-create recipes (<tt class="docutils literal"><span class="pre">.bb</span></tt> files) or modified existing ones (<tt class="docutils literal"><span class="pre">.bbappend</span></tt> files)</li>
+create recipes (<tt class="docutils literal"><span class="pre">.bb</span></tt> files) or modify existing ones (<tt class="docutils literal"><span class="pre">.bbappend</span></tt> files)</li>
 </ul>
 </div>
 <div class="section" id="configuration-data">
 <h3>Configuration Data<a class="headerlink" href="#configuration-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt>: Local User Configuration for your build environment</li>
-<li><tt class="docutils literal"><span class="pre">build/conf/bblayers.conf</span></tt>: Define layers, which are directory trees,
+<li><tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt>: Local user configuration for your build environment</li>
+<li><tt class="docutils literal"><span class="pre">build/conf/bblayers.conf</span></tt>: Defines layers, which are directory trees,
 traversed by BitBake.</li>
 <li><tt class="docutils literal"><span class="pre">sources/meta-*/conf/layer.conf</span></tt>: Layer configuration file</li>
 <li><tt class="docutils literal"><span class="pre">sources/meta-*/conf/machine/*.conf</span></tt>: Machine configuration files</li>
@@ -169,8 +168,8 @@ PACKAGE_CLASSES = &quot;package_rpm&quot;
 </div>
 <p>Important variables:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">MACHINE</span></tt>: Indicates the machine, <tt class="docutils literal"><span class="pre">imx6qsabresd</span></tt> is the default</li>
-<li><tt class="docutils literal"><span class="pre">BB_NUMBER_THREADS</span></tt> and <tt class="docutils literal"><span class="pre">PARALLEL_MAKE</span></tt>: Indicate the max number of threads when
+<li><tt class="docutils literal"><span class="pre">MACHINE</span></tt>: Specifies the machine, <tt class="docutils literal"><span class="pre">imx6qsabresd</span></tt> is the default</li>
+<li><tt class="docutils literal"><span class="pre">BB_NUMBER_THREADS</span></tt> and <tt class="docutils literal"><span class="pre">PARALLEL_MAKE</span></tt>: Specifies the max number of threads when
 baking and compiling</li>
 <li><tt class="docutils literal"><span class="pre">DL_DIR</span></tt>: Tarball repository. Several users can share the same folder, so data can
 be reused.</li>
@@ -181,7 +180,7 @@ be reused.</li>
 <ul>
 <li><p class="first">Also created by the <tt class="docutils literal"><span class="pre">setup-environment</span></tt> script</p>
 </li>
-<li><p class="first">In case you need to add a layer, append it to <tt class="docutils literal"><span class="pre">BBLAYERS</span></tt>:</p>
+<li><p class="first">In case you need to add a layer, add it to <tt class="docutils literal"><span class="pre">BBLAYERS</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>LCONF_VERSION = &quot;6&quot;
 
 BBPATH = &quot;${TOPDIR}&quot;
@@ -205,7 +204,7 @@ BBLAYERS = &quot; \
 </div>
 <div class="section" id="layer-configuration-file-meta-fsl-arm-conf-layer-conf">
 <h3>Layer configuration file <tt class="docutils literal"><span class="pre">meta-fsl-arm/conf/layer.conf</span></tt><a class="headerlink" href="#layer-configuration-file-meta-fsl-arm-conf-layer-conf" title="Permalink to this headline">¶</a></h3>
-<p>This is basically a template, what it changes is the layer&#8217;s name:</p>
+<p>This is basically a template that specifies the layer&#8217;s name and structure:</p>
 <div class="highlight-python"><div class="highlight"><pre># We have a conf and classes directory, add to BBPATH
 BBPATH .= &quot;:${LAYERDIR}&quot;
 
@@ -228,9 +227,9 @@ ${FSL_MIRROR}       http://download.ossystems.com.br/bsp/freescale/source/ \n \
 </div>
 <p>Important variables:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">BBFILES</span></tt>: Indicates where to look for <tt class="docutils literal"><span class="pre">.bb*</span></tt> files</li>
-<li><tt class="docutils literal"><span class="pre">BBFILE_PRIORITY_fsl-arm</span></tt>: Indicates layer&#8217;s priority</li>
-<li><tt class="docutils literal"><span class="pre">MIRRORS</span></tt>: Indicates where to get the source code</li>
+<li><tt class="docutils literal"><span class="pre">BBFILES</span></tt>: Specifies where BitBake looks for <tt class="docutils literal"><span class="pre">.bb*</span></tt> files</li>
+<li><tt class="docutils literal"><span class="pre">BBFILE_PRIORITY_fsl-arm</span></tt>: Specifies priority for recipes in the meta-fsl-arm layer</li>
+<li><tt class="docutils literal"><span class="pre">MIRRORS</span></tt>: Specifies additional paths where the build system can find source code</li>
 </ul>
 </div>
 <div class="section" id="machine-configuration-file-meta-fsl-arm-conf-imx6qsabresd-conf">
@@ -256,13 +255,13 @@ MACHINE_FEATURES += &quot; pci wifi bluetooth&quot;
 </div>
 <p>Important variables:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">IMAGE_FSTYPES</span></tt>: Located on <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/tree/conf/machine/include/imx-base.inc">imx-base.inc</a>.
-Defines the type of outputs for the Root Filesystem. Default is: <tt class="docutils literal"><span class="pre">&quot;tar.bz2</span> <span class="pre">ext3</span> <span class="pre">sdcard&quot;</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">UBOOT_ENTRYPOINT_*</span></tt>: Located on <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/tree/conf/machine/include/imx-base.inc">imx-base.inc</a>.
+<li><tt class="docutils literal"><span class="pre">IMAGE_FSTYPES</span></tt>: Located in <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/tree/conf/machine/include/imx-base.inc">imx-base.inc</a>.
+Defines the type of outputs for the root filesystem. Default is: <tt class="docutils literal"><span class="pre">&quot;tar.bz2</span> <span class="pre">ext3</span> <span class="pre">sdcard&quot;</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UBOOT_ENTRYPOINT_*</span></tt>: Located in <a class="reference external" href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm/tree/conf/machine/include/imx-base.inc">imx-base.inc</a>.
 Defines where the Kernel is loaded by U-boot</li>
-<li><tt class="docutils literal"><span class="pre">SOC_FAMILY</span></tt>: Defines machine&#8217;s family. Only recipes with the same <tt class="docutils literal"><span class="pre">SOC_FAMILY</span></tt> (defined with the recipe&#8217;s variable <tt class="docutils literal"><span class="pre">COMPATIBLE_MACHINE</span></tt>)
+<li><tt class="docutils literal"><span class="pre">SOC_FAMILY</span></tt>: Defines the machine&#8217;s family. Only recipes with the same <tt class="docutils literal"><span class="pre">SOC_FAMILY</span></tt> (defined with the recipe&#8217;s variable <tt class="docutils literal"><span class="pre">COMPATIBLE_MACHINE</span></tt>)
 are taken into account when baking for a particular machine.</li>
-<li><tt class="docutils literal"><span class="pre">UBOOT_MACHINE</span></tt>: Define the u-boot configuration file</li>
+<li><tt class="docutils literal"><span class="pre">UBOOT_MACHINE</span></tt>: Defines the u-boot configuration file</li>
 </ul>
 </div>
 </div>
@@ -270,8 +269,8 @@ are taken into account when baking for a particular machine.</li>
 <h2>Common Development Tasks<a class="headerlink" href="#common-development-tasks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="creating-a-new-layer">
 <span id="new-layer"></span><h3>Creating a new layer<a class="headerlink" href="#creating-a-new-layer" title="Permalink to this headline">¶</a></h3>
-<p>It is suggested to create a layer when creating or modifying any metadata file (recipe,
-configuration file or class). The main reason <strong>modularity</strong>. In the other hand,
+<p>Use a custom layer when creating or modifying any metadata file (recipe,
+configuration file, or class). The main reason is <strong>modularity</strong>. On the other hand,
 make sure your new metadata has not already be implemented (layer, recipe or machine), so
 before proceeding check the main <a class="reference external" href="http://layers.openembedded.org/layerindex/layers/">Layer Index</a>.</p>
 <ol class="arabic">
@@ -282,14 +281,14 @@ directory:</p>
 </div>
 </li>
 <li><p class="first">Move to the place you want to create your layer and choose a name
-(e.g. <tt class="docutils literal"><span class="pre">fsl-custom</span></tt>)</p>
-<blockquote>
-<div><p>sources $ yocto-layer create fsl-custom
+(e.g. <tt class="docutils literal"><span class="pre">fsl-custom</span></tt>):</p>
+<div class="highlight-python"><div class="highlight"><pre>sources $ yocto-layer create fsl-custom
 # Answer the questions. Make sure the priority is set correctly (higher numbers,
 # higher priorities). Set the priority equal to the lowest already present, except
-# when you have introduce a new recipe with the same name as other and want to shadow
-# the original one.</p>
-</div></blockquote>
+# when you create a new recipe with the same name as another recipe and want to shadow
+# the original one.
+</pre></div>
+</div>
 </li>
 <li><p class="first">Add any metadata content. Suggestion: Version the layer with GIT</p>
 </li>
@@ -301,37 +300,37 @@ the <tt class="docutils literal"><span class="pre">BUILD</span></tt> folder:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">You can then include any new image/machine define on your layer. In case
-you create a recipe and you want to include it on your next build, add it into your
+<li><p class="first">You can now include any new image/machine definitions in your layer. If you
+created a new recipe and want to include it on your next build, add it to your
 <tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt> file through the <tt class="docutils literal"><span class="pre">CORE_IMAGE_EXTRA_INSTALL</span></tt> variable.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="patching-the-linux-kernel">
 <span id="patching-kernel"></span><h3>Patching the Linux Kernel<a class="headerlink" href="#patching-the-linux-kernel" title="Permalink to this headline">¶</a></h3>
-<p>The Linux Kernel is just another recipe for Yocto, so learning to patch it, you learn
-to patch any other package. In the other hand, Yocto <strong>should not</strong> be used for
-package development, but in those rare cases follow the below steps. It is assumed
-that you have already build the package you want to patch.</p>
+<p>The Linux Kernel is just another Yocto recipe, so by learning to patch it, you learn
+to patch any other package. On the other hand, Yocto <strong>should not</strong> be used for
+package development. However, if the need does arise, follow the steps listed below. It is assumed
+that you have already built the package you want to patch.</p>
 <ul>
 <li><p class="first">Create the patch or patches. In this example we are patching the
 Linux kernel for <a class="reference external" href="http://www.wandboard.org/">wandboard-dual machine</a>;
-in other words, the value of <tt class="docutils literal"><span class="pre">MACHINE</span></tt> on <tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt> is
+in other words, the value of <tt class="docutils literal"><span class="pre">MACHINE</span></tt> in <tt class="docutils literal"><span class="pre">build/conf/local.conf</span></tt> is
 <tt class="docutils literal"><span class="pre">MACHINE</span> <span class="pre">??=</span> <span class="pre">'wandboard-dual'</span></tt></p>
 </li>
-<li><p class="first">In case you already have the patches, make sure these can be nicely applied with
-the commands <tt class="docutils literal"><span class="pre">git</span> <span class="pre">apply</span> <span class="pre">--check</span> <span class="pre">&lt;PATCH_NAME&gt;</span></tt>, and jump this step:</p>
+<li><p class="first">If you already have the patches available, make sure they can be applied cleanly with
+the commands <tt class="docutils literal"><span class="pre">git</span> <span class="pre">apply</span> <span class="pre">--check</span> <span class="pre">&lt;PATCH_NAME&gt;</span></tt>. To create new or additional patches:</p>
 <div class="highlight-python"><div class="highlight"><pre>build $ cd tmp/work/wandboard_dual-poky-linux-gnueabi/linux-wandboard/3.0.35-r0/git
-build $ # Edit any files you want to change
-build $ git add &lt;modified file 1&gt; &lt;modified file 2&gt; ..
-build $ git commit -s -m &#39;&lt;your commit&#39;s title&gt;&#39;    # Create the commit
-build $ git format-patch -1                         # Create the patch
+# Edit any files you want to change
+$ git add &lt;modified file 1&gt; &lt;modified file 2&gt; ..
+$ git commit -s -m &#39;&lt;your commit&#39;s title&gt;&#39;  # Create the commit
+$ git format-patch -1                       # Create the patch
 </pre></div>
 </div>
 </li>
 <li><p class="first">Create a new layer (see <a class="reference internal" href="index.html#new-layer"><em>Creating a new layer</em></a>)</p>
 </li>
-<li><p class="first">On the new layer (e.g <tt class="docutils literal"><span class="pre">meta-fsl-custom</span></tt>) , create the corresponding sub-directories
+<li><p class="first">In the new layer (e.g <tt class="docutils literal"><span class="pre">meta-fsl-custom</span></tt>), create the corresponding sub-directories
 and the <tt class="docutils literal"><span class="pre">`.bbfile</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre>sources $ mkdir -p \
                    meta-fsl-custom/recipes-kernel/linux/linux-wandboard-3.0.35/
@@ -374,7 +373,7 @@ Do not forget to unmount the partition before removing the card!:</p>
 <div class="section" id="building-the-kernel-manually">
 <span id="building-kernel-manually"></span><h3>Building the Kernel Manually<a class="headerlink" href="#building-the-kernel-manually" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li><p class="first">Prepare the Yocto/Bitbake environment:</p>
+<li><p class="first">Prepare the Yocto/BitBake environment:</p>
 <div class="highlight-python"><div class="highlight"><pre>fsl-community-bsp $ . setup-environment build
 </pre></div>
 </div>
@@ -397,7 +396,7 @@ Do not forget to unmount the partition before removing the card!:</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Get the Linux Kernel&#8217;s source code:</p>
+<li><p class="first">Get the Linux Kernel source code:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ git clone git://git.freescale.com/imx/linux-2.6-imx.git linux-imx
 $ cd linux-imx
 </pre></div>
@@ -417,7 +416,7 @@ linux-imx $ unset LDFLAGS
 </pre></div>
 </div>
 </li>
-<li><p class="first">Choose configuration and compile:</p>
+<li><p class="first">Choose a configuration and compile:</p>
 <div class="highlight-python"><div class="highlight"><pre>linux-imx $ make imx6_defconfig
 linux-imx $ make uImage
 </pre></div>
@@ -428,7 +427,7 @@ linux-imx $ make uImage
 </pre></div>
 </div>
 </li>
-<li><p class="first">If case you want your changes to be reflected on your Yocto Framework,
+<li><p class="first">If you want your changes to be reflected in your Yocto Framework,
 create the patches following the subsection <a class="reference internal" href="index.html#patching-kernel"><em>Patching the Linux Kernel</em></a></p>
 </li>
 </ul>
@@ -436,9 +435,9 @@ create the patches following the subsection <a class="reference internal" href="
 <div class="section" id="contributing">
 <span id="id1"></span><h3>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h3>
 <p>The Yocto Project is open-source, so anyone can contribute. No matter
-what your contribution is (bug fixing or new metadata), contributions are sent
-through patches to a community list. Many eyes will look into your patch and
-at some point it is either rejected or accepted.</p>
+what your contributions are (bug fixes or new metadata), they should be sent
+as patches to the community list. Many eyes will look at your patch, and
+at some point it will either be accepted or rejected.</p>
 <p>Follow these steps to contribute:</p>
 <ul>
 <li><p class="first">Make sure you have previously configured your personal info:</p>
@@ -447,10 +446,10 @@ $ git config --global user.email &quot;your_email@example.com&quot;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Subscribed to the <a class="reference external" href="https://lists.yoctoproject.org/listinfo/meta-freescale">meta-freescale Mailing List</a></p>
+<li><p class="first">Subscribe to the <a class="reference external" href="https://lists.yoctoproject.org/listinfo/meta-freescale">meta-freescale Mailing List</a></p>
 </li>
 <li><p class="first">Always base your work on <strong>master</strong> branches:</p>
-<div class="highlight-python"><div class="highlight"><pre>fsl-community-bsp $  repo init \
+<div class="highlight-python"><div class="highlight"><pre>fsl-community-bsp $ repo init \
     -u https://github.com/Freescale/fsl-community-bsp-platform \
     -b master
 fsl-community-bsp $ repo sync
@@ -477,8 +476,8 @@ sources/meta-fsl-arm $ git commit
 </div>
 </li>
 </ul>
-<p>On the commit&#8217;s log, the title must start with the filename change or introduced,
-then a brief description of the patch&#8217;s goal, following with a long description.
+<p>In the commit&#8217;s log, the title must start with the filename that was changed or created,
+followed by a brief description of the patch&#8217;s goal. On subsequent lines, provide a thorough description of the changes.
 Make sure you follow the standards (type ` git log &#8211;pretty=oneline` to see previous commits)</p>
 <ul>
 <li><p class="first">Create a patch:</p>
@@ -487,9 +486,9 @@ Make sure you follow the standards (type ` git log &#8211;pretty=oneline` to see
 </div>
 </li>
 </ul>
-<p>Where the last parameter (<tt class="docutils literal"><span class="pre">-1</span></tt>) indicate to patch last commit.
+<p>Where the last parameter (<tt class="docutils literal"><span class="pre">-1</span></tt>) indicate to patch the last commit.
 In case you want to create patches for older commits, just indicate the correct index.
-If your patch is done in other folder, just make sure you change the <cite>&#8211;subject-prefix</cite> value.</p>
+If your patch is done in another folder, just make sure you change the <cite>&#8211;subject-prefix</cite> value.</p>
 <ul>
 <li><p class="first">Send your patch or patches with:</p>
 <div class="highlight-python"><div class="highlight"><pre>git send-email --to meta-freescale@yoctoproject.org &lt;patch&gt;
@@ -500,7 +499,7 @@ If your patch is done in other folder, just make sure you change the <cite>&#821
 <p>where <tt class="docutils literal"><span class="pre">&lt;patch&gt;</span></tt> is the file created by <tt class="docutils literal"><span class="pre">git</span> <span class="pre">format-patch</span></tt>.</p>
 <ul>
 <li><p class="first">Keep track of patch responses on the mailing list. In case you need to rework your patch,
-repeat the steps but this time the patch&#8217;s subject changes to
+repeat the steps but this time change the patch&#8217;s subject to
 <tt class="docutils literal"><span class="pre">--subject-prefix='&lt;meta-fsl-*][PATCH</span> <span class="pre">v2'</span></tt></p>
 </li>
 <li><p class="first">Once your patch has been approved, you can delete your working branches:</p>
@@ -513,7 +512,7 @@ repeat the steps but this time the patch&#8217;s subject changes to
 </div>
 <span id="document-weston"></span><div class="section" id="weston">
 <h2>Weston<a class="headerlink" href="#weston" title="Permalink to this headline">¶</a></h2>
-<p>In order to test Weston the reference implementation of a Wayland compositor use the image <em>core-image-weston</em></p>
+<p>In order to test Weston, the reference implementation of a Wayland compositor, use the image <em>core-image-weston</em></p>
 <p>Add the following to conf/local.conf:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">DISTRO_FEATURES_remove</span> <span class="o">=</span> <span class="s">&quot;x11&quot;</span>
 </pre></div>
@@ -525,7 +524,7 @@ repeat the steps but this time the patch&#8217;s subject changes to
 <p>Remember to use a clean build-dir when changing <cite>DISTRO_FEATURES</cite></p>
 <div class="section" id="simple-tests">
 <h3>Simple tests<a class="headerlink" href="#simple-tests" title="Permalink to this headline">¶</a></h3>
-<p>In order to access Weston examples via console:</p>
+<p>In order to access Weston examples via a console:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ export XDG_RUNTIME_DIR=/var/run/user/root
 $ weston-simple-shm =&gt; basic wayland example
 $ weston-simple-egl =&gt; basic wayland example. To make sure egl integration works fine
@@ -560,7 +559,7 @@ with:</p>
 <span id="document-machines"></span><div class="section" id="machines">
 <span id="id1"></span><h2>Machines<a class="headerlink" href="#machines" title="Permalink to this headline">¶</a></h2>
 <p>The scope of this release includes both meta-fsl-arm and meta-fsl-arm-extra.
-Please, see in next table the complete supported board list.</p>
+Please refer to the table below for the complete list of supported boards.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="24%" />

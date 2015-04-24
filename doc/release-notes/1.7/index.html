@@ -742,6 +742,15 @@ of community control should be worked around anyway.</p>
 <tr class="row-odd"><td>twr-vf65gs10</td>
 <td>Freescale Vybrid TWR-VF65GS10</td>
 </tr>
+<tr class="row-even"><td>wandboard-dual</td>
+<td>Wandboard i.MX6 Wandboard Duallite</td>
+</tr>
+<tr class="row-odd"><td>wandboard-quad</td>
+<td>Wandboard i.MX6 Wandboard Quad</td>
+</tr>
+<tr class="row-even"><td>wandboard-solo</td>
+<td>Wandboard i.MX6 Wandboard Solo</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -785,15 +794,6 @@ of community control should be worked around anyway.</p>
 </tr>
 <tr class="row-even"><td>m53evk</td>
 <td>DENX M53 SoM Evaluation Kit</td>
-</tr>
-<tr class="row-odd"><td>wandboard-dual</td>
-<td>Wandboard i.MX6 Wandboard Duallite</td>
-</tr>
-<tr class="row-even"><td>wandboard-quad</td>
-<td>Wandboard i.MX6 Wandboard Quad</td>
-</tr>
-<tr class="row-odd"><td>wandboard-solo</td>
-<td>Wandboard i.MX6 Wandboard Solo</td>
 </tr>
 </tbody>
 </table>
@@ -892,23 +892,23 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-odd"><td>imx233-olinuxino-maxi</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-even"><td>imx233-olinuxino-micro</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-odd"><td>imx233-olinuxino-mini</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-even"><td>imx233-olinuxino-nano</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-odd"><td>imx23evk</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-even"><td>imx28evk</td>
 <td>linux-imx</td>
@@ -916,11 +916,11 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-odd"><td>imx31pdk</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-even"><td>imx35pdk</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-odd"><td>imx51evk</td>
 <td>linux-imx</td>
@@ -936,7 +936,7 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-even"><td>imx6dl-riotboard</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-odd"><td>imx6dlsabreauto</td>
 <td>linux-imx</td>
@@ -980,7 +980,7 @@ FSL Community BSP for each supported machine.</p>
 </tr>
 <tr class="row-odd"><td>m28evk</td>
 <td>linux-fslc</td>
-<td>3.17+git</td>
+<td>3.18+git</td>
 </tr>
 <tr class="row-even"><td>m53evk</td>
 <td>linux-denx</td>
@@ -1387,7 +1387,7 @@ not needed. There are differences, as well, in GPU support recipes.</p>
 <td>&#8211;</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
-<td>0.10.0</td>
+<td>0.10.1</td>
 <td>&#8211;</td>
 <td>&#8211;</td>
 </tr>
@@ -1677,15 +1677,15 @@ when using FSL Community BSP.</p>
 <p>You can understand what a PACKAGEGROUPS is and learn how to use it in <a class="reference external" href="http://www.yoctoproject.org/docs/1.6.1/dev-manual/dev-manual.html#usingpoky-extend-customimage-customtasks">Yocto
 Project Development Manual</a></p>
 <ul class="simple">
-<li><strong>packagegroup-fsl-gstreamer</strong>: Freescale&#8217;s package group which provides audio, video, and debug gstreamer&#8217;s plugins with the required hardware acceleration (if supported by the SoC).</li>
-<li><strong>packagegroup-fsl-gstreamer-full</strong>: Freescale&#8217;s package group which provides audio, video, and debug gstreamer&#8217;s plugins (including good and bad ones) with the required hardware acceleration (if supported by the SoC).</li>
+<li><strong>packagegroup-fsl-gstreamer</strong>: Package group used by FSL Community to provide audio, video, and debug GStreamer&#8217;s plugins with the required hardware acceleration (if supported by the SoC).</li>
+<li><strong>packagegroup-fsl-gstreamer-full</strong>: Package group used by FSL Community to provide audio, video, and debug GStreamer&#8217;s plugins (including good and bad ones) with the required hardware acceleration (if supported by the SoC).</li>
 <li><strong>packagegroup-fsl-mfgtool</strong>: Freescale Manufacturing Tool requirements.</li>
-<li><strong>packagegroup-fsl-tools-benchmark</strong>: Freescale&#8217;s package group which provides a set of benchmark applications.</li>
-<li><strong>packagegroup-fsl-tools-gpu</strong>: Freescale&#8217;s package group used to add the packages which provides GPU support.</li>
-<li><strong>packagegroup-fsl-tools-gpu-external</strong>: Freescale&#8217;s package group which provides graphic packages used to test the several hardware accelerated graphics APIs including packages not provided by Freescale.</li>
-<li><strong>packagegroup-fsl-tools-testapps</strong>: Freescale&#8217;s package group provides a set of packages and utilities for hardware test.</li>
-<li><strong>packagegroup-fslc-gstreamer1.0</strong>: Freescale package group which provides audio, video, networking and debug  GStreamer plugins with the required hardware acceleration (if supported by the SoC).</li>
-<li><strong>packagegroup-fslc-gstreamer1.0-full</strong>: Freescale package group which provides all GStreamer plugins from the  base, good, and bad packages, as well as the ugly and libav ones if commercial packages  are whitelisted, and plugins for the required hardware acceleration (if supported by the SoC).</li>
+<li><strong>packagegroup-fsl-tools-benchmark</strong>: Package group used by FSL Community to provide a set of benchmark applications.</li>
+<li><strong>packagegroup-fsl-tools-gpu</strong>: Package group used by FSL Community to add the packages which provide GPU support.</li>
+<li><strong>packagegroup-fsl-tools-gpu-external</strong>: Package group used by FSL Community to provide graphic packages used to test the several hardware accelerated graphics APIs including packages not provided by Freescale.</li>
+<li><strong>packagegroup-fsl-tools-testapps</strong>: Packagegroup used by FSL Community to provide a set of packages and utilities for hardware test.</li>
+<li><strong>packagegroup-fslc-gstreamer1.0</strong>: Package group used by FSL Community to provide audio, video, networking and debug GStreamer plugins with the required hardware acceleration (if supported by the SoC).</li>
+<li><strong>packagegroup-fslc-gstreamer1.0-full</strong>: Package group used by FSL Community to provide all GStreamer plugins from the base, good, and bad packages, as well as the ugly and libav ones if commercial packages are whitelisted, and plugins for the required hardware acceleration (if supported by the SoC).</li>
 </ul>
 </div>
 <div class="section" id="images">
@@ -1724,60 +1724,64 @@ a Freescale boards/chips layer for the Yocto Project.</p>
 <div class="highlight-python"><div class="highlight"><pre>Statistics for meta-fsl-arm
 ---------------------------
 
-Processed 171 csets from 27 developers
-10 employers found
-A total of 6960 lines added, 3992 removed (delta 2968)
+Processed 196 csets from 29 developers
+11 employers found
+A total of 7437 lines added, 4506 removed (delta 2931)
 
 Developers with the most changesets
-Otavio Salvador             53 (31.0%)
-Chunrong Guo                18 (10.5%)
-Carlos Rafael Giani         13 (7.6%)
-Lauren Post                 11 (6.4%)
-Neena Busireddy             10 (5.8%)
-Jacob Kroon                  9 (5.3%)
-Zhenhua Luo                  7 (4.1%)
-Fabio Estevam                6 (3.5%)
-Max Krummenacher             5 (2.9%)
-Alexander Shashkevych        5 (2.9%)
-Daiane Angolini              5 (2.9%)
-Javier Viguera               5 (2.9%)
-Wang Zidan                   4 (2.3%)
-Gary Bisson                  3 (1.8%)
-Mario Domenech Goulart       2 (1.2%)
-Tony Felice                  2 (1.2%)
-Eric Nelson                  2 (1.2%)
-Alexey Ignatov               2 (1.2%)
-Samuli Piippo                1 (0.6%)
-Andreas Müller              1 (0.6%)
-Gary Thomas                  1 (0.6%)
-Christopher Larson           1 (0.6%)
-Khem Raj                     1 (0.6%)
-Jun Zhu                      1 (0.6%)
-Thomas Elste                 1 (0.6%)
-Thomas Senyk                 1 (0.6%)
-Maciej Borzecki              1 (0.6%)
+Otavio Salvador             66 (33.7%)
+Chunrong Guo                21 (10.7%)
+Carlos Rafael Giani         15 (7.7%)
+Lauren Post                 11 (5.6%)
+Neena Busireddy             10 (5.1%)
+Jacob Kroon                  9 (4.6%)
+Zhenhua Luo                  8 (4.1%)
+Fabio Estevam                7 (3.6%)
+Javier Viguera               6 (3.1%)
+Max Krummenacher             5 (2.6%)
+Alexander Shashkevych        5 (2.6%)
+Daiane Angolini              5 (2.6%)
+Wang Zidan                   4 (2.0%)
+Gary Bisson                  3 (1.5%)
+Nikolay Dimitrov             2 (1.0%)
+Alexandre Belloni            2 (1.0%)
+Mario Domenech Goulart       2 (1.0%)
+Tony Felice                  2 (1.0%)
+Eric Nelson                  2 (1.0%)
+Alexey Ignatov               2 (1.0%)
+Samuli Piippo                1 (0.5%)
+Andreas Müller              1 (0.5%)
+Gary Thomas                  1 (0.5%)
+Christopher Larson           1 (0.5%)
+Khem Raj                     1 (0.5%)
+Jun Zhu                      1 (0.5%)
+Thomas Elste                 1 (0.5%)
+Thomas Senyk                 1 (0.5%)
+Maciej Borzecki              1 (0.5%)
 
 Developers with the most changed lines
-Zhenhua Luo               3200 (30.3%)
-Gary Bisson               2079 (19.7%)
-Otavio Salvador           1945 (18.4%)
-Christopher Larson         400 (3.8%)
-Neena Busireddy            380 (3.6%)
-Chunrong Guo               236 (2.2%)
-Carlos Rafael Giani        142 (1.3%)
-Lauren Post                136 (1.3%)
-Eric Nelson                115 (1.1%)
-Wang Zidan                 103 (1.0%)
-Max Krummenacher            62 (0.6%)
-Khem Raj                    50 (0.5%)
-Tony Felice                 39 (0.4%)
-Jacob Kroon                 32 (0.3%)
-Alexander Shashkevych       25 (0.2%)
+Otavio Salvador           3920 (34.0%)
+Zhenhua Luo               3201 (27.8%)
+Gary Bisson               2182 (18.9%)
+Christopher Larson         400 (3.5%)
+Neena Busireddy            380 (3.3%)
+Nikolay Dimitrov           363 (3.1%)
+Chunrong Guo               239 (2.1%)
+Carlos Rafael Giani        160 (1.4%)
+Lauren Post                144 (1.2%)
+Eric Nelson                115 (1.0%)
+Wang Zidan                 103 (0.9%)
+Max Krummenacher            62 (0.5%)
+Khem Raj                    50 (0.4%)
+Tony Felice                 39 (0.3%)
+Jacob Kroon                 36 (0.3%)
+Alexander Shashkevych       36 (0.3%)
+Javier Viguera              35 (0.3%)
 Daiane Angolini             19 (0.2%)
 Mario Domenech Goulart      13 (0.1%)
-Javier Viguera              12 (0.1%)
-Fabio Estevam                8 (0.1%)
+Fabio Estevam                9 (0.1%)
 Alexey Ignatov               8 (0.1%)
+Alexandre Belloni            4 (0.0%)
 Jun Zhu                      4 (0.0%)
 Thomas Senyk                 4 (0.0%)
 Gary Thomas                  3 (0.0%)
@@ -1786,15 +1790,17 @@ Thomas Elste                 1 (0.0%)
 Maciej Borzecki              1 (0.0%)
 
 Developers with the most lines removed
-Gary Bisson               1975 (49.5%)
-Lauren Post                 36 (0.9%)
-Tony Felice                 33 (0.8%)
+Gary Bisson               1975 (43.8%)
+Lauren Post                 36 (0.8%)
+Tony Felice                 33 (0.7%)
+Javier Viguera              12 (0.3%)
 Alexander Shashkevych        8 (0.2%)
+Otavio Salvador              5 (0.1%)
 Thomas Senyk                 3 (0.1%)
 Gary Thomas                  3 (0.1%)
 
-Developers with the most signoffs (total 119)
-Otavio Salvador            118 (99.2%)
+Developers with the most signoffs (total 131)
+Otavio Salvador            130 (99.2%)
 Richard Purdie               1 (0.8%)
 
 Developers with the most reviews (total 0)
@@ -1805,104 +1811,111 @@ Daiane Angolini              1 (100.0%)
 Developers who gave the most tested-by credits (total 1)
 Fabio Estevam                1 (100.0%)
 
-Developers with the most report credits (total 3)
-Petr Kubiz?ák              3 (100.0%)
+Developers with the most report credits (total 5)
+Petr Kubizňák              3 (60.0%)
+Alexandre Belloni            2 (40.0%)
 
-Developers who gave the most report credits (total 3)
-Otavio Salvador              3 (100.0%)
+Developers who gave the most report credits (total 5)
+Otavio Salvador              5 (100.0%)
 
 Top changeset contributors by employer
-Freescale                   61 (35.7%)
-O.S. Systems                55 (32.2%)
-(Unknown)                   42 (24.6%)
-Digi International           5 (2.9%)
-Boundary Devices             2 (1.2%)
-Timesys                      2 (1.2%)
-Pelagicore AB                1 (0.6%)
-Mentor Graphics              1 (0.6%)
-(None)                       1 (0.6%)
-(Consultant)                 1 (0.6%)
+O.S. Systems                68 (34.7%)
+Freescale                   66 (33.7%)
+(Unknown)                   46 (23.5%)
+Digi International           6 (3.1%)
+Boundary Devices             2 (1.0%)
+Free Electrons               2 (1.0%)
+Timesys                      2 (1.0%)
+Pelagicore AB                1 (0.5%)
+Mentor Graphics              1 (0.5%)
+(None)                       1 (0.5%)
+(Consultant)                 1 (0.5%)
 
 Top lines changed by employer
-Freescale                 4092 (38.7%)
-O.S. Systems              3387 (32.0%)
-(Unknown)                 2475 (23.4%)
-Mentor Graphics            400 (3.8%)
-Boundary Devices           115 (1.1%)
-(None)                      50 (0.5%)
-Timesys                     39 (0.4%)
-Digi International          12 (0.1%)
+Freescale                 4097 (35.5%)
+O.S. Systems              3933 (34.1%)
+(Unknown)                 2852 (24.7%)
+Mentor Graphics            400 (3.5%)
+Boundary Devices           115 (1.0%)
+(None)                      50 (0.4%)
+Timesys                     39 (0.3%)
+Digi International          35 (0.3%)
+Free Electrons               4 (0.0%)
 Pelagicore AB                4 (0.0%)
 (Consultant)                 3 (0.0%)
 
-Employers with the most signoffs (total 119)
-O.S. Systems               118 (99.2%)
+Employers with the most signoffs (total 131)
+O.S. Systems               130 (99.2%)
 Linux Foundation             1 (0.8%)
 
-Employers with the most hackers (total 28)
-(Unknown)                   11 (39.3%)
-Freescale                    8 (28.6%)
-O.S. Systems                 2 (7.1%)
-Mentor Graphics              1 (3.6%)
-Boundary Devices             1 (3.6%)
-(None)                       1 (3.6%)
-Timesys                      1 (3.6%)
-Digi International           1 (3.6%)
-Pelagicore AB                1 (3.6%)
-(Consultant)                 1 (3.6%)
+Employers with the most hackers (total 30)
+(Unknown)                   12 (40.0%)
+Freescale                    8 (26.7%)
+O.S. Systems                 2 (6.7%)
+Mentor Graphics              1 (3.3%)
+Boundary Devices             1 (3.3%)
+(None)                       1 (3.3%)
+Timesys                      1 (3.3%)
+Digi International           1 (3.3%)
+Free Electrons               1 (3.3%)
+Pelagicore AB                1 (3.3%)
+(Consultant)                 1 (3.3%)
 
 
 Statistics for meta-fsl-arm-extra
 ---------------------------------
 
-Processed 64 csets from 15 developers
-5 employers found
-A total of 3922 lines added, 28663 removed (delta -24741)
+Processed 77 csets from 16 developers
+6 employers found
+A total of 3969 lines added, 28686 removed (delta -24717)
 
 Developers with the most changesets
-Eric Nelson                 18 (28.1%)
-Alex de Cabo                10 (15.6%)
-John Weber                   7 (10.9%)
-Otavio Salvador              6 (9.4%)
-Christoph Settgast           6 (9.4%)
-Daiane Angolini              4 (6.2%)
-Raphael Silva                2 (3.1%)
-Ian Coolidge                 2 (3.1%)
-Carlos Rafael Giani          2 (3.1%)
-Rabeeh Khoury                2 (3.1%)
-Alfonso Tamés               1 (1.6%)
-Fabio Estevam                1 (1.6%)
-Simon Kuhnle                 1 (1.6%)
-Jacob Kroon                  1 (1.6%)
-Gary Thomas                  1 (1.6%)
+Eric Nelson                 25 (32.5%)
+Alex de Cabo                12 (15.6%)
+John Weber                   7 (9.1%)
+Otavio Salvador              6 (7.8%)
+Christoph Settgast           6 (7.8%)
+Daiane Angolini              4 (5.2%)
+Ian Coolidge                 3 (3.9%)
+Fabio Estevam                2 (2.6%)
+Alfonso Tamés               2 (2.6%)
+Raphael Silva                2 (2.6%)
+Carlos Rafael Giani          2 (2.6%)
+Rabeeh Khoury                2 (2.6%)
+Nikolay Dimitrov             1 (1.3%)
+Simon Kuhnle                 1 (1.3%)
+Jacob Kroon                  1 (1.3%)
+Gary Thomas                  1 (1.3%)
 
 Developers with the most changed lines
-Alex de Cabo              19497 (64.7%)
+Alex de Cabo              19956 (66.2%)
 Carlos Rafael Giani       5811 (19.3%)
-John Weber                2981 (9.9%)
+John Weber                3171 (10.5%)
 Raphael Silva              704 (2.3%)
 Rabeeh Khoury              279 (0.9%)
-Eric Nelson                 83 (0.3%)
-Otavio Salvador             41 (0.1%)
-Christoph Settgast          32 (0.1%)
+Eric Nelson                121 (0.4%)
+Otavio Salvador             42 (0.1%)
+Christoph Settgast          37 (0.1%)
 Daiane Angolini             24 (0.1%)
-Alfonso Tamés               4 (0.0%)
-Ian Coolidge                 2 (0.0%)
-Fabio Estevam                2 (0.0%)
+Alfonso Tamés               7 (0.0%)
+Ian Coolidge                 5 (0.0%)
+Fabio Estevam                3 (0.0%)
 Simon Kuhnle                 2 (0.0%)
+Nikolay Dimitrov             1 (0.0%)
 Jacob Kroon                  1 (0.0%)
 Gary Thomas                  1 (0.0%)
 
 Developers with the most lines removed
-Alex de Cabo              19026 (66.4%)
+Alex de Cabo              19026 (66.3%)
 Carlos Rafael Giani       3486 (12.2%)
 John Weber                2748 (9.6%)
 Rabeeh Khoury              273 (1.0%)
 Christoph Settgast           7 (0.0%)
 Fabio Estevam                2 (0.0%)
+Ian Coolidge                 1 (0.0%)
 
-Developers with the most signoffs (total 58)
-Otavio Salvador             58 (100.0%)
+Developers with the most signoffs (total 71)
+Otavio Salvador             71 (100.0%)
 
 Developers with the most reviews (total 2)
 Eric Nelson                  2 (100.0%)
@@ -1919,57 +1932,68 @@ Developers with the most report credits (total 0)
 Developers who gave the most report credits (total 0)
 
 Top changeset contributors by employer
-(Unknown)                   31 (48.4%)
-Boundary Devices            20 (31.2%)
-O.S. Systems                 8 (12.5%)
-Freescale                    4 (6.2%)
-(Consultant)                 1 (1.6%)
+Boundary Devices            28 (36.4%)
+(Unknown)                   23 (29.9%)
+Congatec AG                 12 (15.6%)
+O.S. Systems                 8 (10.4%)
+Freescale                    5 (6.5%)
+(Consultant)                 1 (1.3%)
 
 Top lines changed by employer
-(Unknown)                 29276 (97.2%)
+Congatec AG               19956 (66.2%)
+(Unknown)                 9326 (30.9%)
 O.S. Systems               746 (2.5%)
-Boundary Devices            85 (0.3%)
-Freescale                    9 (0.0%)
+Boundary Devices           126 (0.4%)
+Freescale                   10 (0.0%)
 (Consultant)                 1 (0.0%)
 
-Employers with the most signoffs (total 58)
-O.S. Systems                58 (100.0%)
+Employers with the most signoffs (total 71)
+O.S. Systems                71 (100.0%)
 
-Employers with the most hackers (total 16)
-(Unknown)                    9 (56.2%)
-O.S. Systems                 2 (12.5%)
-Boundary Devices             2 (12.5%)
-Freescale                    2 (12.5%)
-(Consultant)                 1 (6.2%)
+Employers with the most hackers (total 17)
+(Unknown)                    9 (52.9%)
+O.S. Systems                 2 (11.8%)
+Boundary Devices             2 (11.8%)
+Freescale                    2 (11.8%)
+Congatec AG                  1 (5.9%)
+(Consultant)                 1 (5.9%)
 
 
 Statistics for meta-fsl-demos
 -----------------------------
 
-Processed 13 csets from 6 developers
+Processed 21 csets from 9 developers
 5 employers found
-A total of 217 lines added, 29 removed (delta 188)
+A total of 256 lines added, 62 removed (delta 194)
 
 Developers with the most changesets
-Otavio Salvador              5 (38.5%)
-Daiane Angolini              3 (23.1%)
-Neena Busireddy              2 (15.4%)
-Alex Gonzalez                1 (7.7%)
-Trevor Woerner               1 (7.7%)
-Carlos Rafael Giani          1 (7.7%)
+Otavio Salvador              8 (38.1%)
+Daiane Angolini              5 (23.8%)
+Neena Busireddy              2 (9.5%)
+Max Krummenacher             1 (4.8%)
+Matt Madison                 1 (4.8%)
+Alexander Shashkevych        1 (4.8%)
+Alex Gonzalez                1 (4.8%)
+Trevor Woerner               1 (4.8%)
+Carlos Rafael Giani          1 (4.8%)
 
 Developers with the most changed lines
-Carlos Rafael Giani        157 (72.0%)
-Otavio Salvador             26 (11.9%)
-Daiane Angolini             22 (10.1%)
-Neena Busireddy             10 (4.6%)
-Alex Gonzalez                1 (0.5%)
-Trevor Woerner               1 (0.5%)
+Carlos Rafael Giani        157 (60.6%)
+Daiane Angolini             48 (18.5%)
+Otavio Salvador             34 (13.1%)
+Neena Busireddy             10 (3.9%)
+Max Krummenacher             4 (1.5%)
+Alexander Shashkevych        3 (1.2%)
+Matt Madison                 1 (0.4%)
+Alex Gonzalez                1 (0.4%)
+Trevor Woerner               1 (0.4%)
 
 Developers with the most lines removed
+Max Krummenacher             1 (1.6%)
+Alexander Shashkevych        1 (1.6%)
 
-Developers with the most signoffs (total 8)
-Otavio Salvador              8 (100.0%)
+Developers with the most signoffs (total 13)
+Otavio Salvador             13 (100.0%)
 
 Developers with the most reviews (total 0)
 
@@ -1982,28 +2006,28 @@ Developers with the most report credits (total 0)
 Developers who gave the most report credits (total 0)
 
 Top changeset contributors by employer
-O.S. Systems                 5 (38.5%)
-Freescale                    4 (30.8%)
-(Unknown)                    2 (15.4%)
-Digi International           1 (7.7%)
-Linaro                       1 (7.7%)
+O.S. Systems                 8 (38.1%)
+Freescale                    6 (28.6%)
+(Unknown)                    5 (23.8%)
+Digi International           1 (4.8%)
+Linaro                       1 (4.8%)
 
 Top lines changed by employer
-(Unknown)                  175 (80.3%)
-O.S. Systems                27 (12.4%)
-Freescale                   14 (6.4%)
-Digi International           1 (0.5%)
-Linaro                       1 (0.5%)
+(Unknown)                  183 (70.7%)
+Freescale                   40 (15.4%)
+O.S. Systems                34 (13.1%)
+Digi International           1 (0.4%)
+Linaro                       1 (0.4%)
 
-Employers with the most signoffs (total 8)
-O.S. Systems                 8 (100.0%)
+Employers with the most signoffs (total 13)
+O.S. Systems                13 (100.0%)
 
-Employers with the most hackers (total 7)
-(Unknown)                    2 (28.6%)
-Freescale                    2 (28.6%)
-O.S. Systems                 1 (14.3%)
-Digi International           1 (14.3%)
-Linaro                       1 (14.3%)
+Employers with the most hackers (total 10)
+(Unknown)                    5 (50.0%)
+Freescale                    2 (20.0%)
+O.S. Systems                 1 (10.0%)
+Digi International           1 (10.0%)
+Linaro                       1 (10.0%)
 
 
 Statistics for base
@@ -2066,23 +2090,23 @@ Freescale                    1 (25.0%)
 Statistics for Documentation
 ----------------------------
 
-Processed 88 csets from 5 developers
+Processed 94 csets from 5 developers
 3 employers found
-A total of 3636 lines added, 2377 removed (delta 1259)
+A total of 4080 lines added, 2775 removed (delta 1305)
 
 Developers with the most changesets
-Daiane Angolini             49 (55.7%)
-Lucas Dutra Nunes           20 (22.7%)
-Mario Domenech Goulart       8 (9.1%)
-Otavio Salvador              6 (6.8%)
-Bob Cochran                  5 (5.7%)
+Daiane Angolini             52 (55.3%)
+Lucas Dutra Nunes           20 (21.3%)
+Mario Domenech Goulart      11 (11.7%)
+Otavio Salvador              6 (6.4%)
+Bob Cochran                  5 (5.3%)
 
 Developers with the most changed lines
-Daiane Angolini           2830 (74.4%)
-Lucas Dutra Nunes          427 (11.2%)
-Bob Cochran                213 (5.6%)
-Mario Domenech Goulart      88 (2.3%)
-Otavio Salvador             78 (2.0%)
+Daiane Angolini           3410 (80.2%)
+Lucas Dutra Nunes          443 (10.4%)
+Bob Cochran                214 (5.0%)
+Mario Domenech Goulart     105 (2.5%)
+Otavio Salvador             78 (1.8%)
 
 Developers with the most lines removed
 
@@ -2104,14 +2128,14 @@ Developers with the most report credits (total 0)
 Developers who gave the most report credits (total 0)
 
 Top changeset contributors by employer
-Freescale                   36 (40.9%)
-O.S. Systems                34 (38.6%)
-(Unknown)                   18 (20.5%)
+Freescale                   39 (41.5%)
+O.S. Systems                37 (39.4%)
+(Unknown)                   18 (19.1%)
 
 Top lines changed by employer
-Freescale                 1805 (47.4%)
-(Unknown)                 1392 (36.6%)
-O.S. Systems               609 (16.0%)
+Freescale                 2232 (52.5%)
+(Unknown)                 1392 (32.8%)
+O.S. Systems               626 (14.7%)
 
 Employers with the most signoffs (total 16)
 Freescale                    8 (50.0%)
@@ -2167,8 +2191,8 @@ this document is on next table.</p>
 <caption>List of open bugs</caption>
 <colgroup>
 <col width="4%" />
-<col width="17%" />
-<col width="79%" />
+<col width="13%" />
+<col width="83%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Bug ID</th>
@@ -2193,41 +2217,41 @@ this document is on next table.</p>
 <td>WaitForUpstream</td>
 <td>GLX load vivante_dri.so failed</td>
 </tr>
-<tr class="row-even"><td>5023</td>
-<td>IN PROGRESS IMPLEMENTATION</td>
-<td>EXTRA_IMAGE_FEATURES += &#8220;tools-sdk&#8221; does return ERROR</td>
-</tr>
-<tr class="row-odd"><td>5098</td>
+<tr class="row-even"><td>5098</td>
 <td>NEW</td>
 <td>gpu-viv-bin-mx6q-3.5.7-1.0.0-alpha.2-sfp.bin and gpu-viv-bin-mx6q-3.5.7-1.0.0-alpha.2-hfp.bin are missing OpenGL headers</td>
 </tr>
-<tr class="row-even"><td>5202</td>
+<tr class="row-odd"><td>5202</td>
 <td>ACCEPTED</td>
 <td>distorted images from gstreamer</td>
 </tr>
-<tr class="row-odd"><td>5331</td>
+<tr class="row-even"><td>5331</td>
 <td>NEW</td>
 <td>error play video via gstreamer with &#8220;mfw_isink&#8221;</td>
 </tr>
-<tr class="row-even"><td>5359</td>
-<td>ACCEPTED</td>
+<tr class="row-odd"><td>5359</td>
+<td>IN PROGRESS DESIGN</td>
 <td>[Yocto 1.5] su - USER -c &#8216;COMMAND&#8217; env variable issue</td>
 </tr>
-<tr class="row-odd"><td>5607</td>
+<tr class="row-even"><td>5607</td>
 <td>NEW</td>
 <td>MCIMX-LVDS1 trhows unknown mouse event on Qt 4.8</td>
 </tr>
-<tr class="row-even"><td>5799</td>
+<tr class="row-odd"><td>5799</td>
 <td>NEW</td>
 <td>add standardized MAINTAINERS infrastructure</td>
 </tr>
-<tr class="row-odd"><td>6703</td>
+<tr class="row-even"><td>6703</td>
 <td>NEW</td>
 <td>Kernel hangs on boot when HDMI cable is plugged</td>
 </tr>
-<tr class="row-even"><td>6760</td>
+<tr class="row-odd"><td>6760</td>
 <td>NEW</td>
 <td>i.MX6: not possible to run X11 without tearing / with proper vsync</td>
+</tr>
+<tr class="row-even"><td>7339</td>
+<td>NEW</td>
+<td>Performance issue in do_rootfs (buildhistory_list_installed_image)</td>
 </tr>
 </tbody>
 </table>
@@ -2254,45 +2278,57 @@ table:</p>
 <td>WONTFIX</td>
 <td>error for using oprofile.ko to profiling</td>
 </tr>
-<tr class="row-odd"><td>5148</td>
+<tr class="row-odd"><td>5023</td>
+<td>FIXED</td>
+<td>EXTRA_IMAGE_FEATURES += &#8220;tools-sdk&#8221; does return ERROR</td>
+</tr>
+<tr class="row-even"><td>5148</td>
 <td>WONTFIX</td>
 <td>perf test fails</td>
 </tr>
-<tr class="row-even"><td>5178</td>
+<tr class="row-odd"><td>5178</td>
 <td>WORKSFORME</td>
 <td>sabresd boot failure with preferred provider linux-fslc</td>
 </tr>
-<tr class="row-odd"><td>5219</td>
+<tr class="row-even"><td>5219</td>
 <td>FIXED</td>
 <td>meta-fsl-arm kernel crash when using graphics acceleration</td>
 </tr>
-<tr class="row-even"><td>5361</td>
+<tr class="row-odd"><td>5361</td>
 <td>FIXED</td>
 <td>resolvconf fail to change dns-nameservers from /etc/network/interfaces</td>
 </tr>
-<tr class="row-odd"><td>5826</td>
+<tr class="row-even"><td>5826</td>
 <td>FIXED</td>
 <td>ARM: recipe xserver-xorg-2_1.15.0-r0: task do_compile: Failed</td>
 </tr>
-<tr class="row-even"><td>5864</td>
+<tr class="row-odd"><td>5864</td>
 <td>FIXED</td>
 <td>.bbappend files with % in their name and &#8220;python __anonymous () { ... }&#8221; fails to parse</td>
 </tr>
-<tr class="row-odd"><td>6083</td>
+<tr class="row-even"><td>6083</td>
 <td>FIXED</td>
 <td>Vivante GPU doesn&#8217;t work with X11</td>
 </tr>
-<tr class="row-even"><td>6098</td>
+<tr class="row-odd"><td>6098</td>
 <td>FIXED</td>
 <td>u-boot-fslc-v2014.01-r0: task do_compile: Failed</td>
 </tr>
-<tr class="row-odd"><td>6545</td>
+<tr class="row-even"><td>6545</td>
 <td>FIXED</td>
 <td>weston patches applied unconditionally</td>
 </tr>
-<tr class="row-even"><td>6894</td>
+<tr class="row-odd"><td>6894</td>
 <td>WONTFIX</td>
 <td>kernel menuconfig unusable and errors during compileing</td>
+</tr>
+<tr class="row-even"><td>7226</td>
+<td>WORKSFORME</td>
+<td>bitbake failure - MACHINE=cubox-i PACKAGE_CLASSES=package_deb</td>
+</tr>
+<tr class="row-odd"><td>7384</td>
+<td>FIXED</td>
+<td>u-boot-fslc fails in master</td>
 </tr>
 </tbody>
 </table>

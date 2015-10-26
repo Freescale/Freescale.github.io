@@ -82,11 +82,15 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.6 no no no
 
 # Dizzi
 git_update https://github.com/Freescale/Documentation.git dizzy $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 yes no yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.7 no no yes
 
 # Fido
 git_update https://github.com/Freescale/Documentation.git fido $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.8 yes no yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/1.8 no no yes
+
+# Jethro
+git_update https://github.com/Freescale/Documentation.git jethro $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.0 yes no yes
 
 ### User Guide
 

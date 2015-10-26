@@ -61,6 +61,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-bsp-scope">FSL Community BSP Scope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#license">License</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#end-user-license-agreement-eula">End User License Agreement (EULA)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#kernel-release-notes">Kernel Release Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#different-product-soc-families">Different Product SoC Families</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#supported-board-list">Supported Board List</a><ul>
@@ -342,6 +346,29 @@ provides the source code for FSL Community BSP Release Notes (RN), User Guide
 (UG) and Frequently Asked Questions (FAQ)</li>
 </ul>
 </div></blockquote>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>The FSL Community BSP is a project with the same licensing of most Yocto Project
+layers. It means the recipe file is under a certain license, and the source code
+used by that recipe is under another certain license (being it equal or not).</p>
+<p>Most of FSL Community BSP&#8216;s metadata is under MIT license, however the extensive
+and accurate list of package&#8217;s license provided by the Yocto Project&#8217;s metadata
+can be generated with few commands, for detailed information on how license is
+handled by Yocto Project see the <a class="reference external" href="http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#licenses">Reference Manual</a>.</p>
+<div class="section" id="end-user-license-agreement-eula">
+<h3>End User License Agreement (EULA)<a class="headerlink" href="#end-user-license-agreement-eula" title="Permalink to this headline">¶</a></h3>
+<p>Freescale releases basically two kind of packages, the open sourced packages use
+regular open source licenses (GPLv2 for example).</p>
+<p>The close sourced packages are released under the Freescale License (known as
+EULA). Each package has a copy of EULA inside itself and a copy of the EULA text
+is also included inside <strong>meta-fsl-arm</strong> root dir
+(<tt class="docutils literal"><span class="pre">sources/meta-fsl-arm/EULA</span></tt>).</p>
+<p>The FSL Community BSP handles the EULA acceptance by prompting user to read and
+accept EULA text at the very first environment setup. It is user&#8217;s duty to read
+and understand it before accepting it. After it is accepted the first time, it
+is assumed accepted in any other build.</p>
+</div>
+</div>
 <div class="section" id="kernel-release-notes">
 <span id="id1"></span><h2>Kernel Release Notes<a class="headerlink" href="#kernel-release-notes" title="Permalink to this headline">¶</a></h2>
 <p>The FSL Community BSP includes support for several kernel providers. Each machine

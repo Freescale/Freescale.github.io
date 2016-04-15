@@ -84,6 +84,10 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/1.8 no no yes
 git_update https://github.com/Freescale/Documentation.git jethro $tmp/docs
 sphinx_update $tmp/docs/release-notes doc/release-notes/2.0 yes no yes
 
+# Krogoth
+git_update https://github.com/Freescale/Documentation.git master $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.1 no yes yes
+
 ### User Guide
 
 # Master

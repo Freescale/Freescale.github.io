@@ -76,17 +76,13 @@ tmp=$(pwd)/tmp
 
 ### Release Notes
 
-# Fido
-git_update https://github.com/Freescale/Documentation.git fido $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/1.8 no no yes
-
 # Jethro
 git_update https://github.com/Freescale/Documentation.git jethro $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/2.0 yes no yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.0 no no yes
 
 # Krogoth
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/2.1 no yes yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.1 yes no yes
 
 ### User Guide
 

@@ -109,12 +109,50 @@
                 <p class="lead">The FSL Community BSP is a community driven project to provide and maintain a Board Support Package meta layer to be used with <a href="http://www.openembedded.org/wiki/OpenEmbedded-Core" target="_blank">OpenEmbedded-Core</a> and <a href="https://www.yoctoproject.org/tools-resources/projects/poky" target="_blank">Poky</a>.</p>
                 <p class="lead">It is composed by three main layers:</p>
                 <ul>
-                  <li><a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-fsl-arm" target="_blank"><strong>meta-fsl-arm:</strong></a> provides the base BSP support and the board support for Freescale ARM reference boards;</li>
-                  <li><a href="https://github.com/Freescale/meta-fsl-arm-extra" target="_blank"><strong>meta-fsl-arm-extra:</strong></a> provides support for 3rd party and partner boards;</li>
-                  <li><a href="https://github.com/Freescale/meta-fsl-demos" target="_blank"><strong>meta-fsl-demos:</strong></a> provides images recipes, demo recipes, and packagegroups used to ease the development with Yocto Project.</li>
+                  <li><a href="http://git.yoctoproject.org/cgit/cgit.cgi/meta-freescale" target="_blank"><strong>meta-freescale:</strong></a> provides the base BSP support and the board support for Freescale i.MX and QorIQ reference boards;</li>
+                  <li><a href="https://github.com/Freescale/meta-freescale-3rdparty" target="_blank"><strong>meta-freescale-3rdparty:</strong></a> provides support for 3rd party and partner boards;</li>
+                  <li><a href="https://github.com/Freescale/meta-freescale-distro" target="_blank"><strong>meta-freescale-distro:</strong></a> provides images recipes, demo recipes, and packagegroups used to ease the development with Yocto Project.</li>
                 </ul>
                 <p class="lead"><strong>Release Notes:</strong></p>
                 <ul class="fa-ul">
+                  <li>
+                    <h3><i class="fa fa-arrow-right fa-fw"></i> 2.2 - codename Morty:</h3>
+                    <div id="documentation-icons" class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-8 col-sm-offset-1">
+                          <div class="row center-block">
+                            <div class="col-sm-3 os-centered">
+                              <a href="http://freescale.github.io/doc/release-notes/2.2/" target="_blank">
+                                <i class="fa fa-globe fa-2x os-green-color"></i>
+                                <h4>Online</h4>
+                              </a>
+                            </div>
+                            <div class="col-sm-3 os-centered">
+                              <a href="http://freescale.github.io/doc/release-notes/2.2/FSLCommunityBSPReleaseNotes-view.pdf" target="_blank">
+                                <i class="fa fa-file-pdf-o fa-2x os-green-color"></i>
+                                <h4>Visualization</h4>
+                              </a>
+                              </p>
+                            </div>
+                            <div class="col-sm-3 os-centered">
+                              <a href="http://freescale.github.io/doc/release-notes/2.2/FSLCommunityBSPReleaseNotes-print-a4.pdf" target="_blank">
+                                <i class="fa fa-file-pdf-o fa-2x os-green-color"></i>
+                                <h4>Printing</h4>
+                                <h4>A4</h4>
+                              </a>
+                            </div>
+                            <div class="col-sm-3 os-centered">
+                              <a href="http://freescale.github.io/doc/release-notes/2.2/FSLCommunityBSPReleaseNotes-print-letter.pdf" target="_blank">
+                                <i class="fa fa-file-pdf-o fa-2x os-green-color"></i>
+                                <h4>Printing</h4>
+                                <h4>Letter</h4>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                   <li>
                     <h3><i class="fa fa-arrow-right fa-fw"></i> 2.1 - codename Krogoth:</h3>
                     <div id="documentation-icons" class="container-fluid">
@@ -209,10 +247,10 @@
             <div class="col-md-8 os-border-left os-blue-links">
               <div class="os-section-content">
                 <p class="lead">The development is centralized in the meta-freescale mailing list.</p>
-                <p class="lead">The mailing list is used to coordinate and handle contributions for meta-fsl-arm, meta-fsl-arm-extra, meta-fsl-ppc and meta-fsl-demos.</p>
+                <p class="lead">The mailing list is used to coordinate and handle contributions for meta-freescale, meta-freescale-3rdparty and meta-freescale-distro.</p>
                 <p class="lead"><a href="https://lists.yoctoproject.org/listinfo/meta-freescale" target="_blank">Subscribe</a> the mailing lists to talk directly with the developers and other users.</p>
-                <p class="lead">See the latest discussions in our <a href="http://news.gmane.org/gmane.linux.embedded.yocto.meta-freescale" target="_blank">archive</a>.</p>
-                <p class="lead">The known bugs are handled using the <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-fsl-arm" target="_blank">Yocto Project Bugzilla</a>.</p>
+                <p class="lead">See the latest discussions in our <a href="https://www.mail-archive.com/meta-freescale@yoctoproject.org/" target="_blank">archive</a>.</p>
+                <p class="lead">The known bugs are handled using the <a href="https://bugzilla.yoctoproject.org/buglist.cgi?quicksearch=meta-freescale" target="_blank">Yocto Project Bugzilla</a>.</p>
               </div>
             </div>
           </div>
@@ -257,7 +295,7 @@
                     <li><i class="fa fa-dollar fa-fw"></i>PATH=${PATH}:~/bin</li>
                     <li><i class="fa fa-dollar fa-fw"></i>mkdir fsl-community-bsp</li>
                     <li><i class="fa fa-dollar fa-fw"></i>cd fsl-community-bsp</li>
-                    <li><i class="fa fa-dollar fa-fw"></i>repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b krogoth</li>
+                    <li><i class="fa fa-dollar fa-fw"></i>repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b morty</li>
                     <li><i class="fa fa-dollar fa-fw"></i>repo sync</li>
                   </ul>
                 </div>

@@ -76,16 +76,20 @@ tmp=$(pwd)/tmp
 
 ### Release Notes
 
-# Krogoth
-git_update https://github.com/Freescale/Documentation.git krogoth $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/2.1 yes no yes
+# Pyro
+git_update https://github.com/Freescale/Documentation.git pyro $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.3 yes no yes
 
-# Morty
+# Rocko
+git_update https://github.com/Freescale/Documentation.git rocko $tmp/docs
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.4 yes no yes
+
+# Sumo
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/2.2 yes no yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.4 yes yes yes
 
 ### User Guide
 
 # Master
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
-sphinx_update $tmp/docs/user-guide doc/user-guide/1.6 yes
+sphinx_update $tmp/docs/user-guide doc/user-guide/2.4 yes

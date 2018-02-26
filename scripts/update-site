@@ -86,7 +86,7 @@ sphinx_update $tmp/docs/release-notes doc/release-notes/2.4 yes no yes
 
 # Sumo
 git_update https://github.com/Freescale/Documentation.git master $tmp/docs
-sphinx_update $tmp/docs/release-notes doc/release-notes/2.4 yes yes yes
+sphinx_update $tmp/docs/release-notes doc/release-notes/2.5 yes yes yes
 
 ### User Guide
 
